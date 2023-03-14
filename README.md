@@ -1,12 +1,29 @@
-# Caravel User Project
+[![tinytapeout](https://github.com/tinytapeout/tinytapeout-02/actions/workflows/gds.yaml/badge.svg)](https://github.com/tinytapeout/tinytapeout-02/actions/workflows/gds.yaml)
+[![verification](https://github.com/tinytapeout/tinytapeout-02/actions/workflows/verification.yaml/badge.svg)](https://github.com/tinytapeout/tinytapeout-02/actions/workflows/verification.yaml)
+[![tt_datasheet](https://github.com/tinytapeout/tinytapeout-02/actions/workflows/tt_datasheet.yaml/badge.svg)](https://github.com/tinytapeout/tinytapeout-02/actions/workflows/tt_datasheet.yaml)
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![UPRJ_CI](https://github.com/efabless/caravel_project_example/actions/workflows/user_project_ci.yml/badge.svg)](https://github.com/efabless/caravel_project_example/actions/workflows/user_project_ci.yml) [![Caravel Build](https://github.com/efabless/caravel_project_example/actions/workflows/caravel_build.yml/badge.svg)](https://github.com/efabless/caravel_project_example/actions/workflows/caravel_build.yml)
+# TinyTapeout
 
-| :exclamation: Important Note            |
-|-----------------------------------------|
+* Visit https://tinytapeout.com for more information on the project and how to get involved.
+* Read [INFO](INFO.md) for how the project is built and technical project notes.
+* Read [Verification](VERIFICATION.md) for how we verify the project.
 
-## Please fill in your project documentation in this README.md file 
+# Datasheet
 
-Refer to [README](docs/source/index.rst#section-quickstart) for a quickstart of how to use caravel_user_project
+[PDF Download](datasheet.pdf).
 
-Refer to [README](docs/source/index.rst) for this sample project documentation. 
+For the most recent automatic build, click the tt_datasheet badge above, then download the PDF artifact.
+
+# GDS layout of all projects
+
+![tiny tapeout](tinytapeout.png)
+
+# Project Index
+
+| Index | Author | Title | Type | Git Repo |
+| ----- | ------ | ------| -----| ---------|
+| 0 | Matt Venn | Test Inverter Project | [Wokwi](https://wokwi.com/projects/357464855584307201) | https://github.com/TinyTapeout/tt03-test-invert |
+| 1 | Wallie Everest | Chiptune | HDL | https://github.com/WallieEverest/tt03 |
+| 2 | icegoat9 | 7 Segment Life | [Wokwi](https://wokwi.com/projects/357752736742764545) | https://github.com/icegoat9/tinytapeout03-7seglife |
+| 3 | Meinhard Kissich, EAS Group, Graz University of Technology | Another Piece of Pi | HDL | https://github.com/meiniKi/tt03-another-piece-of-pi |
+| 4 | nqbit | Wormy | HDL | https://github.com/nqbit/wormy |
