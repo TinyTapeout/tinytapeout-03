@@ -26,21 +26,24 @@
  * example should be removed and replaced with the actual
  * user project.
  *
+ * THIS FILE HAS BEEN GENERATED USING multi_tools_project CODEGEN
+ * IF YOU NEED TO MAKE EDITS TO IT, EDIT codegen/caravel_iface_header.txt
+ *
  *-------------------------------------------------------------
  */
 
 module user_project_wrapper #(
     parameter BITS = 32
-) (
+)(
 `ifdef USE_POWER_PINS
-    inout vdda1,	// User area 1 3.3V supply
-    inout vdda2,	// User area 2 3.3V supply
-    inout vssa1,	// User area 1 analog ground
-    inout vssa2,	// User area 2 analog ground
-    inout vccd1,	// User area 1 1.8V supply
-    inout vccd2,	// User area 2 1.8v supply
-    inout vssd1,	// User area 1 digital ground
-    inout vssd2,	// User area 2 digital ground
+    inout vdda1,       // User area 1 3.3V supply
+    inout vdda2,       // User area 2 3.3V supply
+    inout vssa1,       // User area 1 analog ground
+    inout vssa2,       // User area 2 analog ground
+    inout vccd1,       // User area 1 1.8V supply
+    inout vccd2,       // User area 2 1.8v supply
+    inout vssd1,       // User area 1 digital ground
+    inout vssd2,       // User area 2 digital ground
 `endif
 
     // Wishbone Slave ports (WB MI A)
@@ -78,46 +81,154 @@ module user_project_wrapper #(
     output [2:0] user_irq
 );
 
-/*--------------------------------------*/
-/* User project is instantiated  here   */
-/*--------------------------------------*/
+    // start of module instantiation
 
-user_proj_example mprj (
-`ifdef USE_POWER_PINS
-	.vccd1(vccd1),	// User area 1 1.8V power
-	.vssd1(vssd1),	// User area 1 digital ground
-`endif
+    wire sc_clk_out, sc_data_out, sc_latch_out, sc_scan_out;
+    wire sc_clk_in,  sc_data_in;
 
-    .wb_clk_i(wb_clk_i),
-    .wb_rst_i(wb_rst_i),
+    scan_controller #(.NUM_DESIGNS(5)) scan_controller (
+       .clk                    (wb_clk_i),
+       .reset                  (wb_rst_i),
+       .active_select          (io_in[20:12]),
+       .inputs                 (io_in[28:21]),
+       .outputs                (io_out[36:29]),
+       .ready                  (io_out[37]),
+       .slow_clk               (io_out[10]),
+       .set_clk_div            (io_in[11]),
 
-    // MGMT SoC Wishbone Slave
+       .scan_clk_out           (sc_clk_out),
+       .scan_clk_in            (sc_clk_in),
+       .scan_data_out          (sc_data_out),
+       .scan_data_in           (sc_data_in),
+       .scan_select            (sc_scan_out),
+       .scan_latch_en          (sc_latch_out),
 
-    .wbs_cyc_i(wbs_cyc_i),
-    .wbs_stb_i(wbs_stb_i),
-    .wbs_we_i(wbs_we_i),
-    .wbs_sel_i(wbs_sel_i),
-    .wbs_adr_i(wbs_adr_i),
-    .wbs_dat_i(wbs_dat_i),
-    .wbs_ack_o(wbs_ack_o),
-    .wbs_dat_o(wbs_dat_o),
+       .la_scan_clk_in         (la_data_in[0]),
+       .la_scan_data_in        (la_data_in[1]),
+       .la_scan_data_out       (la_data_out[0]),
+       .la_scan_select         (la_data_in[2]),
+       .la_scan_latch_en       (la_data_in[3]),
 
-    // Logic Analyzer
+       .driver_sel             (io_in[9:8]),
 
-    .la_data_in(la_data_in),
-    .la_data_out(la_data_out),
-    .la_oenb (la_oenb),
+       .oeb                    (io_oeb)
+    );
 
-    // IO Pads
+    // [000] https://github.com/TinyTapeout/tt03-test-invert
+    wire sw_000_clk_out, sw_000_data_out, sw_000_scan_out, sw_000_latch_out;
+    wire [7:0] sw_000_module_data_in;
+    wire [7:0] sw_000_module_data_out;
+    scanchain #(.NUM_IOS(8)) scanchain_000 (
+        .clk_in          (sc_clk_out),
+        .data_in         (sc_data_out),
+        .scan_select_in  (sc_scan_out),
+        .latch_enable_in (sc_latch_out),
+        .clk_out         (sw_000_clk_out),
+        .data_out        (sw_000_data_out),
+        .scan_select_out (sw_000_scan_out),
+        .latch_enable_out(sw_000_latch_out),
+        .module_data_in  (sw_000_module_data_in),
+        .module_data_out (sw_000_module_data_out)
+    );
 
-    .io_in ({io_in[37:30],io_in[7:0]}),
-    .io_out({io_out[37:30],io_out[7:0]}),
-    .io_oeb({io_oeb[37:30],io_oeb[7:0]}),
+    user_module_357464855584307201 user_module_357464855584307201_000 (
+        .io_in  (sw_000_module_data_in),
+        .io_out (sw_000_module_data_out)
+    );
 
-    // IRQ
-    .irq(user_irq)
-);
+    // [001] https://github.com/WallieEverest/tt03
+    wire sw_001_clk_out, sw_001_data_out, sw_001_scan_out, sw_001_latch_out;
+    wire [7:0] sw_001_module_data_in;
+    wire [7:0] sw_001_module_data_out;
+    scanchain #(.NUM_IOS(8)) scanchain_001 (
+        .clk_in          (sw_000_clk_out),
+        .data_in         (sw_000_data_out),
+        .scan_select_in  (sw_000_scan_out),
+        .latch_enable_in (sw_000_latch_out),
+        .clk_out         (sw_001_clk_out),
+        .data_out        (sw_001_data_out),
+        .scan_select_out (sw_001_scan_out),
+        .latch_enable_out(sw_001_latch_out),
+        .module_data_in  (sw_001_module_data_in),
+        .module_data_out (sw_001_module_data_out)
+    );
+
+    weverest_top weverest_top_001 (
+        .io_in  (sw_001_module_data_in),
+        .io_out (sw_001_module_data_out)
+    );
+
+    // [002] https://github.com/icegoat9/tinytapeout03-7seglife
+    wire sw_002_clk_out, sw_002_data_out, sw_002_scan_out, sw_002_latch_out;
+    wire [7:0] sw_002_module_data_in;
+    wire [7:0] sw_002_module_data_out;
+    scanchain #(.NUM_IOS(8)) scanchain_002 (
+        .clk_in          (sw_001_clk_out),
+        .data_in         (sw_001_data_out),
+        .scan_select_in  (sw_001_scan_out),
+        .latch_enable_in (sw_001_latch_out),
+        .clk_out         (sw_002_clk_out),
+        .data_out        (sw_002_data_out),
+        .scan_select_out (sw_002_scan_out),
+        .latch_enable_out(sw_002_latch_out),
+        .module_data_in  (sw_002_module_data_in),
+        .module_data_out (sw_002_module_data_out)
+    );
+
+    user_module_357752736742764545 user_module_357752736742764545_002 (
+        .io_in  (sw_002_module_data_in),
+        .io_out (sw_002_module_data_out)
+    );
+
+    // [003] https://github.com/meiniKi/tt03-another-piece-of-pi
+    wire sw_003_clk_out, sw_003_data_out, sw_003_scan_out, sw_003_latch_out;
+    wire [7:0] sw_003_module_data_in;
+    wire [7:0] sw_003_module_data_out;
+    scanchain #(.NUM_IOS(8)) scanchain_003 (
+        .clk_in          (sw_002_clk_out),
+        .data_in         (sw_002_data_out),
+        .scan_select_in  (sw_002_scan_out),
+        .latch_enable_in (sw_002_latch_out),
+        .clk_out         (sw_003_clk_out),
+        .data_out        (sw_003_data_out),
+        .scan_select_out (sw_003_scan_out),
+        .latch_enable_out(sw_003_latch_out),
+        .module_data_in  (sw_003_module_data_in),
+        .module_data_out (sw_003_module_data_out)
+    );
+
+    meiniki_pi meiniki_pi_003 (
+        .io_in  (sw_003_module_data_in),
+        .io_out (sw_003_module_data_out)
+    );
+
+    // [004] https://github.com/nqbit/wormy
+    wire sw_004_clk_out, sw_004_data_out, sw_004_scan_out, sw_004_latch_out;
+    wire [7:0] sw_004_module_data_in;
+    wire [7:0] sw_004_module_data_out;
+    scanchain #(.NUM_IOS(8)) scanchain_004 (
+        .clk_in          (sw_003_clk_out),
+        .data_in         (sw_003_data_out),
+        .scan_select_in  (sw_003_scan_out),
+        .latch_enable_in (sw_003_latch_out),
+        .clk_out         (sw_004_clk_out),
+        .data_out        (sw_004_data_out),
+        .scan_select_out (sw_004_scan_out),
+        .latch_enable_out(sw_004_latch_out),
+        .module_data_in  (sw_004_module_data_in),
+        .module_data_out (sw_004_module_data_out)
+    );
+
+    wormy_top wormy_top_004 (
+        .io_in  (sw_004_module_data_in),
+        .io_out (sw_004_module_data_out)
+    );
+
+    // Connect final signals back to the scan controller
+    assign sc_clk_in  = sw_004_clk_out;
+    assign sc_data_in = sw_004_data_out;
+
+    // end of module instantiation
 
 endmodule	// user_project_wrapper
-
 `default_nettype wire

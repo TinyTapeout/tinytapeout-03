@@ -544,7 +544,7 @@ MACRO user_project_wrapper
     END
   END io_in[9]
   PIN io_oeb[0]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -552,7 +552,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[0]
   PIN io_oeb[10]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -560,7 +560,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[10]
   PIN io_oeb[11]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -568,7 +568,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[11]
   PIN io_oeb[12]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -576,7 +576,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[12]
   PIN io_oeb[13]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -584,7 +584,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[13]
   PIN io_oeb[14]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -592,7 +592,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[14]
   PIN io_oeb[15]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -600,7 +600,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[15]
   PIN io_oeb[16]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -608,7 +608,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[16]
   PIN io_oeb[17]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -616,7 +616,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[17]
   PIN io_oeb[18]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -624,7 +624,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[18]
   PIN io_oeb[19]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -632,7 +632,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[19]
   PIN io_oeb[1]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -640,7 +640,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[1]
   PIN io_oeb[20]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -648,7 +648,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[20]
   PIN io_oeb[21]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -656,7 +656,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[21]
   PIN io_oeb[22]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -664,7 +664,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[22]
   PIN io_oeb[23]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -672,7 +672,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[23]
   PIN io_oeb[24]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -680,7 +680,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[24]
   PIN io_oeb[25]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -688,7 +688,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[25]
   PIN io_oeb[26]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -696,7 +696,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[26]
   PIN io_oeb[27]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -704,7 +704,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[27]
   PIN io_oeb[28]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -712,7 +712,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[28]
   PIN io_oeb[29]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -720,7 +720,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[29]
   PIN io_oeb[2]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -728,7 +728,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[2]
   PIN io_oeb[30]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -736,7 +736,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[30]
   PIN io_oeb[31]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -744,7 +744,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[31]
   PIN io_oeb[32]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -752,7 +752,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[32]
   PIN io_oeb[33]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -760,7 +760,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[33]
   PIN io_oeb[34]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -768,7 +768,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[34]
   PIN io_oeb[35]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -776,7 +776,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[35]
   PIN io_oeb[36]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -784,7 +784,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[36]
   PIN io_oeb[37]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -792,7 +792,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[37]
   PIN io_oeb[3]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -800,7 +800,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[3]
   PIN io_oeb[4]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -808,7 +808,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[4]
   PIN io_oeb[5]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -816,7 +816,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[5]
   PIN io_oeb[6]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -824,7 +824,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[6]
   PIN io_oeb[7]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -832,7 +832,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[7]
   PIN io_oeb[8]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -840,7 +840,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[8]
   PIN io_oeb[9]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -848,7 +848,7 @@ MACRO user_project_wrapper
     END
   END io_oeb[9]
   PIN io_out[0]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -856,7 +856,7 @@ MACRO user_project_wrapper
     END
   END io_out[0]
   PIN io_out[10]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -864,7 +864,7 @@ MACRO user_project_wrapper
     END
   END io_out[10]
   PIN io_out[11]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -872,7 +872,7 @@ MACRO user_project_wrapper
     END
   END io_out[11]
   PIN io_out[12]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -880,7 +880,7 @@ MACRO user_project_wrapper
     END
   END io_out[12]
   PIN io_out[13]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -888,7 +888,7 @@ MACRO user_project_wrapper
     END
   END io_out[13]
   PIN io_out[14]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -896,7 +896,7 @@ MACRO user_project_wrapper
     END
   END io_out[14]
   PIN io_out[15]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -904,7 +904,7 @@ MACRO user_project_wrapper
     END
   END io_out[15]
   PIN io_out[16]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -912,7 +912,7 @@ MACRO user_project_wrapper
     END
   END io_out[16]
   PIN io_out[17]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -920,7 +920,7 @@ MACRO user_project_wrapper
     END
   END io_out[17]
   PIN io_out[18]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -928,7 +928,7 @@ MACRO user_project_wrapper
     END
   END io_out[18]
   PIN io_out[19]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -936,7 +936,7 @@ MACRO user_project_wrapper
     END
   END io_out[19]
   PIN io_out[1]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -944,7 +944,7 @@ MACRO user_project_wrapper
     END
   END io_out[1]
   PIN io_out[20]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -952,7 +952,7 @@ MACRO user_project_wrapper
     END
   END io_out[20]
   PIN io_out[21]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -960,7 +960,7 @@ MACRO user_project_wrapper
     END
   END io_out[21]
   PIN io_out[22]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -968,7 +968,7 @@ MACRO user_project_wrapper
     END
   END io_out[22]
   PIN io_out[23]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -976,7 +976,7 @@ MACRO user_project_wrapper
     END
   END io_out[23]
   PIN io_out[24]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -984,7 +984,7 @@ MACRO user_project_wrapper
     END
   END io_out[24]
   PIN io_out[25]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -992,7 +992,7 @@ MACRO user_project_wrapper
     END
   END io_out[25]
   PIN io_out[26]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -1000,7 +1000,7 @@ MACRO user_project_wrapper
     END
   END io_out[26]
   PIN io_out[27]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -1008,7 +1008,7 @@ MACRO user_project_wrapper
     END
   END io_out[27]
   PIN io_out[28]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -1016,7 +1016,7 @@ MACRO user_project_wrapper
     END
   END io_out[28]
   PIN io_out[29]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -1024,7 +1024,7 @@ MACRO user_project_wrapper
     END
   END io_out[29]
   PIN io_out[2]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -1032,7 +1032,7 @@ MACRO user_project_wrapper
     END
   END io_out[2]
   PIN io_out[30]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -1040,7 +1040,7 @@ MACRO user_project_wrapper
     END
   END io_out[30]
   PIN io_out[31]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -1048,7 +1048,7 @@ MACRO user_project_wrapper
     END
   END io_out[31]
   PIN io_out[32]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -1056,7 +1056,7 @@ MACRO user_project_wrapper
     END
   END io_out[32]
   PIN io_out[33]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -1064,7 +1064,7 @@ MACRO user_project_wrapper
     END
   END io_out[33]
   PIN io_out[34]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -1072,7 +1072,7 @@ MACRO user_project_wrapper
     END
   END io_out[34]
   PIN io_out[35]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -1080,7 +1080,7 @@ MACRO user_project_wrapper
     END
   END io_out[35]
   PIN io_out[36]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -1088,7 +1088,7 @@ MACRO user_project_wrapper
     END
   END io_out[36]
   PIN io_out[37]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -1096,7 +1096,7 @@ MACRO user_project_wrapper
     END
   END io_out[37]
   PIN io_out[3]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -1104,7 +1104,7 @@ MACRO user_project_wrapper
     END
   END io_out[3]
   PIN io_out[4]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -1112,7 +1112,7 @@ MACRO user_project_wrapper
     END
   END io_out[4]
   PIN io_out[5]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -1120,7 +1120,7 @@ MACRO user_project_wrapper
     END
   END io_out[5]
   PIN io_out[6]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -1128,7 +1128,7 @@ MACRO user_project_wrapper
     END
   END io_out[6]
   PIN io_out[7]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -1136,7 +1136,7 @@ MACRO user_project_wrapper
     END
   END io_out[7]
   PIN io_out[8]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -1144,7 +1144,7 @@ MACRO user_project_wrapper
     END
   END io_out[8]
   PIN io_out[9]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met3 ;
@@ -2176,7 +2176,7 @@ MACRO user_project_wrapper
     END
   END la_data_in[9]
   PIN la_data_out[0]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2184,7 +2184,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[0]
   PIN la_data_out[100]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2192,7 +2192,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[100]
   PIN la_data_out[101]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2200,7 +2200,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[101]
   PIN la_data_out[102]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2208,7 +2208,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[102]
   PIN la_data_out[103]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2216,7 +2216,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[103]
   PIN la_data_out[104]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2224,7 +2224,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[104]
   PIN la_data_out[105]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2232,7 +2232,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[105]
   PIN la_data_out[106]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2240,7 +2240,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[106]
   PIN la_data_out[107]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2248,7 +2248,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[107]
   PIN la_data_out[108]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2256,7 +2256,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[108]
   PIN la_data_out[109]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2264,7 +2264,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[109]
   PIN la_data_out[10]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2272,7 +2272,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[10]
   PIN la_data_out[110]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2280,7 +2280,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[110]
   PIN la_data_out[111]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2288,7 +2288,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[111]
   PIN la_data_out[112]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2296,7 +2296,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[112]
   PIN la_data_out[113]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2304,7 +2304,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[113]
   PIN la_data_out[114]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2312,7 +2312,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[114]
   PIN la_data_out[115]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2320,7 +2320,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[115]
   PIN la_data_out[116]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2328,7 +2328,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[116]
   PIN la_data_out[117]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2336,7 +2336,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[117]
   PIN la_data_out[118]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2344,7 +2344,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[118]
   PIN la_data_out[119]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2352,7 +2352,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[119]
   PIN la_data_out[11]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2360,7 +2360,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[11]
   PIN la_data_out[120]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2368,7 +2368,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[120]
   PIN la_data_out[121]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2376,7 +2376,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[121]
   PIN la_data_out[122]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2384,7 +2384,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[122]
   PIN la_data_out[123]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2392,7 +2392,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[123]
   PIN la_data_out[124]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2400,7 +2400,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[124]
   PIN la_data_out[125]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2408,7 +2408,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[125]
   PIN la_data_out[126]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2416,7 +2416,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[126]
   PIN la_data_out[127]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2424,7 +2424,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[127]
   PIN la_data_out[12]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2432,7 +2432,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[12]
   PIN la_data_out[13]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2440,7 +2440,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[13]
   PIN la_data_out[14]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2448,7 +2448,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[14]
   PIN la_data_out[15]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2456,7 +2456,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[15]
   PIN la_data_out[16]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2464,7 +2464,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[16]
   PIN la_data_out[17]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2472,7 +2472,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[17]
   PIN la_data_out[18]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2480,7 +2480,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[18]
   PIN la_data_out[19]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2488,7 +2488,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[19]
   PIN la_data_out[1]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2496,7 +2496,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[1]
   PIN la_data_out[20]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2504,7 +2504,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[20]
   PIN la_data_out[21]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2512,7 +2512,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[21]
   PIN la_data_out[22]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2520,7 +2520,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[22]
   PIN la_data_out[23]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2528,7 +2528,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[23]
   PIN la_data_out[24]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2536,7 +2536,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[24]
   PIN la_data_out[25]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2544,7 +2544,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[25]
   PIN la_data_out[26]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2552,7 +2552,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[26]
   PIN la_data_out[27]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2560,7 +2560,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[27]
   PIN la_data_out[28]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2568,7 +2568,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[28]
   PIN la_data_out[29]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2576,7 +2576,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[29]
   PIN la_data_out[2]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2584,7 +2584,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[2]
   PIN la_data_out[30]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2592,7 +2592,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[30]
   PIN la_data_out[31]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2600,7 +2600,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[31]
   PIN la_data_out[32]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2608,7 +2608,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[32]
   PIN la_data_out[33]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2616,7 +2616,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[33]
   PIN la_data_out[34]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2624,7 +2624,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[34]
   PIN la_data_out[35]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2632,7 +2632,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[35]
   PIN la_data_out[36]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2640,7 +2640,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[36]
   PIN la_data_out[37]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2648,7 +2648,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[37]
   PIN la_data_out[38]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2656,7 +2656,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[38]
   PIN la_data_out[39]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2664,7 +2664,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[39]
   PIN la_data_out[3]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2672,7 +2672,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[3]
   PIN la_data_out[40]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2680,7 +2680,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[40]
   PIN la_data_out[41]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2688,7 +2688,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[41]
   PIN la_data_out[42]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2696,7 +2696,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[42]
   PIN la_data_out[43]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2704,7 +2704,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[43]
   PIN la_data_out[44]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2712,7 +2712,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[44]
   PIN la_data_out[45]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2720,7 +2720,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[45]
   PIN la_data_out[46]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2728,7 +2728,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[46]
   PIN la_data_out[47]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2736,7 +2736,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[47]
   PIN la_data_out[48]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2744,7 +2744,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[48]
   PIN la_data_out[49]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2752,7 +2752,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[49]
   PIN la_data_out[4]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2760,7 +2760,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[4]
   PIN la_data_out[50]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2768,7 +2768,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[50]
   PIN la_data_out[51]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2776,7 +2776,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[51]
   PIN la_data_out[52]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2784,7 +2784,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[52]
   PIN la_data_out[53]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2792,7 +2792,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[53]
   PIN la_data_out[54]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2800,7 +2800,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[54]
   PIN la_data_out[55]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2808,7 +2808,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[55]
   PIN la_data_out[56]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2816,7 +2816,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[56]
   PIN la_data_out[57]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2824,7 +2824,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[57]
   PIN la_data_out[58]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2832,7 +2832,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[58]
   PIN la_data_out[59]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2840,7 +2840,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[59]
   PIN la_data_out[5]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2848,7 +2848,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[5]
   PIN la_data_out[60]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2856,7 +2856,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[60]
   PIN la_data_out[61]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2864,7 +2864,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[61]
   PIN la_data_out[62]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2872,7 +2872,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[62]
   PIN la_data_out[63]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2880,7 +2880,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[63]
   PIN la_data_out[64]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2888,7 +2888,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[64]
   PIN la_data_out[65]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2896,7 +2896,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[65]
   PIN la_data_out[66]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2904,7 +2904,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[66]
   PIN la_data_out[67]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2912,7 +2912,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[67]
   PIN la_data_out[68]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2920,7 +2920,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[68]
   PIN la_data_out[69]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2928,7 +2928,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[69]
   PIN la_data_out[6]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2936,7 +2936,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[6]
   PIN la_data_out[70]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2944,7 +2944,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[70]
   PIN la_data_out[71]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2952,7 +2952,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[71]
   PIN la_data_out[72]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2960,7 +2960,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[72]
   PIN la_data_out[73]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2968,7 +2968,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[73]
   PIN la_data_out[74]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2976,7 +2976,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[74]
   PIN la_data_out[75]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2984,7 +2984,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[75]
   PIN la_data_out[76]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -2992,7 +2992,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[76]
   PIN la_data_out[77]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -3000,7 +3000,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[77]
   PIN la_data_out[78]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -3008,7 +3008,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[78]
   PIN la_data_out[79]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -3016,7 +3016,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[79]
   PIN la_data_out[7]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -3024,7 +3024,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[7]
   PIN la_data_out[80]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -3032,7 +3032,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[80]
   PIN la_data_out[81]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -3040,7 +3040,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[81]
   PIN la_data_out[82]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -3048,7 +3048,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[82]
   PIN la_data_out[83]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -3056,7 +3056,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[83]
   PIN la_data_out[84]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -3064,7 +3064,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[84]
   PIN la_data_out[85]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -3072,7 +3072,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[85]
   PIN la_data_out[86]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -3080,7 +3080,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[86]
   PIN la_data_out[87]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -3088,7 +3088,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[87]
   PIN la_data_out[88]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -3096,7 +3096,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[88]
   PIN la_data_out[89]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -3104,7 +3104,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[89]
   PIN la_data_out[8]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -3112,7 +3112,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[8]
   PIN la_data_out[90]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -3120,7 +3120,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[90]
   PIN la_data_out[91]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -3128,7 +3128,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[91]
   PIN la_data_out[92]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -3136,7 +3136,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[92]
   PIN la_data_out[93]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -3144,7 +3144,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[93]
   PIN la_data_out[94]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -3152,7 +3152,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[94]
   PIN la_data_out[95]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -3160,7 +3160,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[95]
   PIN la_data_out[96]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -3168,7 +3168,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[96]
   PIN la_data_out[97]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -3176,7 +3176,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[97]
   PIN la_data_out[98]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -3184,7 +3184,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[98]
   PIN la_data_out[99]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -3192,7 +3192,7 @@ MACRO user_project_wrapper
     END
   END la_data_out[99]
   PIN la_data_out[9]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -4232,7 +4232,7 @@ MACRO user_project_wrapper
     END
   END user_clock2
   PIN user_irq[0]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -4240,7 +4240,7 @@ MACRO user_project_wrapper
     END
   END user_irq[0]
   PIN user_irq[1]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -4248,7 +4248,7 @@ MACRO user_project_wrapper
     END
   END user_irq[1]
   PIN user_irq[2]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -5580,7 +5580,7 @@ MACRO user_project_wrapper
     END
   END wb_rst_i
   PIN wbs_ack_o
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6108,7 +6108,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_i[9]
   PIN wbs_dat_o[0]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6116,7 +6116,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[0]
   PIN wbs_dat_o[10]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6124,7 +6124,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[10]
   PIN wbs_dat_o[11]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6132,7 +6132,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[11]
   PIN wbs_dat_o[12]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6140,7 +6140,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[12]
   PIN wbs_dat_o[13]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6148,7 +6148,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[13]
   PIN wbs_dat_o[14]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6156,7 +6156,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[14]
   PIN wbs_dat_o[15]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6164,7 +6164,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[15]
   PIN wbs_dat_o[16]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6172,7 +6172,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[16]
   PIN wbs_dat_o[17]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6180,7 +6180,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[17]
   PIN wbs_dat_o[18]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6188,7 +6188,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[18]
   PIN wbs_dat_o[19]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6196,7 +6196,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[19]
   PIN wbs_dat_o[1]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6204,7 +6204,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[1]
   PIN wbs_dat_o[20]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6212,7 +6212,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[20]
   PIN wbs_dat_o[21]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6220,7 +6220,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[21]
   PIN wbs_dat_o[22]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6228,7 +6228,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[22]
   PIN wbs_dat_o[23]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6236,7 +6236,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[23]
   PIN wbs_dat_o[24]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6244,7 +6244,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[24]
   PIN wbs_dat_o[25]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6252,7 +6252,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[25]
   PIN wbs_dat_o[26]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6260,7 +6260,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[26]
   PIN wbs_dat_o[27]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6268,7 +6268,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[27]
   PIN wbs_dat_o[28]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6276,7 +6276,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[28]
   PIN wbs_dat_o[29]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6284,7 +6284,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[29]
   PIN wbs_dat_o[2]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6292,7 +6292,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[2]
   PIN wbs_dat_o[30]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6300,7 +6300,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[30]
   PIN wbs_dat_o[31]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6308,7 +6308,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[31]
   PIN wbs_dat_o[3]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6316,7 +6316,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[3]
   PIN wbs_dat_o[4]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6324,7 +6324,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[4]
   PIN wbs_dat_o[5]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6332,7 +6332,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[5]
   PIN wbs_dat_o[6]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6340,7 +6340,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[6]
   PIN wbs_dat_o[7]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6348,7 +6348,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[7]
   PIN wbs_dat_o[8]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;
@@ -6356,7 +6356,7 @@ MACRO user_project_wrapper
     END
   END wbs_dat_o[8]
   PIN wbs_dat_o[9]
-    DIRECTION OUTPUT TRISTATE ;
+    DIRECTION OUTPUT ;
     USE SIGNAL ;
     PORT
       LAYER met2 ;

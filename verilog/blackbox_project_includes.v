@@ -1,0 +1,7 @@
+`include "rtl/scan_controller/scan_controller.v"
+`include "rtl/scanchain/scanchain.v"
+`include "gl/user_module_357464855584307201.v"
+`include "gl/weverest_top.v"
+`include "gl/user_module_357752736742764545.v"
+`include "gl/meiniki_pi.v"
+`include "gl/wormy_top.v"
