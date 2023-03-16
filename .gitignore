@@ -1,3 +1,7 @@
+git_url_to_email.json
+setuptokens.sh
+datasheet.md
+gds/*gds
 /.idea/
 /precheck_results/
 */tmp
@@ -6,3 +10,10 @@
 *.lst
 *.vcd
 *.gtkw
+*.fst
+results.xml
+sim_build*
+__pycache__
+scan_mux
+.DS_Store
+venv
