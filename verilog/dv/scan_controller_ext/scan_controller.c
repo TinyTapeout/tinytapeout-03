@@ -15,15 +15,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// This include is relative to $CARAVEL_PATH (see Makefile)
 #include <defs.h>
 #include <stub.c>
 
-/*
-	IO Test:
-		- Configures MPRJ lower 8-IO pins as outputs
-		- Observes counter value through the MPRJ lower 8 IO pins (in the testbench)
-*/
+#define SET(PIN,N) (PIN |=  (1<<N))
+#define CLR(PIN,N) (PIN &= ~(1<<N))
+#define GET(PIN,N) (PIN &   (1<<N))
+
+#define FW_READY    12
 
 void main()
 {
@@ -43,33 +42,37 @@ void main()
 
 	*/
 
-	/* Set up the housekeeping SPI to be connected internally so	*/
-	/* that external pin changes don't affect it.			*/
+    // 2 inputs for enable logic analyser control
+	reg_mprj_io_8 =   GPIO_MODE_USER_STD_INPUT_NOPULL;
+	reg_mprj_io_9 =   GPIO_MODE_USER_STD_INPUT_NOPULL;
 
-	// reg_spi_enable = 1;
-	// reg_spimaster_cs = 0x10001;
-	// reg_spimaster_control = 0x0801;
+    /*
+    inputs                 (io_in[28:21]),
+    outputs                (io_out[36:29]),
+    ext_scan_clk       = inputs[0];
+    ext_scan_data_in   = inputs[1];
+    ext_scan_clk_in    = outputs[0]
+    ext_scan_data_in   = outputs[1]
+    ext_scan_select    = inputs[2];   
+    ext_scan_latch_en  = inputs[3];
 
-	// reg_spimaster_control = 0xa002;	// Enable, prescaler = 2,
-                                        // connect to housekeeping SPI
+    assign outputs = driver_sel[1] ? aio_output_reg : {6'b0, ext_scan_data_in, ext_scan_clk_in};
+    */
 
-	// Connect the housekeeping SPI to the SPI master
-	// so that the CSB line is not left floating.  This allows
-	// all of the GPIO pins to be used for user functions.
+    reg_mprj_io_21 = GPIO_MODE_USER_STD_INPUT_NOPULL; // clk
+    reg_mprj_io_22 = GPIO_MODE_USER_STD_INPUT_NOPULL; // data in
+    reg_mprj_io_23 = GPIO_MODE_USER_STD_INPUT_NOPULL; // scan
+    reg_mprj_io_24 = GPIO_MODE_USER_STD_INPUT_NOPULL; // latch
 
-	// Configure lower 8-IOs as user output
-	// Observe counter value in the testbench
-	reg_mprj_io_0 =  GPIO_MODE_USER_STD_OUTPUT;
-	reg_mprj_io_1 =  GPIO_MODE_USER_STD_OUTPUT;
-	reg_mprj_io_2 =  GPIO_MODE_USER_STD_OUTPUT;
-	reg_mprj_io_3 =  GPIO_MODE_USER_STD_OUTPUT;
-	reg_mprj_io_4 =  GPIO_MODE_USER_STD_OUTPUT;
-	reg_mprj_io_5 =  GPIO_MODE_USER_STD_OUTPUT;
-	reg_mprj_io_6 =  GPIO_MODE_USER_STD_OUTPUT;
-	reg_mprj_io_7 =  GPIO_MODE_USER_STD_OUTPUT;
+    reg_mprj_io_29 = GPIO_MODE_USER_STD_OUTPUT; // clk  out
+    reg_mprj_io_30 = GPIO_MODE_USER_STD_OUTPUT; // data out
 
-	/* Apply configuration */
-	reg_mprj_xfer = 1;
-	while (reg_mprj_xfer == 1);
+    // outputs for testbench control
+    reg_mprj_io_12 = GPIO_MODE_MGMT_STD_OUTPUT; // fw ready
+
+    /* Apply configuration */
+    reg_mprj_xfer = 1;
+    while (reg_mprj_xfer == 1);
+
+	reg_mprj_datal |= 1 << FW_READY;
 }
-
