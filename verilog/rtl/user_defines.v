@@ -52,9 +52,9 @@
 // up in a state that can be used immediately without depending on
 // the management SoC to run a startup program to configure the GPIOs.
 
-`define USER_CONFIG_GPIO_5_INIT  `GPIO_MODE_INVALID
-`define USER_CONFIG_GPIO_6_INIT  `GPIO_MODE_INVALID
-`define USER_CONFIG_GPIO_7_INIT  `GPIO_MODE_INVALID
+`define USER_CONFIG_GPIO_5_INIT  `GPIO_MODE_MGMT_STD_INPUT_NOPULL
+`define USER_CONFIG_GPIO_6_INIT  `GPIO_MODE_MGMT_STD_INPUT_NOPULL
+`define USER_CONFIG_GPIO_7_INIT  `GPIO_MODE_MGMT_STD_INPUT_NOPULL
 
 // refer to verilog/dv/scan_controller_ext/scan_controller.c
 
