@@ -9,8 +9,6 @@
     "CLOCK_PORT": "wb_clk_i",
     "CLOCK_NET": "mprj.clk",
     "FP_PDN_MACRO_HOOKS": [
-        "mprj vccd1 vssd1 vccd1 vssd1,",
-        "scan_controller vccd1 vssd1 vccd1 vssd1,",
         "scanchain_000 vccd1 vssd1 vccd1 vssd1,",
         "user_module_357464855584307201_000 vccd1 vssd1 vccd1 vssd1,",
         "scanchain_001 vccd1 vssd1 vccd1 vssd1,",
@@ -20,8 +18,9 @@
         "scanchain_003 vccd1 vssd1 vccd1 vssd1,",
         "meiniki_pi_003 vccd1 vssd1 vccd1 vssd1,",
         "scanchain_004 vccd1 vssd1 vccd1 vssd1,",
-        "wormy_top_004 vccd1 vssd1 vccd1 vssd1"
-        ],
+        "wormy_top_004 vccd1 vssd1 vccd1 vssd1,",
+        "scan_controller vccd1 vssd1 vccd1 vssd1"
+    ],
     "MACRO_PLACEMENT_CFG": "dir::macro.cfg",
     "PDN_CFG": "dir::pdn_cfg.tcl",
     "MAGIC_DEF_LABELS": 0,
@@ -30,27 +29,23 @@
         "dir::../../verilog/blackbox_project_includes.v"
     ],
     "EXTRA_LEFS": [
-        "dir::../../lef/knight_rider_KolosKoblasz.lef",
-        "dir::../../lef/meiniki_pi.lef",
-        "dir::../../lef/user_module_357464855584307201.lef",
-        "dir::../../lef/user_module_357752736742764545.lef",
-        "dir::../../lef/user_project_wrapper.lef",
-        "dir::../../lef/weverest_top.lef",
-        "dir::../../lef/wormy_top.lef",
+        "dir::../../lef/scan_controller.lef",
         "dir::../../lef/scanchain.lef",
-        "dir::../../lef/scan_controller.lef"
-        ],
+        "dir::../../lef/user_module_357464855584307201.lef",
+        "dir::../../lef/weverest_top.lef",
+        "dir::../../lef/user_module_357752736742764545.lef",
+        "dir::../../lef/meiniki_pi.lef",
+        "dir::../../lef/wormy_top.lef"
+    ],
     "EXTRA_GDS_FILES": [
-        "dir::../../gds/knight_rider_KolosKoblasz.gds",
-        "dir::../../gds/meiniki_pi.gds",
-        "dir::../../gds/user_module_357464855584307201.gds",
-        "dir::../../gds/user_module_357752736742764545.gds",
-        "dir::../../gds/user_project_wrapper.gds",
-        "dir::../../gds/weverest_top.gds",
-        "dir::../../gds/wormy_top.gds",
+        "dir::../../gds/scan_controller.gds",
         "dir::../../gds/scanchain.gds",
-        "dir::../../gds/scan_controller.gds"
-        ],
+        "dir::../../gds/user_module_357464855584307201.gds",
+        "dir::../../gds/weverest_top.gds",
+        "dir::../../gds/user_module_357752736742764545.gds",
+        "dir::../../gds/meiniki_pi.gds",
+        "dir::../../gds/wormy_top.gds"
+    ],
     "BASE_SDC_FILE": "dir::base_user_project_wrapper.sdc",
     "RUN_KLAYOUT_XOR": 0,
     "RUN_KLAYOUT_DRC": 0,
@@ -71,8 +66,6 @@
     "FP_PDN_HPITCH": 185,
     "FP_PDN_HOFFSET": 130,
     "CLOCK_TREE_SYNTH": 0,
-    "FP_PDN_VOFFSET": 5,
-    "FP_PDN_HOFFSET": 5,
     "MAGIC_ZEROIZE_ORIGIN": 0,
     "FP_SIZING": "absolute",
     "RUN_CVC": 0,

@@ -1,58 +1,21 @@
-source $::env(SCRIPTS_DIR)/utils/utils.tcl
+# Copyright 2020-2022 Efabless Corporation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
-# Power nets
-if { [info exists ::env(FP_PDN_ENABLE_GLOBAL_CONNECTIONS)] } {
-    if { $::env(FP_PDN_ENABLE_GLOBAL_CONNECTIONS) == 1 } {
-        foreach power_pin $::env(STD_CELL_POWER_PINS) {
-            add_global_connection \
-                -net $::env(VDD_NET) \
-                -inst_pattern .* \
-                -pin_pattern $power_pin \
-                -power
-        }
-        foreach ground_pin $::env(STD_CELL_GROUND_PINS) {
-            add_global_connection \
-                -net $::env(GND_NET) \
-                -inst_pattern .* \
-                -pin_pattern $ground_pin \
-                -ground
-        }
-    }
-}
-
-if { $::env(FP_PDN_ENABLE_MACROS_GRID) == 1 &&
-    [info exists ::env(FP_PDN_MACRO_HOOKS)]} {
-    set pdn_hooks [split $::env(FP_PDN_MACRO_HOOKS) ","]
-    foreach pdn_hook $pdn_hooks {
-        set instance_name [lindex $pdn_hook 0]
-        set power_net [lindex $pdn_hook 1]
-        set ground_net [lindex $pdn_hook 2]
-        set power_pin [lindex $pdn_hook 3]
-        set ground_pin [lindex $pdn_hook 4]
-        # This assumes the power pin and the power net have the same name.
-        # The macro hooks only give an instance name and not power pin names.
-
-        if { $power_pin == "" || $ground_pin == "" } {
-            puts_err "FP_PDN_MACRO_HOOKS missing power and ground pin names"
-            return -code error
-        }
-
-        add_global_connection \
-            -net $power_net \
-            -inst_pattern $instance_name \
-            -pin_pattern $power_pin \
-            -power
-
-        add_global_connection \
-            -net $ground_net \
-            -inst_pattern $instance_name \
-            -pin_pattern $ground_pin \
-            -ground
-    }
-}
+source $::env(SCRIPTS_DIR)/openroad/common/set_global_connections.tcl
+set_global_connections
 
 set secondary []
-
 foreach vdd $::env(VDD_NETS) gnd $::env(GND_NETS) {
     if { $vdd != $::env(VDD_NET)} {
         lappend secondary $vdd
@@ -96,6 +59,7 @@ if { $::env(DESIGN_IS_CORE) == 1 } {
         -width $::env(FP_PDN_VWIDTH) \
         -pitch $::env(FP_PDN_VPITCH) \
         -offset $::env(FP_PDN_VOFFSET) \
+        -spacing $::env(FP_PDN_VSPACING) \
         -starts_with POWER -extend_to_core_ring \
         -nets {vssd1 vccd1}
 
@@ -105,9 +69,10 @@ if { $::env(DESIGN_IS_CORE) == 1 } {
         -width $::env(FP_PDN_HWIDTH) \
         -pitch $::env(FP_PDN_HPITCH) \
         -offset $::env(FP_PDN_HOFFSET) \
+        -spacing $::env(FP_PDN_HSPACING) \
         -starts_with POWER -extend_to_core_ring \
         -nets {vssd1 vccd1}
-
+        
     add_pdn_connect \
         -grid stdcell_grid \
         -layers "$::env(FP_PDN_LOWER_LAYER) $::env(FP_PDN_UPPER_LAYER)"
