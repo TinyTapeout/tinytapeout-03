@@ -5,3 +5,8 @@
 `include "gl/user_module_357752736742764545.v"
 `include "gl/meiniki_pi.v"
 `include "gl/wormy_top.v"
+`include "gl/knight_rider_KolosKoblasz.v"
+`include "gl/user_module_358970514554149889.v"
+`include "gl/user_module_357897381919942657.v"
+`include "gl/user_module_357106633951414273.v"
+`include "gl/MichaelBell_hovalaag.v"
