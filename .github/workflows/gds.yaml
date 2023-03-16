@@ -1,0 +1,80 @@
+name: gds
+# either manually started, or on a schedule
+on: [ push, workflow_dispatch, pull_request ]
+jobs:
+  tinytapeout:
+    env:
+        OPENLANE_ROOT:  /home/runner/openlane
+        PDK_ROOT:       /home/runner/pdk
+        PDK:            sky130A
+        GH_TOKEN:       ${{ secrets.GH_TOKEN }}
+        GH_USERNAME:    ${{ secrets.GH_USERNAME }}
+    # ubuntu
+    runs-on: ubuntu-latest
+    steps:
+    # need the repo checked out
+    - name: checkout repo
+      uses: actions/checkout@v3
+
+    # install the tt tools
+    - name: checkout tt tools repo
+      uses: actions/checkout@v3
+      with:
+        repository: tinytapeout/tt-support-tools
+        path: tt
+
+    # build pdk - have to move this back above to get caravel makefile
+    - name: pdk & openlane & precheck
+      run: |
+        make setup
+        make precheck
+
+    # uncompress any gds commited to the repo
+    - name: uncompress gds
+      run: | 
+        make uncompress
+
+    # need python
+    - name: setup python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        cache: 'pip'
+    - run: pip install -r tt/requirements.txt
+
+    # install oss fpga tools for yosys to sanity check module ports
+    - name: install oss-cad-suite
+      uses: YosysHQ/setup-oss-cad-suite@v1
+      with:
+          osscadsuite-version: '2022-09-03' # pin the version, latest one fails to work with caravel
+
+    # fetch the repos
+    - name: fetch all
+      run: python ./tt/configure.py --clone-all --fetch-gds --debug
+
+    # pwd debug
+    - name: show projects
+      run: find projects
+
+    # install projects
+    - name: configure
+      run: python ./tt/configure.py --update-caravel
+
+    - name: user project wrapper GDS
+      run: make user_project_wrapper
+
+    # remove projects so that the precheck doesn't fail on 'non-inclusive words'
+    - name: remove projects
+      run: rm -rf projects
+
+    - name: precheck
+      run: make run-precheck
+
+    # archive the results
+    - name: Archive Wrapper GDS
+      uses: actions/upload-artifact@v3
+      with:
+          name: Wrapper GDS
+          path: |
+            # symlinked user_project_wrapper directory doesn't work
+            openlane/user_project_wrapper/runs/*_*/

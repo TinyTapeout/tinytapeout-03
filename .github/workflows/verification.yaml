@@ -1,0 +1,95 @@
+name: verification
+# either manually started, or on a schedule
+on: [ push, workflow_dispatch, pull_request ]
+jobs:
+  verification:
+    env:
+        OPENLANE_ROOT:      /home/runner/openlane
+        PDK_ROOT:           /home/runner/pdk
+        PDK:                sky130A
+        GH_TOKEN:           ${{ secrets.GH_TOKEN }}
+        GH_USERNAME:        ${{ secrets.GH_USERNAME }}
+        DESIGNS:            /home/runner/work/tinytapeout-03/tinytapeout-03
+        TARGET_PATH:        /home/runner/work/tinytapeout-03/tinytapeout-03
+        MGMT_AREA_ROOT:     /home/runner/work/tinytapeout-03/tinytapeout-03/mgmt_core_wrapper
+        MCW_ROOT:           /home/runner/work/tinytapeout-03/tinytapeout-03/mgmt_core_wrapper
+        CARAVEL_ROOT:       /home/runner/work/tinytapeout-03/tinytapeout-03/caravel
+        CORE_VERILOG_PATH:  /home/runner/work/tinytapeout-03/tinytapeout-03/mgmt_core_wrapper/verilog
+        GCC_PATH:           /home/runner/riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-linux-ubuntu14/bin/
+        GCC_PREFIX:         riscv64-unknown-elf
+
+    # ubuntu
+    runs-on: ubuntu-latest
+    steps:
+    # need the repo checked out
+    - name: checkout repo
+      uses: actions/checkout@v3
+
+    # install the tt tools
+    - name: checkout tt tools repo
+      uses: actions/checkout@v3
+      with:
+        repository: tinytapeout/tt-support-tools
+        path: tt
+
+    # build pdk - have to move this back above to get caravel makefile
+    - name: pdk & openlane & precheck
+      run: |
+        make setup
+        make precheck
+
+    # install riscv gcc
+    - name: riscv gcc
+      run: |
+        cd $HOME
+        wget https://static.dev.sifive.com/dev-tools/riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-linux-ubuntu14.tar.gz
+        tar -xzf riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-linux-ubuntu14.tar.gz
+
+    # pwd debug
+    - name: pwd
+      run: |
+        pwd # /home/runner/work/tinytapeout-02/tinytapeout-02
+
+    # install oss fpga tools for cocotb and iverilog
+    - name: install oss-cad-suite
+      uses: YosysHQ/setup-oss-cad-suite@v1
+      with:
+          osscadsuite-version: '2022-09-03' # pin the version, latest one fails to work with caravel
+          python-override: true
+    - run: | 
+        yosys --version
+        iverilog -V
+        pip install -r tt/requirements.txt
+
+    # fetch the repos - test mode
+    - name: fetch all
+      run: python ./tt/configure.py --clone-all --fetch-gds --debug --test
+
+    # install projects
+    - name: configure for test
+      run: python ./tt/configure.py --update-caravel --test --limit 20
+
+    # run first set of tests
+    - name: basic simulations
+      run: |
+        cd verilog/dv/scan_controller
+        make clean test_single
+        make clean test_wait_state
+        make clean test_clock_div
+        make clean test_scan_controller
+
+    # requires riscv for firmware and PDK for standard cells
+    - name: full chip sim - external
+      run: |
+        cd verilog/dv/scan_controller_ext
+        make coco_test
+
+    - name: full chip sim - internal
+      run: |
+        cd verilog/dv/scan_controller_int
+        make coco_test
+
+    - name: full chip sim - logic analyser
+      run: |
+        cd verilog/dv/scan_controller_la
+        make coco_test
