@@ -53,15 +53,15 @@ if { $::env(DESIGN_IS_CORE) == 1 } {
         -voltage_domain CORE \
         -pins "$::env(FP_PDN_LOWER_LAYER) $::env(FP_PDN_UPPER_LAYER)"
 
-    add_pdn_stripe \
-        -grid stdcell_grid \
-        -layer $::env(FP_PDN_LOWER_LAYER) \
-        -width $::env(FP_PDN_VWIDTH) \
-        -pitch $::env(FP_PDN_VPITCH) \
-        -offset $::env(FP_PDN_VOFFSET) \
-        -spacing $::env(FP_PDN_VSPACING) \
-        -starts_with POWER -extend_to_core_ring \
-        -nets {vssd1 vccd1}
+#    add_pdn_stripe \
+#        -grid stdcell_grid \
+#        -layer $::env(FP_PDN_LOWER_LAYER) \
+#        -width $::env(FP_PDN_VWIDTH) \
+#        -pitch $::env(FP_PDN_VPITCH) \
+#        -offset $::env(FP_PDN_VOFFSET) \
+#        -spacing $::env(FP_PDN_VSPACING) \
+#        -starts_with POWER -extend_to_core_ring \
+#        -nets {vssd1 vccd1}
 
     add_pdn_stripe \
         -grid stdcell_grid \
