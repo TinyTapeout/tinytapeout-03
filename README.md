@@ -32,3 +32,9 @@ For the most recent automatic build, click the tt_datasheet badge above, then do
 | 7 | Yannick Reiß | 4x4 Memory | [Wokwi](https://wokwi.com/projects/357897381919942657) | https://github.com/yannickreiss/TT3_Memory |
 | 8 | Yannick Reiß | KS-Signal | [Wokwi](https://wokwi.com/projects/357106633951414273) | https://github.com/yannickreiss/TT3_KS-Signal |
 | 9 | Mike Bell | Hovalaag CPU | HDL | https://github.com/MichaelBell/tt03-hovalaag |
+| 10 | Niklas Fassbender | SKINNY SBOX | [Wokwi](https://wokwi.com/projects/359353377078748161) | https://github.com/nikals99/tt03-skinny-sbox |
+| 11 | Tim Henkes | Stateful Lock | [Wokwi](https://wokwi.com/projects/359357227471086593) | https://github.com/Syndace/tt03-stateful-lock |
+| 12 | Fabio Campos | Ascon's 5-bit S-box | [Wokwi](https://wokwi.com/projects/359360834113498113) | https://github.com/sopmacF/tt03-ascon-sbox |
+| 13 | Alexander Schönborn | 8bit configurable galois lfsr | HDL | https://github.com/gr33nstyle/tt03-verilog-lfsr |
+| 14 | Thorsten Knoll | Sbox SKINNY 8 Bit | [Wokwi](https://wokwi.com/projects/359372419264319489) | https://github.com/ThorKn/tt03_sbox_8bit_skinny |
+| 15 | Marcus Michaely | BinaryDoorLock | [Wokwi](https://wokwi.com/projects/357178660283991041) | https://github.com/marcusmichaely/tt03-submission-template |

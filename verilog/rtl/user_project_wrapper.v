@@ -334,7 +334,7 @@ module user_project_wrapper #(
         .io_out (sw_009_module_data_out)
     );
 
-    // [010] https://github.com/TinyTapeout/tt03-test-invert
+    // [010] https://github.com/nikals99/tt03-skinny-sbox
     wire sw_010_clk_out, sw_010_data_out, sw_010_scan_out, sw_010_latch_out;
     wire [7:0] sw_010_module_data_in;
     wire [7:0] sw_010_module_data_out;
@@ -351,12 +351,12 @@ module user_project_wrapper #(
         .module_data_out (sw_010_module_data_out)
     );
 
-    user_module_357464855584307201 user_module_357464855584307201_010 (
+    user_module_359353377078748161 user_module_359353377078748161_010 (
         .io_in  (sw_010_module_data_in),
         .io_out (sw_010_module_data_out)
     );
 
-    // [011] https://github.com/TinyTapeout/tt03-test-invert
+    // [011] https://github.com/Syndace/tt03-stateful-lock
     wire sw_011_clk_out, sw_011_data_out, sw_011_scan_out, sw_011_latch_out;
     wire [7:0] sw_011_module_data_in;
     wire [7:0] sw_011_module_data_out;
@@ -373,12 +373,12 @@ module user_project_wrapper #(
         .module_data_out (sw_011_module_data_out)
     );
 
-    user_module_357464855584307201 user_module_357464855584307201_011 (
+    user_module_359357227471086593 user_module_359357227471086593_011 (
         .io_in  (sw_011_module_data_in),
         .io_out (sw_011_module_data_out)
     );
 
-    // [012] https://github.com/TinyTapeout/tt03-test-invert
+    // [012] https://github.com/sopmacF/tt03-ascon-sbox
     wire sw_012_clk_out, sw_012_data_out, sw_012_scan_out, sw_012_latch_out;
     wire [7:0] sw_012_module_data_in;
     wire [7:0] sw_012_module_data_out;
@@ -395,12 +395,12 @@ module user_project_wrapper #(
         .module_data_out (sw_012_module_data_out)
     );
 
-    user_module_357464855584307201 user_module_357464855584307201_012 (
+    user_module_359360834113498113 user_module_359360834113498113_012 (
         .io_in  (sw_012_module_data_in),
         .io_out (sw_012_module_data_out)
     );
 
-    // [013] https://github.com/TinyTapeout/tt03-test-invert
+    // [013] https://github.com/gr33nstyle/tt03-verilog-lfsr
     wire sw_013_clk_out, sw_013_data_out, sw_013_scan_out, sw_013_latch_out;
     wire [7:0] sw_013_module_data_in;
     wire [7:0] sw_013_module_data_out;
@@ -417,12 +417,12 @@ module user_project_wrapper #(
         .module_data_out (sw_013_module_data_out)
     );
 
-    user_module_357464855584307201 user_module_357464855584307201_013 (
+    greenstyle_lfsr greenstyle_lfsr_013 (
         .io_in  (sw_013_module_data_in),
         .io_out (sw_013_module_data_out)
     );
 
-    // [014] https://github.com/TinyTapeout/tt03-test-invert
+    // [014] https://github.com/ThorKn/tt03_sbox_8bit_skinny
     wire sw_014_clk_out, sw_014_data_out, sw_014_scan_out, sw_014_latch_out;
     wire [7:0] sw_014_module_data_in;
     wire [7:0] sw_014_module_data_out;
@@ -439,12 +439,12 @@ module user_project_wrapper #(
         .module_data_out (sw_014_module_data_out)
     );
 
-    user_module_357464855584307201 user_module_357464855584307201_014 (
+    user_module_359372419264319489 user_module_359372419264319489_014 (
         .io_in  (sw_014_module_data_in),
         .io_out (sw_014_module_data_out)
     );
 
-    // [015] https://github.com/TinyTapeout/tt03-test-invert
+    // [015] https://github.com/marcusmichaely/tt03-submission-template
     wire sw_015_clk_out, sw_015_data_out, sw_015_scan_out, sw_015_latch_out;
     wire [7:0] sw_015_module_data_in;
     wire [7:0] sw_015_module_data_out;
@@ -461,7 +461,7 @@ module user_project_wrapper #(
         .module_data_out (sw_015_module_data_out)
     );
 
-    user_module_357464855584307201 user_module_357464855584307201_015 (
+    user_module_357178660283991041 user_module_357178660283991041_015 (
         .io_in  (sw_015_module_data_in),
         .io_out (sw_015_module_data_out)
     );
