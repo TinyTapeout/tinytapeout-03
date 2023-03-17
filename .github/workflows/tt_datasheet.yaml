@@ -34,7 +34,7 @@ jobs:
 
     # fetch the repos
     - name: fetch all
-      run: python .tt/configure.py --clone-all --debug
+      run: python ./tt/configure.py --clone-all --debug
 
     # pandoc deps
     - name: Pandoc deps
