@@ -100,12 +100,16 @@ void main()
         CLR(reg_la0_data, CLK);
 
         if(GET(reg_la0_data_in, DATA_IN)) // returns 1 even if we see x in the trace
-            SET(reg_mprj_datal, DATA_RX);
+            reg_mprj_datal = (1 << TB_CLK) + (1 << DATA_RX);
+            //SET(reg_mprj_datal, DATA_RX);
         else
-            CLR(reg_mprj_datal, DATA_RX);
+            //CLR(reg_mprj_datal, DATA_RX);
+            reg_mprj_datal = (1 << TB_CLK); // + (1 << DATA_RX);
 
         // sync to tb
-        SET(reg_mprj_datal, TB_CLK);
+        // the SET |= is clearing the data pin so the data is always read as 0. 
+        // this worked for tt02 (mpw7 tag), is failing for tt03 (mpw9a tag)
+        // SET(reg_mprj_datal, TB_CLK);
         CLR(reg_mprj_datal, TB_CLK);
     }
 
