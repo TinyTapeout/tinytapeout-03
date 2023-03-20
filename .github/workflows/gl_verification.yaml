@@ -1,0 +1,80 @@
+name: gl_verification
+# either manually started, or on a schedule
+on: [ push, workflow_dispatch, pull_request ]
+jobs:
+  gl_verification:
+    env:
+        OPENLANE_ROOT:      /home/runner/openlane
+        PDK_ROOT:           /home/runner/pdk
+        PDK:                sky130A
+        GH_TOKEN:           ${{ secrets.GH_TOKEN }}
+        GH_USERNAME:        ${{ secrets.GH_USERNAME }}
+        DESIGNS:            /home/runner/work/tinytapeout-03/tinytapeout-03
+        TARGET_PATH:        /home/runner/work/tinytapeout-03/tinytapeout-03
+        MGMT_AREA_ROOT:     /home/runner/work/tinytapeout-03/tinytapeout-03/mgmt_core_wrapper
+        MCW_ROOT:           /home/runner/work/tinytapeout-03/tinytapeout-03/mgmt_core_wrapper
+        CARAVEL_ROOT:       /home/runner/work/tinytapeout-03/tinytapeout-03/caravel
+        CORE_VERILOG_PATH:  /home/runner/work/tinytapeout-03/tinytapeout-03/mgmt_core_wrapper/verilog
+        GCC_PATH:           /home/runner/riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-linux-ubuntu14/bin/
+        GCC_PREFIX:         riscv64-unknown-elf
+
+    # ubuntu
+    runs-on: ubuntu-latest
+    steps:
+    # need the repo checked out
+    - name: checkout repo
+      uses: actions/checkout@v3
+
+    # install the tt tools
+    - name: checkout tt tools repo
+      uses: actions/checkout@v3
+      with:
+        repository: tinytapeout/tt-support-tools
+        ref: submission-tools
+        path: tt
+
+    # build pdk - have to move this back above to get caravel makefile
+    - name: pdk & openlane & precheck
+      run: |
+        make setup
+
+    # uncompress any gds commited to the repo
+    - name: uncompress gds
+      run: | 
+        make uncompress
+
+    # need python
+    - name: setup python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        cache: 'pip'
+    - run: pip install -r tt/requirements.txt
+
+    # install oss fpga tools for yosys to sanity check module ports
+    - name: install oss-cad-suite
+      uses: YosysHQ/setup-oss-cad-suite@v1
+      with:
+          osscadsuite-version: '2022-09-03' # pin the version, latest one fails to work with caravel
+
+    # fetch the test repos
+    - name: fetch all
+      run: python ./tt/configure.py --test --clone-all --fetch-gds --debug
+
+    # pwd debug
+    - name: show projects
+      run: find projects
+
+    # install test projects
+    - name: configure
+      run: python ./tt/configure.py --test --update-caravel
+
+    # need the user project wrapper gatelevel netlist
+    - name: user project wrapper GDS
+      run: make user_project_wrapper
+
+    # run GL test
+    - name: GL simulation
+      run: |
+        cd verilog/dv/scan_controller
+        make clean test_scan_controller_gl
