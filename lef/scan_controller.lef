@@ -660,19 +660,19 @@ MACRO scan_controller
     USE POWER ;
     PORT
       LAYER met4 ;
-        RECT 32.090 10.640 33.690 87.280 ;
+        RECT 32.085 10.640 33.685 87.280 ;
     END
     PORT
       LAYER met4 ;
-        RECT 86.830 10.640 88.430 87.280 ;
+        RECT 86.820 10.640 88.420 87.280 ;
     END
     PORT
       LAYER met4 ;
-        RECT 141.570 10.640 143.170 87.280 ;
+        RECT 141.555 10.640 143.155 87.280 ;
     END
     PORT
       LAYER met4 ;
-        RECT 196.310 10.640 197.910 87.280 ;
+        RECT 196.290 10.640 197.890 87.280 ;
     END
   END vccd1
   PIN vssd1
@@ -680,26 +680,26 @@ MACRO scan_controller
     USE GROUND ;
     PORT
       LAYER met4 ;
-        RECT 59.460 10.640 61.060 87.280 ;
+        RECT 59.450 10.640 61.050 87.280 ;
     END
     PORT
       LAYER met4 ;
-        RECT 114.200 10.640 115.800 87.280 ;
+        RECT 114.185 10.640 115.785 87.280 ;
     END
     PORT
       LAYER met4 ;
-        RECT 168.940 10.640 170.540 87.280 ;
+        RECT 168.920 10.640 170.520 87.280 ;
     END
     PORT
       LAYER met4 ;
-        RECT 223.680 10.640 225.280 87.280 ;
+        RECT 223.655 10.640 225.255 87.280 ;
     END
   END vssd1
   OBS
       LAYER li1 ;
         RECT 5.520 10.795 224.480 87.125 ;
       LAYER met1 ;
-        RECT 0.070 10.640 225.790 87.280 ;
+        RECT 0.070 4.460 225.790 95.500 ;
       LAYER met2 ;
         RECT 0.790 95.720 6.110 96.000 ;
         RECT 7.230 95.720 15.770 96.000 ;
