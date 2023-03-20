@@ -9,7 +9,6 @@ gds/*gds
 *.hex*
 *.lst
 *.vcd
-*.gtkw
 *.fst
 results.xml
 sim_build*
