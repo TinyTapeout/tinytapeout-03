@@ -61,10 +61,6 @@ jobs:
     - name: fetch all
       run: python ./tt/configure.py --test --clone-all --fetch-gds --debug
 
-    # pwd debug
-    - name: show projects
-      run: find projects
-
     # install test projects
     - name: configure
       run: python ./tt/configure.py --test --update-caravel
