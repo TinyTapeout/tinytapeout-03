@@ -26,37 +26,36 @@ module MichaelBell_hovalaag (
   input [7:0] io_in,
   output [7:0] io_out
 );
-    wire clk;
-    wire [7:2] io_in_b;
-
-`ifdef SIM
-    assign #30 io_in_b[7:2] = io_in[7:2];
-`else
-    // Delay the main inputs to help with hold time violations
-    genvar i;
-    generate
-        for (i = 2; i <= 7; i = i + 1) begin
-            sky130_fd_sc_hd__dlymetal6s6s_1 dly1(.X(io_in_b[i]), .A(io_in[i]));
-        end
-    endgenerate
-`endif
+    wire clk = io_in[0];
+    wire inv_clk;
+    wire inv_clk2;
 
     wire reset;
 
     reg [9:0] addr;
 
-    assign clk = io_in[0];
     assign reset = io_in[1] && io_in[2];
+
+`ifdef SIM
+    assign inv_clk = ~io_in[0];
+    assign inv_clk2 = ~io_in[0];
+`else
+    wire inv_clk_mid;
+    sky130_fd_sc_hd__inv_1 clkinv(.Y(inv_clk_mid), .A(io_in[0]));
+    sky130_fd_sc_hd__clkbuf_8 invclkbuf(.X(inv_clk), .A(inv_clk_mid));
+    sky130_fd_sc_hd__clkbuf_8 invclkbuf2(.X(inv_clk2), .A(inv_clk_mid));
+`endif
 
     HovalaagWrapper wrapper (
         .clk(clk),
+        .inv_clk(inv_clk),
         .reset(reset),
         .addr(addr),
-        .io_in(io_in_b[7:2]),
+        .io_in(io_in[7:2]),
         .io_out(io_out[7:0])
     );
 
-    always @(negedge clk) begin
+    always @(posedge inv_clk2) begin
         if (io_in[1] && (io_in[2] || io_in[3])) begin
             addr <= 10'b1000000000;
         end

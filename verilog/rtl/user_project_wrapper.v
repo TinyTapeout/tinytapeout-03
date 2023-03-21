@@ -466,7 +466,7 @@ module user_project_wrapper #(
         .io_out (sw_015_module_data_out)
     );
 
-    // [016] https://github.com/TinyTapeout/tt03-test-invert
+    // [016] https://github.com/shadow1229/tt03-bad-apple
     wire sw_016_clk_out, sw_016_data_out, sw_016_scan_out, sw_016_latch_out;
     wire [7:0] sw_016_module_data_in;
     wire [7:0] sw_016_module_data_out;
@@ -483,12 +483,12 @@ module user_project_wrapper #(
         .module_data_out (sw_016_module_data_out)
     );
 
-    user_module_357464855584307201 user_module_357464855584307201_016 (
+    shadow1229_player shadow1229_player_016 (
         .io_in  (sw_016_module_data_in),
         .io_out (sw_016_module_data_out)
     );
 
-    // [017] https://github.com/TinyTapeout/tt03-test-invert
+    // [017] https://github.com/diferential/muxpga
     wire sw_017_clk_out, sw_017_data_out, sw_017_scan_out, sw_017_latch_out;
     wire [7:0] sw_017_module_data_in;
     wire [7:0] sw_017_module_data_out;
@@ -505,12 +505,12 @@ module user_project_wrapper #(
         .module_data_out (sw_017_module_data_out)
     );
 
-    user_module_357464855584307201 user_module_357464855584307201_017 (
+    diferential_muxpga diferential_muxpga_017 (
         .io_in  (sw_017_module_data_in),
         .io_out (sw_017_module_data_out)
     );
 
-    // [018] https://github.com/TinyTapeout/tt03-test-invert
+    // [018] https://github.com/SchreinerCarin/tt03-4bit-adder
     wire sw_018_clk_out, sw_018_data_out, sw_018_scan_out, sw_018_latch_out;
     wire [7:0] sw_018_module_data_in;
     wire [7:0] sw_018_module_data_out;
@@ -527,12 +527,12 @@ module user_project_wrapper #(
         .module_data_out (sw_018_module_data_out)
     );
 
-    user_module_357464855584307201 user_module_357464855584307201_018 (
+    user_module_354091612057990145 user_module_354091612057990145_018 (
         .io_in  (sw_018_module_data_in),
         .io_out (sw_018_module_data_out)
     );
 
-    // [019] https://github.com/TinyTapeout/tt03-test-invert
+    // [019] https://github.com/MoonbaseOtago/tt03-pdp8
     wire sw_019_clk_out, sw_019_data_out, sw_019_scan_out, sw_019_latch_out;
     wire [7:0] sw_019_module_data_in;
     wire [7:0] sw_019_module_data_out;
@@ -549,7 +549,7 @@ module user_project_wrapper #(
         .module_data_out (sw_019_module_data_out)
     );
 
-    user_module_357464855584307201 user_module_357464855584307201_019 (
+    moonbase_pdp8 moonbase_pdp8_019 (
         .io_in  (sw_019_module_data_in),
         .io_out (sw_019_module_data_out)
     );

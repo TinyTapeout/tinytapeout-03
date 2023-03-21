@@ -17,3 +17,7 @@
 -v $(USER_PROJECT_VERILOG)/gl/greenstyle_lfsr.v
 -v $(USER_PROJECT_VERILOG)/gl/user_module_359372419264319489.v
 -v $(USER_PROJECT_VERILOG)/gl/user_module_357178660283991041.v
+-v $(USER_PROJECT_VERILOG)/gl/shadow1229_player.v
+-v $(USER_PROJECT_VERILOG)/gl/diferential_muxpga.v
+-v $(USER_PROJECT_VERILOG)/gl/user_module_354091612057990145.v
+-v $(USER_PROJECT_VERILOG)/gl/moonbase_pdp8.v

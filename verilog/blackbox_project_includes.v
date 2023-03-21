@@ -16,3 +16,7 @@
 `include "gl/greenstyle_lfsr.v"
 `include "gl/user_module_359372419264319489.v"
 `include "gl/user_module_357178660283991041.v"
+`include "gl/shadow1229_player.v"
+`include "gl/diferential_muxpga.v"
+`include "gl/user_module_354091612057990145.v"
+`include "gl/moonbase_pdp8.v"

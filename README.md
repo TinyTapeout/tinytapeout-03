@@ -39,3 +39,7 @@ For the most recent automatic build, click the tt_datasheet badge above, then do
 | 13 | Alexander Schönborn | 8bit configurable galois lfsr | HDL | https://github.com/gr33nstyle/tt03-verilog-lfsr |
 | 14 | Thorsten Knoll | Sbox SKINNY 8 Bit | [Wokwi](https://wokwi.com/projects/359372419264319489) | https://github.com/ThorKn/tt03_sbox_8bit_skinny |
 | 15 | Marcus Michaely | BinaryDoorLock | [Wokwi](https://wokwi.com/projects/357178660283991041) | https://github.com/marcusmichaely/tt03-submission-template |
+| 16 | shadow1229 | bad apple | HDL | https://github.com/shadow1229/tt03-bad-apple |
+| 17 | Emilian Miron | TinyFPGA attempt for TinyTapeout3 | HDL | https://github.com/diferential/muxpga |
+| 18 | Carin Schreiner | 4bit Adder | [Wokwi](https://wokwi.com/projects/354091612057990145) | https://github.com/SchreinerCarin/tt03-4bit-adder |
+| 19 | Paul Campnell | 12-bit PDP8 | HDL | https://github.com/MoonbaseOtago/tt03-pdp8 |

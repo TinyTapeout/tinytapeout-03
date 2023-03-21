@@ -42,13 +42,13 @@
         "scanchain_015 vccd1 vssd1 vccd1 vssd1,",
         "user_module_357178660283991041_015 vccd1 vssd1 vccd1 vssd1,",
         "scanchain_016 vccd1 vssd1 vccd1 vssd1,",
-        "user_module_357464855584307201_016 vccd1 vssd1 vccd1 vssd1,",
+        "shadow1229_player_016 vccd1 vssd1 vccd1 vssd1,",
         "scanchain_017 vccd1 vssd1 vccd1 vssd1,",
-        "user_module_357464855584307201_017 vccd1 vssd1 vccd1 vssd1,",
+        "diferential_muxpga_017 vccd1 vssd1 vccd1 vssd1,",
         "scanchain_018 vccd1 vssd1 vccd1 vssd1,",
-        "user_module_357464855584307201_018 vccd1 vssd1 vccd1 vssd1,",
+        "user_module_354091612057990145_018 vccd1 vssd1 vccd1 vssd1,",
         "scanchain_019 vccd1 vssd1 vccd1 vssd1,",
-        "user_module_357464855584307201_019 vccd1 vssd1 vccd1 vssd1,",
+        "moonbase_pdp8_019 vccd1 vssd1 vccd1 vssd1,",
         "scanchain_020 vccd1 vssd1 vccd1 vssd1,",
         "user_module_357464855584307201_020 vccd1 vssd1 vccd1 vssd1,",
         "scanchain_021 vccd1 vssd1 vccd1 vssd1,",
@@ -536,7 +536,11 @@
         "dir::../../lef/user_module_359360834113498113.lef",
         "dir::../../lef/greenstyle_lfsr.lef",
         "dir::../../lef/user_module_359372419264319489.lef",
-        "dir::../../lef/user_module_357178660283991041.lef"
+        "dir::../../lef/user_module_357178660283991041.lef",
+        "dir::../../lef/shadow1229_player.lef",
+        "dir::../../lef/diferential_muxpga.lef",
+        "dir::../../lef/user_module_354091612057990145.lef",
+        "dir::../../lef/moonbase_pdp8.lef"
     ],
     "EXTRA_GDS_FILES": [
         "dir::../../gds/scan_controller.gds",
@@ -556,7 +560,11 @@
         "dir::../../gds/user_module_359360834113498113.gds",
         "dir::../../gds/greenstyle_lfsr.gds",
         "dir::../../gds/user_module_359372419264319489.gds",
-        "dir::../../gds/user_module_357178660283991041.gds"
+        "dir::../../gds/user_module_357178660283991041.gds",
+        "dir::../../gds/shadow1229_player.gds",
+        "dir::../../gds/diferential_muxpga.gds",
+        "dir::../../gds/user_module_354091612057990145.gds",
+        "dir::../../gds/moonbase_pdp8.gds"
     ],
     "BASE_SDC_FILE": "dir::base_user_project_wrapper.sdc",
     "RUN_KLAYOUT_XOR": 0,

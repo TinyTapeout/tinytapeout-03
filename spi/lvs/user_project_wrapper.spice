@@ -14,6 +14,12 @@
 + module_data_out[7] scan_select_in scan_select_out vccd1 vssd1
 .ends
 
+* Black-box entry subcircuit for diferential_muxpga abstract view
+.subckt diferential_muxpga io_in[0] io_in[1] io_in[2] io_in[3] io_in[4] io_in[5] io_in[6]
++ io_in[7] io_out[0] io_out[1] io_out[2] io_out[3] io_out[4] io_out[5] io_out[6] io_out[7]
++ vccd1 vssd1
+.ends
+
 * Black-box entry subcircuit for user_module_357106633951414273 abstract view
 .subckt user_module_357106633951414273 io_in[0] io_in[1] io_in[2] io_in[3] io_in[4]
 + io_in[5] io_in[6] io_in[7] io_out[0] io_out[1] io_out[2] io_out[3] io_out[4] io_out[5]
@@ -24,6 +30,18 @@
 .subckt user_module_357897381919942657 io_in[0] io_in[1] io_in[2] io_in[3] io_in[4]
 + io_in[5] io_in[6] io_in[7] io_out[0] io_out[1] io_out[2] io_out[3] io_out[4] io_out[5]
 + io_out[6] io_out[7] vccd1 vssd1
+.ends
+
+* Black-box entry subcircuit for user_module_354091612057990145 abstract view
+.subckt user_module_354091612057990145 io_in[0] io_in[1] io_in[2] io_in[3] io_in[4]
++ io_in[5] io_in[6] io_in[7] io_out[0] io_out[1] io_out[2] io_out[3] io_out[4] io_out[5]
++ io_out[6] io_out[7] vccd1 vssd1
+.ends
+
+* Black-box entry subcircuit for moonbase_pdp8 abstract view
+.subckt moonbase_pdp8 io_in[0] io_in[1] io_in[2] io_in[3] io_in[4] io_in[5] io_in[6]
++ io_in[7] io_out[0] io_out[1] io_out[2] io_out[3] io_out[4] io_out[5] io_out[6] io_out[7]
++ vccd1 vssd1
 .ends
 
 * Black-box entry subcircuit for user_module_359353377078748161 abstract view
@@ -48,6 +66,12 @@
 .subckt MichaelBell_hovalaag io_in[0] io_in[1] io_in[2] io_in[3] io_in[4] io_in[5]
 + io_in[6] io_in[7] io_out[0] io_out[1] io_out[2] io_out[3] io_out[4] io_out[5] io_out[6]
 + io_out[7] vccd1 vssd1
+.ends
+
+* Black-box entry subcircuit for shadow1229_player abstract view
+.subckt shadow1229_player io_in[0] io_in[1] io_in[2] io_in[3] io_in[4] io_in[5] io_in[6]
++ io_in[7] io_out[0] io_out[1] io_out[2] io_out[3] io_out[4] io_out[5] io_out[6] io_out[7]
++ vccd1 vssd1
 .ends
 
 * Black-box entry subcircuit for user_module_357178660283991041 abstract view
@@ -349,6 +373,12 @@ Xuser_module_357464855584307201_200 scanchain_200/module_data_in[0] scanchain_20
 + scanchain_200/module_data_out[0] scanchain_200/module_data_out[1] scanchain_200/module_data_out[2]
 + scanchain_200/module_data_out[3] scanchain_200/module_data_out[4] scanchain_200/module_data_out[5]
 + scanchain_200/module_data_out[6] scanchain_200/module_data_out[7] vccd1 vssd1 user_module_357464855584307201
+Xdiferential_muxpga_017 scanchain_017/module_data_in[0] scanchain_017/module_data_in[1]
++ scanchain_017/module_data_in[2] scanchain_017/module_data_in[3] scanchain_017/module_data_in[4]
++ scanchain_017/module_data_in[5] scanchain_017/module_data_in[6] scanchain_017/module_data_in[7]
++ scanchain_017/module_data_out[0] scanchain_017/module_data_out[1] scanchain_017/module_data_out[2]
++ scanchain_017/module_data_out[3] scanchain_017/module_data_out[4] scanchain_017/module_data_out[5]
++ scanchain_017/module_data_out[6] scanchain_017/module_data_out[7] vccd1 vssd1 diferential_muxpga
 Xuser_module_357464855584307201_052 scanchain_052/module_data_in[0] scanchain_052/module_data_in[1]
 + scanchain_052/module_data_in[2] scanchain_052/module_data_in[3] scanchain_052/module_data_in[4]
 + scanchain_052/module_data_in[5] scanchain_052/module_data_in[6] scanchain_052/module_data_in[7]
@@ -883,6 +913,12 @@ Xscanchain_187 scanchain_187/clk_in scanchain_188/clk_in scanchain_187/data_in s
 + scanchain_187/module_data_out[2] scanchain_187/module_data_out[3] scanchain_187/module_data_out[4]
 + scanchain_187/module_data_out[5] scanchain_187/module_data_out[6] scanchain_187/module_data_out[7]
 + scanchain_187/scan_select_in scanchain_188/scan_select_in vccd1 vssd1 scanchain
+Xuser_module_354091612057990145_018 scanchain_018/module_data_in[0] scanchain_018/module_data_in[1]
++ scanchain_018/module_data_in[2] scanchain_018/module_data_in[3] scanchain_018/module_data_in[4]
++ scanchain_018/module_data_in[5] scanchain_018/module_data_in[6] scanchain_018/module_data_in[7]
++ scanchain_018/module_data_out[0] scanchain_018/module_data_out[1] scanchain_018/module_data_out[2]
++ scanchain_018/module_data_out[3] scanchain_018/module_data_out[4] scanchain_018/module_data_out[5]
++ scanchain_018/module_data_out[6] scanchain_018/module_data_out[7] vccd1 vssd1 user_module_354091612057990145
 Xuser_module_357464855584307201_226 scanchain_226/module_data_in[0] scanchain_226/module_data_in[1]
 + scanchain_226/module_data_in[2] scanchain_226/module_data_in[3] scanchain_226/module_data_in[4]
 + scanchain_226/module_data_in[5] scanchain_226/module_data_in[6] scanchain_226/module_data_in[7]
@@ -1197,6 +1233,12 @@ Xuser_module_357464855584307201_206 scanchain_206/module_data_in[0] scanchain_20
 + scanchain_206/module_data_out[0] scanchain_206/module_data_out[1] scanchain_206/module_data_out[2]
 + scanchain_206/module_data_out[3] scanchain_206/module_data_out[4] scanchain_206/module_data_out[5]
 + scanchain_206/module_data_out[6] scanchain_206/module_data_out[7] vccd1 vssd1 user_module_357464855584307201
+Xmoonbase_pdp8_019 moonbase_pdp8_019/io_in[0] moonbase_pdp8_019/io_in[1] moonbase_pdp8_019/io_in[2]
++ moonbase_pdp8_019/io_in[3] moonbase_pdp8_019/io_in[4] moonbase_pdp8_019/io_in[5]
++ moonbase_pdp8_019/io_in[6] moonbase_pdp8_019/io_in[7] moonbase_pdp8_019/io_out[0]
++ moonbase_pdp8_019/io_out[1] moonbase_pdp8_019/io_out[2] moonbase_pdp8_019/io_out[3]
++ moonbase_pdp8_019/io_out[4] moonbase_pdp8_019/io_out[5] moonbase_pdp8_019/io_out[6]
++ moonbase_pdp8_019/io_out[7] vccd1 vssd1 moonbase_pdp8
 Xuser_module_359353377078748161_010 scanchain_010/module_data_in[0] scanchain_010/module_data_in[1]
 + scanchain_010/module_data_in[2] scanchain_010/module_data_in[3] scanchain_010/module_data_in[4]
 + scanchain_010/module_data_in[5] scanchain_010/module_data_in[6] scanchain_010/module_data_in[7]
@@ -1431,12 +1473,6 @@ Xuser_module_357464855584307201_027 scanchain_027/module_data_in[0] scanchain_02
 + scanchain_027/module_data_out[0] scanchain_027/module_data_out[1] scanchain_027/module_data_out[2]
 + scanchain_027/module_data_out[3] scanchain_027/module_data_out[4] scanchain_027/module_data_out[5]
 + scanchain_027/module_data_out[6] scanchain_027/module_data_out[7] vccd1 vssd1 user_module_357464855584307201
-Xuser_module_357464855584307201_016 scanchain_016/module_data_in[0] scanchain_016/module_data_in[1]
-+ scanchain_016/module_data_in[2] scanchain_016/module_data_in[3] scanchain_016/module_data_in[4]
-+ scanchain_016/module_data_in[5] scanchain_016/module_data_in[6] scanchain_016/module_data_in[7]
-+ scanchain_016/module_data_out[0] scanchain_016/module_data_out[1] scanchain_016/module_data_out[2]
-+ scanchain_016/module_data_out[3] scanchain_016/module_data_out[4] scanchain_016/module_data_out[5]
-+ scanchain_016/module_data_out[6] scanchain_016/module_data_out[7] vccd1 vssd1 user_module_357464855584307201
 Xscanchain_104 scanchain_104/clk_in scanchain_105/clk_in scanchain_104/data_in scanchain_105/data_in
 + scanchain_104/latch_enable_in scanchain_105/latch_enable_in scanchain_104/module_data_in[0]
 + scanchain_104/module_data_in[1] scanchain_104/module_data_in[2] scanchain_104/module_data_in[3]
@@ -1509,12 +1545,6 @@ Xuser_module_357464855584307201_028 scanchain_028/module_data_in[0] scanchain_02
 + scanchain_028/module_data_out[0] scanchain_028/module_data_out[1] scanchain_028/module_data_out[2]
 + scanchain_028/module_data_out[3] scanchain_028/module_data_out[4] scanchain_028/module_data_out[5]
 + scanchain_028/module_data_out[6] scanchain_028/module_data_out[7] vccd1 vssd1 user_module_357464855584307201
-Xuser_module_357464855584307201_017 scanchain_017/module_data_in[0] scanchain_017/module_data_in[1]
-+ scanchain_017/module_data_in[2] scanchain_017/module_data_in[3] scanchain_017/module_data_in[4]
-+ scanchain_017/module_data_in[5] scanchain_017/module_data_in[6] scanchain_017/module_data_in[7]
-+ scanchain_017/module_data_out[0] scanchain_017/module_data_out[1] scanchain_017/module_data_out[2]
-+ scanchain_017/module_data_out[3] scanchain_017/module_data_out[4] scanchain_017/module_data_out[5]
-+ scanchain_017/module_data_out[6] scanchain_017/module_data_out[7] vccd1 vssd1 user_module_357464855584307201
 Xscanchain_105 scanchain_105/clk_in scanchain_106/clk_in scanchain_105/data_in scanchain_106/data_in
 + scanchain_105/latch_enable_in scanchain_106/latch_enable_in scanchain_105/module_data_in[0]
 + scanchain_105/module_data_in[1] scanchain_105/module_data_in[2] scanchain_105/module_data_in[3]
@@ -1561,12 +1591,6 @@ Xuser_module_357464855584307201_029 scanchain_029/module_data_in[0] scanchain_02
 + scanchain_029/module_data_out[0] scanchain_029/module_data_out[1] scanchain_029/module_data_out[2]
 + scanchain_029/module_data_out[3] scanchain_029/module_data_out[4] scanchain_029/module_data_out[5]
 + scanchain_029/module_data_out[6] scanchain_029/module_data_out[7] vccd1 vssd1 user_module_357464855584307201
-Xuser_module_357464855584307201_018 scanchain_018/module_data_in[0] scanchain_018/module_data_in[1]
-+ scanchain_018/module_data_in[2] scanchain_018/module_data_in[3] scanchain_018/module_data_in[4]
-+ scanchain_018/module_data_in[5] scanchain_018/module_data_in[6] scanchain_018/module_data_in[7]
-+ scanchain_018/module_data_out[0] scanchain_018/module_data_out[1] scanchain_018/module_data_out[2]
-+ scanchain_018/module_data_out[3] scanchain_018/module_data_out[4] scanchain_018/module_data_out[5]
-+ scanchain_018/module_data_out[6] scanchain_018/module_data_out[7] vccd1 vssd1 user_module_357464855584307201
 Xscanchain_106 scanchain_106/clk_in scanchain_107/clk_in scanchain_106/data_in scanchain_107/data_in
 + scanchain_106/latch_enable_in scanchain_107/latch_enable_in scanchain_106/module_data_in[0]
 + scanchain_106/module_data_in[1] scanchain_106/module_data_in[2] scanchain_106/module_data_in[3]
@@ -1605,12 +1629,6 @@ Xuser_module_357464855584307201_190 scanchain_190/module_data_in[0] scanchain_19
 + scanchain_190/module_data_out[0] scanchain_190/module_data_out[1] scanchain_190/module_data_out[2]
 + scanchain_190/module_data_out[3] scanchain_190/module_data_out[4] scanchain_190/module_data_out[5]
 + scanchain_190/module_data_out[6] scanchain_190/module_data_out[7] vccd1 vssd1 user_module_357464855584307201
-Xuser_module_357464855584307201_019 scanchain_019/module_data_in[0] scanchain_019/module_data_in[1]
-+ scanchain_019/module_data_in[2] scanchain_019/module_data_in[3] scanchain_019/module_data_in[4]
-+ scanchain_019/module_data_in[5] scanchain_019/module_data_in[6] scanchain_019/module_data_in[7]
-+ scanchain_019/module_data_out[0] scanchain_019/module_data_out[1] scanchain_019/module_data_out[2]
-+ scanchain_019/module_data_out[3] scanchain_019/module_data_out[4] scanchain_019/module_data_out[5]
-+ scanchain_019/module_data_out[6] scanchain_019/module_data_out[7] vccd1 vssd1 user_module_357464855584307201
 Xscanchain_107 scanchain_107/clk_in scanchain_108/clk_in scanchain_107/data_in scanchain_108/data_in
 + scanchain_107/latch_enable_in scanchain_108/latch_enable_in scanchain_107/module_data_in[0]
 + scanchain_107/module_data_in[1] scanchain_107/module_data_in[2] scanchain_107/module_data_in[3]
@@ -1653,6 +1671,12 @@ Xuser_module_357464855584307201_191 scanchain_191/module_data_in[0] scanchain_19
 + scanchain_191/module_data_out[0] scanchain_191/module_data_out[1] scanchain_191/module_data_out[2]
 + scanchain_191/module_data_out[3] scanchain_191/module_data_out[4] scanchain_191/module_data_out[5]
 + scanchain_191/module_data_out[6] scanchain_191/module_data_out[7] vccd1 vssd1 user_module_357464855584307201
+Xshadow1229_player_016 shadow1229_player_016/io_in[0] shadow1229_player_016/io_in[1]
++ shadow1229_player_016/io_in[2] shadow1229_player_016/io_in[3] shadow1229_player_016/io_in[4]
++ shadow1229_player_016/io_in[5] shadow1229_player_016/io_in[6] shadow1229_player_016/io_in[7]
++ shadow1229_player_016/io_out[0] shadow1229_player_016/io_out[1] shadow1229_player_016/io_out[2]
++ shadow1229_player_016/io_out[3] shadow1229_player_016/io_out[4] shadow1229_player_016/io_out[5]
++ shadow1229_player_016/io_out[6] shadow1229_player_016/io_out[7] vccd1 vssd1 shadow1229_player
 Xscanchain_108 scanchain_108/clk_in scanchain_109/clk_in scanchain_108/data_in scanchain_109/data_in
 + scanchain_108/latch_enable_in scanchain_109/latch_enable_in scanchain_108/module_data_in[0]
 + scanchain_108/module_data_in[1] scanchain_108/module_data_in[2] scanchain_108/module_data_in[3]
@@ -3394,12 +3418,12 @@ Xscanchain_027 scanchain_027/clk_in scanchain_028/clk_in scanchain_027/data_in s
 + scanchain_027/module_data_out[5] scanchain_027/module_data_out[6] scanchain_027/module_data_out[7]
 + scanchain_027/scan_select_in scanchain_028/scan_select_in vccd1 vssd1 scanchain
 Xscanchain_016 scanchain_016/clk_in scanchain_017/clk_in scanchain_016/data_in scanchain_017/data_in
-+ scanchain_016/latch_enable_in scanchain_017/latch_enable_in scanchain_016/module_data_in[0]
-+ scanchain_016/module_data_in[1] scanchain_016/module_data_in[2] scanchain_016/module_data_in[3]
-+ scanchain_016/module_data_in[4] scanchain_016/module_data_in[5] scanchain_016/module_data_in[6]
-+ scanchain_016/module_data_in[7] scanchain_016/module_data_out[0] scanchain_016/module_data_out[1]
-+ scanchain_016/module_data_out[2] scanchain_016/module_data_out[3] scanchain_016/module_data_out[4]
-+ scanchain_016/module_data_out[5] scanchain_016/module_data_out[6] scanchain_016/module_data_out[7]
++ scanchain_016/latch_enable_in scanchain_017/latch_enable_in shadow1229_player_016/io_in[0]
++ shadow1229_player_016/io_in[1] shadow1229_player_016/io_in[2] shadow1229_player_016/io_in[3]
++ shadow1229_player_016/io_in[4] shadow1229_player_016/io_in[5] shadow1229_player_016/io_in[6]
++ shadow1229_player_016/io_in[7] shadow1229_player_016/io_out[0] shadow1229_player_016/io_out[1]
++ shadow1229_player_016/io_out[2] shadow1229_player_016/io_out[3] shadow1229_player_016/io_out[4]
++ shadow1229_player_016/io_out[5] shadow1229_player_016/io_out[6] shadow1229_player_016/io_out[7]
 + scanchain_016/scan_select_in scanchain_017/scan_select_in vccd1 vssd1 scanchain
 Xscanchain_005 scanchain_005/clk_in scanchain_006/clk_in scanchain_005/data_in scanchain_006/data_in
 + scanchain_005/latch_enable_in scanchain_006/latch_enable_in scanchain_005/module_data_in[0]
@@ -3518,12 +3542,12 @@ Xscanchain_190 scanchain_190/clk_in scanchain_191/clk_in scanchain_190/data_in s
 + scanchain_190/module_data_out[5] scanchain_190/module_data_out[6] scanchain_190/module_data_out[7]
 + scanchain_190/scan_select_in scanchain_191/scan_select_in vccd1 vssd1 scanchain
 Xscanchain_019 scanchain_019/clk_in scanchain_020/clk_in scanchain_019/data_in scanchain_020/data_in
-+ scanchain_019/latch_enable_in scanchain_020/latch_enable_in scanchain_019/module_data_in[0]
-+ scanchain_019/module_data_in[1] scanchain_019/module_data_in[2] scanchain_019/module_data_in[3]
-+ scanchain_019/module_data_in[4] scanchain_019/module_data_in[5] scanchain_019/module_data_in[6]
-+ scanchain_019/module_data_in[7] scanchain_019/module_data_out[0] scanchain_019/module_data_out[1]
-+ scanchain_019/module_data_out[2] scanchain_019/module_data_out[3] scanchain_019/module_data_out[4]
-+ scanchain_019/module_data_out[5] scanchain_019/module_data_out[6] scanchain_019/module_data_out[7]
++ scanchain_019/latch_enable_in scanchain_020/latch_enable_in moonbase_pdp8_019/io_in[0]
++ moonbase_pdp8_019/io_in[1] moonbase_pdp8_019/io_in[2] moonbase_pdp8_019/io_in[3]
++ moonbase_pdp8_019/io_in[4] moonbase_pdp8_019/io_in[5] moonbase_pdp8_019/io_in[6]
++ moonbase_pdp8_019/io_in[7] moonbase_pdp8_019/io_out[0] moonbase_pdp8_019/io_out[1]
++ moonbase_pdp8_019/io_out[2] moonbase_pdp8_019/io_out[3] moonbase_pdp8_019/io_out[4]
++ moonbase_pdp8_019/io_out[5] moonbase_pdp8_019/io_out[6] moonbase_pdp8_019/io_out[7]
 + scanchain_019/scan_select_in scanchain_020/scan_select_in vccd1 vssd1 scanchain
 Xscanchain_008 scanchain_008/clk_in scanchain_009/clk_in scanchain_008/data_in scanchain_009/data_in
 + scanchain_008/latch_enable_in scanchain_009/latch_enable_in scanchain_008/module_data_in[0]

@@ -1,0 +1,232 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO shadow1229_player
+  CLASS BLOCK ;
+  FOREIGN shadow1229_player ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 150.000 BY 170.000 ;
+  PIN io_in[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 8.200 2.000 8.800 ;
+    END
+  END io_in[0]
+  PIN io_in[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 18.400 2.000 19.000 ;
+    END
+  END io_in[1]
+  PIN io_in[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 28.600 2.000 29.200 ;
+    END
+  END io_in[2]
+  PIN io_in[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 38.800 2.000 39.400 ;
+    END
+  END io_in[3]
+  PIN io_in[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 49.000 2.000 49.600 ;
+    END
+  END io_in[4]
+  PIN io_in[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 59.200 2.000 59.800 ;
+    END
+  END io_in[5]
+  PIN io_in[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 69.400 2.000 70.000 ;
+    END
+  END io_in[6]
+  PIN io_in[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 79.600 2.000 80.200 ;
+    END
+  END io_in[7]
+  PIN io_out[0]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 89.800 2.000 90.400 ;
+    END
+  END io_out[0]
+  PIN io_out[1]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 100.000 2.000 100.600 ;
+    END
+  END io_out[1]
+  PIN io_out[2]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 110.200 2.000 110.800 ;
+    END
+  END io_out[2]
+  PIN io_out[3]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 120.400 2.000 121.000 ;
+    END
+  END io_out[3]
+  PIN io_out[4]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 130.600 2.000 131.200 ;
+    END
+  END io_out[4]
+  PIN io_out[5]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 140.800 2.000 141.400 ;
+    END
+  END io_out[5]
+  PIN io_out[6]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 151.000 2.000 151.600 ;
+    END
+  END io_out[6]
+  PIN io_out[7]
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+        RECT 0.000 161.200 2.000 161.800 ;
+    END
+  END io_out[7]
+  PIN vccd1
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 22.085 5.200 23.685 163.440 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 56.815 5.200 58.415 163.440 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 91.545 5.200 93.145 163.440 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 126.275 5.200 127.875 163.440 ;
+    END
+  END vccd1
+  PIN vssd1
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT 39.450 5.200 41.050 163.440 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 74.180 5.200 75.780 163.440 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 108.910 5.200 110.510 163.440 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 143.640 5.200 145.240 163.440 ;
+    END
+  END vssd1
+  OBS
+      LAYER li1 ;
+        RECT 5.520 5.355 144.440 163.285 ;
+      LAYER met1 ;
+        RECT 0.070 1.060 148.970 163.840 ;
+      LAYER met2 ;
+        RECT 0.090 0.155 148.950 163.870 ;
+      LAYER met3 ;
+        RECT 0.065 162.200 148.975 163.365 ;
+        RECT 2.400 160.800 148.975 162.200 ;
+        RECT 0.065 152.000 148.975 160.800 ;
+        RECT 2.400 150.600 148.975 152.000 ;
+        RECT 0.065 141.800 148.975 150.600 ;
+        RECT 2.400 140.400 148.975 141.800 ;
+        RECT 0.065 131.600 148.975 140.400 ;
+        RECT 2.400 130.200 148.975 131.600 ;
+        RECT 0.065 121.400 148.975 130.200 ;
+        RECT 2.400 120.000 148.975 121.400 ;
+        RECT 0.065 111.200 148.975 120.000 ;
+        RECT 2.400 109.800 148.975 111.200 ;
+        RECT 0.065 101.000 148.975 109.800 ;
+        RECT 2.400 99.600 148.975 101.000 ;
+        RECT 0.065 90.800 148.975 99.600 ;
+        RECT 2.400 89.400 148.975 90.800 ;
+        RECT 0.065 80.600 148.975 89.400 ;
+        RECT 2.400 79.200 148.975 80.600 ;
+        RECT 0.065 70.400 148.975 79.200 ;
+        RECT 2.400 69.000 148.975 70.400 ;
+        RECT 0.065 60.200 148.975 69.000 ;
+        RECT 2.400 58.800 148.975 60.200 ;
+        RECT 0.065 50.000 148.975 58.800 ;
+        RECT 2.400 48.600 148.975 50.000 ;
+        RECT 0.065 39.800 148.975 48.600 ;
+        RECT 2.400 38.400 148.975 39.800 ;
+        RECT 0.065 29.600 148.975 38.400 ;
+        RECT 2.400 28.200 148.975 29.600 ;
+        RECT 0.065 19.400 148.975 28.200 ;
+        RECT 2.400 18.000 148.975 19.400 ;
+        RECT 0.065 9.200 148.975 18.000 ;
+        RECT 2.400 7.800 148.975 9.200 ;
+        RECT 0.065 0.175 148.975 7.800 ;
+      LAYER met4 ;
+        RECT 2.135 4.800 21.685 159.625 ;
+        RECT 24.085 4.800 39.050 159.625 ;
+        RECT 41.450 4.800 56.415 159.625 ;
+        RECT 58.815 4.800 73.780 159.625 ;
+        RECT 76.180 4.800 91.145 159.625 ;
+        RECT 93.545 4.800 108.510 159.625 ;
+        RECT 110.910 4.800 125.875 159.625 ;
+        RECT 128.275 4.800 134.025 159.625 ;
+        RECT 2.135 1.535 134.025 4.800 ;
+  END
+END shadow1229_player
+END LIBRARY
+

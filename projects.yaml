@@ -63,21 +63,21 @@
   status: active
   fill: false
 16:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/shadow1229/tt03-bad-apple
   status: active
-  fill: true
+  fill: false
 17:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/diferential/muxpga
   status: active
-  fill: true
+  fill: false
 18:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/SchreinerCarin/tt03-4bit-adder
   status: active
-  fill: true
+  fill: false
 19:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/MoonbaseOtago/tt03-pdp8
   status: active
-  fill: true
+  fill: false
 20:
   url: https://github.com/TinyTapeout/tt03-test-invert
   status: active
