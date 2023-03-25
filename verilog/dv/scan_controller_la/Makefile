@@ -22,7 +22,7 @@ coco_test: scan_controller.hex
 	mkdir sim_build/
 
     # change project_tb.v to match your testbench name
-	iverilog -Ttyp -DFUNCTIONAL -DSIM -DUSE_POWER_PINS -DUNIT_DELAY=#1 \
+	iverilog -Ttyp -DFUNCTIONAL -DSIM -DUSE_POWER_PINS -DUNIT_DELAY=\#1 \
 	-f$(VERILOG_PATH)/includes/includes.rtl.caravel \
 	-f$(USER_PROJECT_VERILOG)/includes/includes.rtl.$(CONFIG) -o sim_build/sim.vvp scan_controller_tb.v
 
