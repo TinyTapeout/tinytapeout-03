@@ -153,7 +153,7 @@ module user_project_wrapper #(
         .module_data_out (sw_001_module_data_out)
     );
 
-    weverest_top weverest_top_001 (
+    morningjava_top morningjava_top_001 (
         .io_in  (sw_001_module_data_in),
         .io_out (sw_001_module_data_out)
     );
@@ -505,7 +505,7 @@ module user_project_wrapper #(
         .module_data_out (sw_017_module_data_out)
     );
 
-    diferential_muxpga diferential_muxpga_017 (
+    user_module_357464855584307201 user_module_357464855584307201_017 (
         .io_in  (sw_017_module_data_in),
         .io_out (sw_017_module_data_out)
     );
@@ -554,7 +554,7 @@ module user_project_wrapper #(
         .io_out (sw_019_module_data_out)
     );
 
-    // [020] https://github.com/TinyTapeout/tt03-test-invert
+    // [020] https://github.com/SchreinerCarin/tt03-ctf
     wire sw_020_clk_out, sw_020_data_out, sw_020_scan_out, sw_020_latch_out;
     wire [7:0] sw_020_module_data_in;
     wire [7:0] sw_020_module_data_out;
@@ -571,12 +571,12 @@ module user_project_wrapper #(
         .module_data_out (sw_020_module_data_out)
     );
 
-    user_module_357464855584307201 user_module_357464855584307201_020 (
+    user_module_360014965627378689 user_module_360014965627378689_020 (
         .io_in  (sw_020_module_data_in),
         .io_out (sw_020_module_data_out)
     );
 
-    // [021] https://github.com/TinyTapeout/tt03-test-invert
+    // [021] https://github.com/yannickreiss/TT3_dot_op
     wire sw_021_clk_out, sw_021_data_out, sw_021_scan_out, sw_021_latch_out;
     wire [7:0] sw_021_module_data_in;
     wire [7:0] sw_021_module_data_out;
@@ -593,12 +593,12 @@ module user_project_wrapper #(
         .module_data_out (sw_021_module_data_out)
     );
 
-    user_module_357464855584307201 user_module_357464855584307201_021 (
+    yannickreiss_dot_op yannickreiss_dot_op_021 (
         .io_in  (sw_021_module_data_in),
         .io_out (sw_021_module_data_out)
     );
 
-    // [022] https://github.com/TinyTapeout/tt03-test-invert
+    // [022] https://github.com/diferential/sc-rv-tt03-block1
     wire sw_022_clk_out, sw_022_data_out, sw_022_scan_out, sw_022_latch_out;
     wire [7:0] sw_022_module_data_in;
     wire [7:0] sw_022_module_data_out;
@@ -615,12 +615,12 @@ module user_project_wrapper #(
         .module_data_out (sw_022_module_data_out)
     );
 
-    user_module_357464855584307201 user_module_357464855584307201_022 (
+    diferential_rvb1 diferential_rvb1_022 (
         .io_in  (sw_022_module_data_in),
         .io_out (sw_022_module_data_out)
     );
 
-    // [023] https://github.com/TinyTapeout/tt03-test-invert
+    // [023] https://github.com/diferential/sc-rv-tt03-block2
     wire sw_023_clk_out, sw_023_data_out, sw_023_scan_out, sw_023_latch_out;
     wire [7:0] sw_023_module_data_in;
     wire [7:0] sw_023_module_data_out;
@@ -637,12 +637,12 @@ module user_project_wrapper #(
         .module_data_out (sw_023_module_data_out)
     );
 
-    user_module_357464855584307201 user_module_357464855584307201_023 (
+    diferential_rvb2 diferential_rvb2_023 (
         .io_in  (sw_023_module_data_in),
         .io_out (sw_023_module_data_out)
     );
 
-    // [024] https://github.com/TinyTapeout/tt03-test-invert
+    // [024] https://github.com/diferential/sc-rv-tt03-block3
     wire sw_024_clk_out, sw_024_data_out, sw_024_scan_out, sw_024_latch_out;
     wire [7:0] sw_024_module_data_in;
     wire [7:0] sw_024_module_data_out;
@@ -659,12 +659,12 @@ module user_project_wrapper #(
         .module_data_out (sw_024_module_data_out)
     );
 
-    user_module_357464855584307201 user_module_357464855584307201_024 (
+    diferential_rvb3 diferential_rvb3_024 (
         .io_in  (sw_024_module_data_in),
         .io_out (sw_024_module_data_out)
     );
 
-    // [025] https://github.com/TinyTapeout/tt03-test-invert
+    // [025] https://github.com/diferential/sc-rv-tt03-block4
     wire sw_025_clk_out, sw_025_data_out, sw_025_scan_out, sw_025_latch_out;
     wire [7:0] sw_025_module_data_in;
     wire [7:0] sw_025_module_data_out;
@@ -681,12 +681,12 @@ module user_project_wrapper #(
         .module_data_out (sw_025_module_data_out)
     );
 
-    user_module_357464855584307201 user_module_357464855584307201_025 (
+    diferential_rvb4 diferential_rvb4_025 (
         .io_in  (sw_025_module_data_in),
         .io_out (sw_025_module_data_out)
     );
 
-    // [026] https://github.com/TinyTapeout/tt03-test-invert
+    // [026] https://github.com/Aidan-McNay/31b-PrimeDetection
     wire sw_026_clk_out, sw_026_data_out, sw_026_scan_out, sw_026_latch_out;
     wire [7:0] sw_026_module_data_in;
     wire [7:0] sw_026_module_data_out;
@@ -703,12 +703,12 @@ module user_project_wrapper #(
         .module_data_out (sw_026_module_data_out)
     );
 
-    user_module_357464855584307201 user_module_357464855584307201_026 (
+    aidan_mcnay_PrimeDetector aidan_mcnay_PrimeDetector_026 (
         .io_in  (sw_026_module_data_in),
         .io_out (sw_026_module_data_out)
     );
 
-    // [027] https://github.com/TinyTapeout/tt03-test-invert
+    // [027] https://github.com/LukeVassallo/tt03-xor-cipher
     wire sw_027_clk_out, sw_027_data_out, sw_027_scan_out, sw_027_latch_out;
     wire [7:0] sw_027_module_data_in;
     wire [7:0] sw_027_module_data_out;
@@ -725,7 +725,7 @@ module user_project_wrapper #(
         .module_data_out (sw_027_module_data_out)
     );
 
-    user_module_357464855584307201 user_module_357464855584307201_027 (
+    lukevassallo_xor_cipher lukevassallo_xor_cipher_027 (
         .io_in  (sw_027_module_data_in),
         .io_out (sw_027_module_data_out)
     );

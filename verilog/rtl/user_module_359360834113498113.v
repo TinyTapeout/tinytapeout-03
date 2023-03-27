@@ -18,7 +18,7 @@ module user_module_359360834113498113(
   wire net10;
   wire net11 = 1'b0;
   wire net12 = 1'b1;
-  wire net13 = 1'b1;
+  wire net13;
   wire net14;
   wire net15;
   wire net16;
@@ -35,7 +35,6 @@ module user_module_359360834113498113(
   wire net27;
   wire net28;
   wire net29;
-  wire net30;
 
   assign io_out[0] = net6;
   assign io_out[1] = net7;
@@ -46,105 +45,105 @@ module user_module_359360834113498113(
   xor_cell xor1 (
     .a (net1),
     .b (net5),
-    .out (net14)
+    .out (net13)
   );
   xor_cell xor2 (
     .a (net2),
     .b (net3),
-    .out (net15)
+    .out (net14)
   );
   xor_cell xor3 (
     .a (net4),
     .b (net5),
-    .out (net16)
+    .out (net15)
   );
   not_cell not1 (
-    .in (net14),
-    .out (net17)
+    .in (net13),
+    .out (net16)
   );
   xor_cell xor4 (
-    .a (net14),
-    .b (net18),
-    .out (net19)
+    .a (net13),
+    .b (net17),
+    .out (net18)
   );
   and_cell and1 (
-    .a (net17),
+    .a (net16),
     .b (net2),
-    .out (net20)
+    .out (net19)
   );
   xor_cell xor5 (
-    .a (net19),
+    .a (net18),
     .b (net10),
     .out (net6)
   );
   xor_cell xor6 (
-    .a (net19),
-    .b (net21),
+    .a (net18),
+    .b (net20),
     .out (net7)
   );
   xor_cell xor7 (
     .a (net2),
-    .b (net22),
-    .out (net21)
+    .b (net21),
+    .out (net20)
   );
   xor_cell xor8 (
-    .a (net16),
-    .b (net20),
+    .a (net15),
+    .b (net19),
     .out (net10)
   );
   and_cell and2 (
-    .a (net23),
-    .b (net16),
-    .out (net24)
+    .a (net22),
+    .b (net15),
+    .out (net23)
   );
   not_cell not2 (
     .in (net4),
-    .out (net23)
+    .out (net22)
   );
   and_cell and3 (
-    .a (net25),
-    .b (net15),
-    .out (net18)
+    .a (net24),
+    .b (net14),
+    .out (net17)
   );
   not_cell not3 (
     .in (net2),
-    .out (net25)
+    .out (net24)
   );
   not_cell not4 (
+    .in (net14),
+    .out (net25)
+  );
+  not_cell not5 (
     .in (net15),
     .out (net26)
   );
-  not_cell not5 (
-    .in (net16),
-    .out (net27)
-  );
   and_cell and4 (
-    .a (net26),
+    .a (net25),
     .b (net4),
-    .out (net22)
+    .out (net21)
   );
   and_cell and5 (
-    .a (net27),
-    .b (net14),
-    .out (net28)
+    .a (net26),
+    .b (net13),
+    .out (net27)
   );
   xor_cell xor9 (
     .a (net4),
-    .b (net28),
-    .out (net29)
+    .b (net27),
+    .out (net28)
   );
   xor_cell xor10 (
-    .a (net30),
-    .b (net29),
+    .a (net29),
+    .b (net28),
     .out (net9)
   );
   not_cell not6 (
-    .in (net30),
+    .in (net29),
     .out (net8)
   );
   xor_cell xor11 (
-    .a (net15),
-    .b (net24),
-    .out (net30)
+    .a (net14),
+    .b (net23),
+    .out (net29)
   );
 endmodule

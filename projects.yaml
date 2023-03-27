@@ -68,7 +68,7 @@
   fill: false
 17:
   url: https://github.com/diferential/muxpga
-  status: active
+  status: disable
   fill: false
 18:
   url: https://github.com/SchreinerCarin/tt03-4bit-adder
@@ -79,37 +79,37 @@
   status: active
   fill: false
 20:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/SchreinerCarin/tt03-ctf
   status: active
-  fill: true
+  fill: false
 21:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/yannickreiss/TT3_dot_op
   status: active
-  fill: true
+  fill: false
 22:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/diferential/sc-rv-tt03-block1
   status: active
-  fill: true
+  fill: false
 23:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/diferential/sc-rv-tt03-block2
   status: active
-  fill: true
+  fill: false
 24:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/diferential/sc-rv-tt03-block3
   status: active
-  fill: true
+  fill: false
 25:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/diferential/sc-rv-tt03-block4
   status: active
-  fill: true
+  fill: false
 26:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/Aidan-McNay/31b-PrimeDetection
   status: active
-  fill: true
+  fill: false
 27:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/LukeVassallo/tt03-xor-cipher
   status: active
-  fill: true
+  fill: false
 28:
   url: https://github.com/TinyTapeout/tt03-test-invert
   status: active
