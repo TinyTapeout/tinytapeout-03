@@ -31,9 +31,6 @@ module user_module_359353377078748161(
   assign io_out[2] = net7;
   assign io_out[3] = net8;
 
-  xor_cell xor1 (
-
-  );
   or_cell or1 (
     .a (net4),
     .b (net3),

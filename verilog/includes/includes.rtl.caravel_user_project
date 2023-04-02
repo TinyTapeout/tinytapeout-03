@@ -3,7 +3,7 @@
 -v $(USER_PROJECT_VERILOG)/rtl/scanchain/scanchain.v
 -v $(USER_PROJECT_VERILOG)/rtl/cells.v
 -v $(USER_PROJECT_VERILOG)/rtl/user_module_357464855584307201.v
--v $(USER_PROJECT_VERILOG)/rtl/001_weverest_top.sv
+-v $(USER_PROJECT_VERILOG)/rtl/001_morningjava_top.v
 -v $(USER_PROJECT_VERILOG)/rtl/user_module_357752736742764545.v
 -v $(USER_PROJECT_VERILOG)/rtl/003_meiniki_pi.v
 -v $(USER_PROJECT_VERILOG)/rtl/004_wormy_top.v
@@ -19,6 +19,13 @@
 -v $(USER_PROJECT_VERILOG)/rtl/user_module_359372419264319489.v
 -v $(USER_PROJECT_VERILOG)/rtl/user_module_357178660283991041.v
 -v $(USER_PROJECT_VERILOG)/rtl/016_player.v
--v $(USER_PROJECT_VERILOG)/rtl/017_counter.v
 -v $(USER_PROJECT_VERILOG)/rtl/user_module_354091612057990145.v
 -v $(USER_PROJECT_VERILOG)/rtl/019_cpu.v
+-v $(USER_PROJECT_VERILOG)/rtl/user_module_360014965627378689.v
+-v $(USER_PROJECT_VERILOG)/rtl/021_dot_operator.v
+-v $(USER_PROJECT_VERILOG)/rtl/022_rv_block1.v
+-v $(USER_PROJECT_VERILOG)/rtl/023_rv_block2.v
+-v $(USER_PROJECT_VERILOG)/rtl/024_rv_block3.v
+-v $(USER_PROJECT_VERILOG)/rtl/025_rv_block4.v
+-v $(USER_PROJECT_VERILOG)/rtl/026_PrimeDetector.v
+-v $(USER_PROJECT_VERILOG)/rtl/027_lukevassallo_xor_cipher.v
