@@ -6,7 +6,7 @@ docker run --rm \
     -v $PDK_ROOT:$PDK_ROOT \
     --user 1000:1000 \
     efabless/openlane:a35b64aa200c91e9eb7dde56db787d6b4c0ea12a-amd64 \
-    /bin/bash -c "cd $(pwd) ; sh verilog/gl/sta.sh"
+    /bin/bash -c "cd $(pwd) ; sh verilog/gl/sta.sh | tee sta.log"
 
     #sh verilog/gl/sta.sh
     #-v /home/matt/work/asic-workshop/shuttle7/openlane/designs:/openlane/install \
