@@ -32,16 +32,20 @@ jobs:
 
     # run sta, create sta.log
     - name: run sta
-      run: ./stadocker.sh
+      run: |
+        ./stadocker.sh
+        ls 
 
     # test
     - name: test sta
+      if: success() || failure()
       run: |
+        ls
         ! grep VIOLATED sta.log
 
     - name: upload logs
       if: success() || failure()
       uses: actions/upload-artifact@v3
       with:
-        name: sta.log
+        name: STA
         path: sta.log
