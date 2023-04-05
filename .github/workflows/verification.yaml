@@ -57,6 +57,7 @@ jobs:
       with:
           osscadsuite-version: '2022-09-03' # pin the version, latest one fails to work with caravel
           python-override: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
     - run: | 
         yosys --version
         iverilog -V

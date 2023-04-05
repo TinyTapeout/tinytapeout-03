@@ -55,6 +55,7 @@ jobs:
     - name: install oss-cad-suite
       uses: YosysHQ/setup-oss-cad-suite@v1
       with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           osscadsuite-version: '2022-09-03' # pin the version, latest one fails to work with caravel
 
     # fetch the test repos
