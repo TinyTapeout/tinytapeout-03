@@ -32,16 +32,12 @@ jobs:
 
     # run sta, create sta.log
     - name: run sta
-      continue-on-error: true
-      run: |
-        ./stadocker.sh
-        ls 
+      run: ./stadocker.sh
 
     # test
     - name: test sta
       if: success() || failure()
       run: |
-        ls
         ! grep VIOLATED sta.log
 
     - name: upload logs
