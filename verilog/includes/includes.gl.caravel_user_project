@@ -16,8 +16,9 @@
 -v $(USER_PROJECT_VERILOG)/gl/user_module_359360834113498113.v
 -v $(USER_PROJECT_VERILOG)/gl/greenstyle_lfsr.v
 -v $(USER_PROJECT_VERILOG)/gl/user_module_359372419264319489.v
--v $(USER_PROJECT_VERILOG)/gl/user_module_357178660283991041.v
+-v $(USER_PROJECT_VERILOG)/gl/user_module_359387860730498049.v
 -v $(USER_PROJECT_VERILOG)/gl/shadow1229_player.v
+-v $(USER_PROJECT_VERILOG)/gl/diferential_muxpga.v
 -v $(USER_PROJECT_VERILOG)/gl/user_module_354091612057990145.v
 -v $(USER_PROJECT_VERILOG)/gl/moonbase_pdp8.v
 -v $(USER_PROJECT_VERILOG)/gl/user_module_360014965627378689.v
@@ -28,3 +29,9 @@
 -v $(USER_PROJECT_VERILOG)/gl/diferential_rvb4.v
 -v $(USER_PROJECT_VERILOG)/gl/aidan_mcnay_PrimeDetector.v
 -v $(USER_PROJECT_VERILOG)/gl/lukevassallo_xor_cipher.v
+-v $(USER_PROJECT_VERILOG)/gl/tomkeddie_top_tto_a.v
+-v $(USER_PROJECT_VERILOG)/gl/MichaelBell_6bit_fifo.v
+-v $(USER_PROJECT_VERILOG)/gl/guianmonezm_ezmcpu.v
+-v $(USER_PROJECT_VERILOG)/gl/yubex_tiny_logic_analyzer.v
+-v $(USER_PROJECT_VERILOG)/gl/user_module_360745091952588801.v
+-v $(USER_PROJECT_VERILOG)/gl/bat52_pwm_ddpm_top.v

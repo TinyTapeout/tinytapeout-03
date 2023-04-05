@@ -68,7 +68,7 @@
   fill: false
 17:
   url: https://github.com/diferential/muxpga
-  status: disable
+  status: active
   fill: false
 18:
   url: https://github.com/SchreinerCarin/tt03-4bit-adder
@@ -111,29 +111,29 @@
   status: active
   fill: false
 28:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/TomKeddie/tinytapeout-2023-1a
   status: active
-  fill: true
+  fill: false
 29:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/MichaelBell/tt03-fifo
   status: active
-  fill: true
+  fill: false
 30:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/guianmonezm/tt03-ezm_cpu
   status: active
-  fill: true
+  fill: false
 31:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/yubex/tt03-tiny-logic-analyzer
   status: active
-  fill: true
+  fill: false
 32:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/rejunity/tt03-alu-4bit
   status: active
-  fill: true
+  fill: false
 33:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/bat52/tt03-ddpm-pwm
   status: active
-  fill: true
+  fill: false
 34:
   url: https://github.com/TinyTapeout/tt03-test-invert
   status: active

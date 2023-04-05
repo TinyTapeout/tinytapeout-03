@@ -24,7 +24,7 @@ For the most recent automatic build, click the tt_datasheet badge above, then do
 | Index | Author | Title | Type | Git Repo |
 | ----- | ------ | ------| -----| ---------|
 | 0 | Matt Venn | Test Inverter Project | [Wokwi](https://wokwi.com/projects/357464855584307201) | https://github.com/TinyTapeout/tt03-test-invert |
-| 1 | Wallie Everest | Chiptune | HDL | https://github.com/WallieEverest/tt03 |
+| 1 | Wallie Everest | ChipTune | HDL | https://github.com/WallieEverest/tt03 |
 | 2 | icegoat9 | 7 Segment Life | [Wokwi](https://wokwi.com/projects/357752736742764545) | https://github.com/icegoat9/tinytapeout03-7seglife |
 | 3 | Meinhard Kissich, EAS Group, Graz University of Technology | Another Piece of Pi | HDL | https://github.com/meiniKi/tt03-another-piece-of-pi |
 | 4 | nqbit | Wormy | HDL | https://github.com/nqbit/wormy |
@@ -38,8 +38,9 @@ For the most recent automatic build, click the tt_datasheet badge above, then do
 | 12 | Fabio Campos | Ascon's 5-bit S-box | [Wokwi](https://wokwi.com/projects/359360834113498113) | https://github.com/sopmacF/tt03-ascon-sbox |
 | 13 | Alexander Schönborn | 8bit configurable galois lfsr | HDL | https://github.com/gr33nstyle/tt03-verilog-lfsr |
 | 14 | Thorsten Knoll | Sbox SKINNY 8 Bit | [Wokwi](https://wokwi.com/projects/359372419264319489) | https://github.com/ThorKn/tt03_sbox_8bit_skinny |
-| 15 | Marcus Michaely | BinaryDoorLock | [Wokwi](https://wokwi.com/projects/357178660283991041) | https://github.com/marcusmichaely/tt03-submission-template |
+| 15 | Marcus Michaely | BinaryDoorLock | [Wokwi](https://wokwi.com/projects/359387860730498049) | https://github.com/marcusmichaely/tt03-submission-template |
 | 16 | shadow1229 | bad apple | HDL | https://github.com/shadow1229/tt03-bad-apple |
+| 17 | Emilian Miron | TinyFPGA attempt for TinyTapeout3 | HDL | https://github.com/diferential/muxpga |
 | 18 | Carin Schreiner | 4bit Adder | [Wokwi](https://wokwi.com/projects/354091612057990145) | https://github.com/SchreinerCarin/tt03-4bit-adder |
 | 19 | Paul Campnell | 12-bit PDP8 | HDL | https://github.com/MoonbaseOtago/tt03-pdp8 |
 | 20 | Carin Schreiner | CTF - Catch the fish | [Wokwi](https://wokwi.com/projects/360014965627378689) | https://github.com/SchreinerCarin/tt03-ctf |
@@ -50,3 +51,9 @@ For the most recent automatic build, click the tt_datasheet badge above, then do
 | 25 | Emilian Miron | RiscV Scan Chain based CPU -- block 4 -- ALU | HDL | https://github.com/diferential/sc-rv-tt03-block4 |
 | 26 | Aidan McNay | 31b-PrimeDetector | HDL | https://github.com/Aidan-McNay/31b-PrimeDetection |
 | 27 | Luke Vassallo | XOR Stream Cipher | HDL | https://github.com/LukeVassallo/tt03-xor-cipher |
+| 28 | Tom Keddie | LED Panel Driver | HDL | https://github.com/TomKeddie/tinytapeout-2023-1a |
+| 29 | Mike Bell | 6-bit FIFO | HDL | https://github.com/MichaelBell/tt03-fifo |
+| 30 | guianmonezm#4787 | ezm_cpu | HDL | https://github.com/guianmonezm/tt03-ezm_cpu |
+| 31 | yubex | tiny logic analyzer | HDL | https://github.com/yubex/tt03-tiny-logic-analyzer |
+| 32 | ReJ aka Renaldas Zioma | 4-bit ALU | [Wokwi](https://wokwi.com/projects/360745091952588801) | https://github.com/rejunity/tt03-alu-4bit |
+| 33 | Marco Merlin | Pulse-Density Modulators | HDL | https://github.com/bat52/tt03-ddpm-pwm |

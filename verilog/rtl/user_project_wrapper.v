@@ -461,7 +461,7 @@ module user_project_wrapper #(
         .module_data_out (sw_015_module_data_out)
     );
 
-    user_module_357178660283991041 user_module_357178660283991041_015 (
+    user_module_359387860730498049 user_module_359387860730498049_015 (
         .io_in  (sw_015_module_data_in),
         .io_out (sw_015_module_data_out)
     );
@@ -505,7 +505,7 @@ module user_project_wrapper #(
         .module_data_out (sw_017_module_data_out)
     );
 
-    user_module_357464855584307201 user_module_357464855584307201_017 (
+    diferential_muxpga diferential_muxpga_017 (
         .io_in  (sw_017_module_data_in),
         .io_out (sw_017_module_data_out)
     );
@@ -730,7 +730,7 @@ module user_project_wrapper #(
         .io_out (sw_027_module_data_out)
     );
 
-    // [028] https://github.com/TinyTapeout/tt03-test-invert
+    // [028] https://github.com/TomKeddie/tinytapeout-2023-1a
     wire sw_028_clk_out, sw_028_data_out, sw_028_scan_out, sw_028_latch_out;
     wire [7:0] sw_028_module_data_in;
     wire [7:0] sw_028_module_data_out;
@@ -747,12 +747,12 @@ module user_project_wrapper #(
         .module_data_out (sw_028_module_data_out)
     );
 
-    user_module_357464855584307201 user_module_357464855584307201_028 (
+    tomkeddie_top_tto_a tomkeddie_top_tto_a_028 (
         .io_in  (sw_028_module_data_in),
         .io_out (sw_028_module_data_out)
     );
 
-    // [029] https://github.com/TinyTapeout/tt03-test-invert
+    // [029] https://github.com/MichaelBell/tt03-fifo
     wire sw_029_clk_out, sw_029_data_out, sw_029_scan_out, sw_029_latch_out;
     wire [7:0] sw_029_module_data_in;
     wire [7:0] sw_029_module_data_out;
@@ -769,12 +769,12 @@ module user_project_wrapper #(
         .module_data_out (sw_029_module_data_out)
     );
 
-    user_module_357464855584307201 user_module_357464855584307201_029 (
+    MichaelBell_6bit_fifo MichaelBell_6bit_fifo_029 (
         .io_in  (sw_029_module_data_in),
         .io_out (sw_029_module_data_out)
     );
 
-    // [030] https://github.com/TinyTapeout/tt03-test-invert
+    // [030] https://github.com/guianmonezm/tt03-ezm_cpu
     wire sw_030_clk_out, sw_030_data_out, sw_030_scan_out, sw_030_latch_out;
     wire [7:0] sw_030_module_data_in;
     wire [7:0] sw_030_module_data_out;
@@ -791,12 +791,12 @@ module user_project_wrapper #(
         .module_data_out (sw_030_module_data_out)
     );
 
-    user_module_357464855584307201 user_module_357464855584307201_030 (
+    guianmonezm_ezmcpu guianmonezm_ezmcpu_030 (
         .io_in  (sw_030_module_data_in),
         .io_out (sw_030_module_data_out)
     );
 
-    // [031] https://github.com/TinyTapeout/tt03-test-invert
+    // [031] https://github.com/yubex/tt03-tiny-logic-analyzer
     wire sw_031_clk_out, sw_031_data_out, sw_031_scan_out, sw_031_latch_out;
     wire [7:0] sw_031_module_data_in;
     wire [7:0] sw_031_module_data_out;
@@ -813,12 +813,12 @@ module user_project_wrapper #(
         .module_data_out (sw_031_module_data_out)
     );
 
-    user_module_357464855584307201 user_module_357464855584307201_031 (
+    yubex_tiny_logic_analyzer yubex_tiny_logic_analyzer_031 (
         .io_in  (sw_031_module_data_in),
         .io_out (sw_031_module_data_out)
     );
 
-    // [032] https://github.com/TinyTapeout/tt03-test-invert
+    // [032] https://github.com/rejunity/tt03-alu-4bit
     wire sw_032_clk_out, sw_032_data_out, sw_032_scan_out, sw_032_latch_out;
     wire [7:0] sw_032_module_data_in;
     wire [7:0] sw_032_module_data_out;
@@ -835,12 +835,12 @@ module user_project_wrapper #(
         .module_data_out (sw_032_module_data_out)
     );
 
-    user_module_357464855584307201 user_module_357464855584307201_032 (
+    user_module_360745091952588801 user_module_360745091952588801_032 (
         .io_in  (sw_032_module_data_in),
         .io_out (sw_032_module_data_out)
     );
 
-    // [033] https://github.com/TinyTapeout/tt03-test-invert
+    // [033] https://github.com/bat52/tt03-ddpm-pwm
     wire sw_033_clk_out, sw_033_data_out, sw_033_scan_out, sw_033_latch_out;
     wire [7:0] sw_033_module_data_in;
     wire [7:0] sw_033_module_data_out;
@@ -857,7 +857,7 @@ module user_project_wrapper #(
         .module_data_out (sw_033_module_data_out)
     );
 
-    user_module_357464855584307201 user_module_357464855584307201_033 (
+    bat52_pwm_ddpm_top bat52_pwm_ddpm_top_033 (
         .io_in  (sw_033_module_data_in),
         .io_out (sw_033_module_data_out)
     );

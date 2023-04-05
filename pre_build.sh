@@ -1,8 +1,10 @@
 #!/bin/bash
 set -e
 
+. venv/bin/activate
+
 # environment
-. setuptokens.sh
+. ./setuptokens.sh
 
 # unzip gds files
 make uncompress

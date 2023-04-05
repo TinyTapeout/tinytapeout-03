@@ -37,13 +37,15 @@ module MichaelBell_hovalaag (
 
     assign reset_n = !(reset_enable && io_in[2]);
 
+    wire [7:0] out_from_wrapper;
+
     HovalaagWrapper wrapper (
         .clk(clk),
         .reset_n(reset_n),
         .reset_rosc_n(reset_rosc_n),
         .addr(addr),
         .io_in(io_in[7:2]),
-        .io_out(io_out[7:0])
+        .io_out(out_from_wrapper)
     );
 
     always @(posedge clk) begin
@@ -75,5 +77,9 @@ module MichaelBell_hovalaag (
         end
     endgenerate
 `endif
+
+    // Output data.  For addr 7 and 8 output clock so that the output can be used as input to MichaelBell_6bit_fifo
+    assign io_out[7:1] = out_from_wrapper[7:1];
+    assign io_out[0] = (addr == 7 || addr == 8) ? io_in[0] : out_from_wrapper[0];
 
 endmodule
