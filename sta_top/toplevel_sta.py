@@ -1,11 +1,14 @@
 #!/usr/bin/python3
-usage = """toplevel_sta.py <path to main verilog> <path to spefs> <path to sdc> [-i]
+usage = """toplevel_sta.py <path to main verilog> <path to spefs> <path to sdc> [-i] [-slow/-typ/-fast/-multi]
 
 To perform toplevel STA on tinytapeout style designs, where have a lot of individual module
 verilogs and spefs
 
-NB the -i flag means that after analysis has run it remains in STA interactively rather than 
-quitting
+FLAGS:
+-i : after analysis has run it remains in STA interactively rather than quitting
+-slow/-typ/-fast/-multi : which process corner will be used - default, otherwise will use just the named corner
+ (slow->ss, -typ->tt, -fast ->ff - NB no skew corners are modelled)
+
 
 Created by Jeremy Birch, 15/3/2023
 
@@ -29,8 +32,9 @@ NB this uses a slightly altered version of the python3 verilog parser (because i
 TODO:
 expand this to create relevant constraints for each embedded module
 
-example usage:
-python3 ./toplevel_sta.py ./verilog/gl/user_project_wrapper.v ./spef/user_project_wrapper.spef ./top.sdc
+example usage (run in tinytapeout-NN/sta_top) :
+python3 ./toplevel_sta.py ../verilog/gl/user_project_wrapper.v ../spef/user_project_wrapper.spef ./top.sdc
+
 """
 
 #set the search path so we pickup our (modified) version of the verilog parser
@@ -76,16 +80,40 @@ print(sys.argv)
 
 ok=False
 interactive=False
+multi=True
+corner=None
 
-if len(sys.argv)==4:
+nargs=len(sys.argv)
+
+if nargs==4:
     script,vpath,spath,sdc=sys.argv
     ok=True
-elif len(sys.argv)==5:
-    script,vpath,spath,sdc,di=sys.argv
-    if di=="-i":
-        interactive=True
-        ok=True    
-    
+elif nargs>4 and nargs<7:
+    script,vpath,spath,sdc,*rest=sys.argv
+    ok=True
+    for arg in rest:
+        if arg=="-i":
+            interactive=True
+        elif arg=="-slow":
+            multi=False
+            corner="ss"
+        elif arg=="-typ":
+            multi=False
+            corner="tt"
+        elif arg=="-fast":
+            multi=False
+            corner="ff"
+        elif arg=="-multi":
+            multi=True
+            corner=None
+        else:
+            print("Bad arg : %s"%arg)
+            ok=False
+            break
+
+if not multi and corner==None:
+    ok=False
+        
 if not ok:
     print("ERROR - "+usage)
     exit(-1)
@@ -102,6 +130,11 @@ if not os.path.isfile(sdc):
     print("SDC file missing - %s\n"%sdc)
     exit(-1)
 
+if multi:
+    print("Running multicorner analysis\n")
+else:
+    print("Running single corner analysis at corner %s\n"%corner)
+    
 #preprocess the verilog to work round the inout/escaped names issues
 mvpath=preprocessVerilog(vpath)
     
@@ -204,13 +237,17 @@ else:
 alltcl=vdir+"/all_sta.tcl"
 doexit="" if interactive else "exit"
 
+#set this if doing multicorner analysis
+
+mc="-multi_corner" if multi else ""
+
 ostrm=open(alltcl,"w")
 ostrm.write("""
 #script to do our STA of the design - including loading the spefs
 puts ">>>STA start"
 
 source $::env(SCRIPTS_DIR)/openroad/common/io.tcl
-read_libs
+read_libs %s
 #why is this in here?!
 #read_lef $::env(MERGED_LEF)
 puts ">>> about to read netlist"
@@ -273,8 +310,23 @@ puts " report_check_types -max_slew -max_cap -max_fanout -violators"
 puts "============================================================================"
 report_check_types -max_slew -max_capacitance -max_fanout -violators
 
+puts "specific checks for this design"
+puts "\n==========================================================================="
+puts "MIN - HOLD"
+report_checks -path_delay min -from scanchain_249/*
+report_checks -path_delay min -from scan_controller/*
+report_checks -path_delay min -to scan_controller/*
+
+puts "MAX - SETUP"
+report_checks -path_delay max -from scanchain_249/*
+report_checks -path_delay max -from scan_controller/*
+report_checks -path_delay max -to scan_controller/*
+puts "============================================================================"
+
+
+
 %s
-"""%(sout,sout,sdc,sdc,doexit))
+"""%(mc,sout,sout,sdc,sdc,doexit))
 
 ostrm.close()
 print("wrote analysis script %s\n"%alltcl)
@@ -311,13 +363,34 @@ export DESIGN_DIR=designs/$DESIGN_NAME
 #SYNTH_TIMING_DERATE
 
 export SCRIPTS_DIR=$openlane/scripts
-#typ
-#export LIB_SYNTH_COMPLETE=$PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+"""%stem)
+
+if multi:  
+    ostrm.write("""
+# alternatively set 
+export LIB_SYNTH_COMPLETE="dummy"
+export LIB_SLOWEST=$PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v40.lib
+export LIB_TYPICAL=$PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+export LIB_FASTEST=$PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib
+# and run read_libs -multi_corner
+    """)
+elif corner=="ss":
+    ostrm.write("""
 #slow
 export LIB_SYNTH_COMPLETE=$PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v40.lib
+""")
+elif corner=="tt":
+    ostrm.write("""
+#typ
+export LIB_SYNTH_COMPLETE=$PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+""")
+elif corner=="ff":
+    ostrm.write("""
 #fast
-#export LIB_SYNTH_COMPLETE=$PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib
+export LIB_SYNTH_COMPLETE=$PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib
+  """)
 
+ostrm.write("""
 export STA_WRITE_LIB=0
 #may want to change this?!
 export STA_PRE_CTS=0
@@ -325,7 +398,7 @@ export STA_PRE_CTS=0
 export CURRENT_NETLIST=%s
 
 sta %s
-"""%(stem,merged,alltcl))
+"""%(merged,alltcl))
 
 ostrm.close()
 
