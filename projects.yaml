@@ -135,17 +135,17 @@
   status: active
   fill: false
 34:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/grant-h/tt03-crc-decelerator
   status: active
-  fill: true
+  fill: false
 35:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/nikor/tt03-verilog-demo
   status: active
-  fill: true
+  fill: false
 36:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/jedicomo22/Norberto_IPN_V1
   status: active
-  fill: true
+  fill: false
 37:
   url: https://github.com/TinyTapeout/tt03-test-invert
   status: active

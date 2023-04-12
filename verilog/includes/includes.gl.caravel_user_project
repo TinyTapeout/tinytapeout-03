@@ -1,7 +1,7 @@
 -v $(USER_PROJECT_VERILOG)/gl/user_project_wrapper.v
 -v $(USER_PROJECT_VERILOG)/gl/scan_controller.v
 -v $(USER_PROJECT_VERILOG)/gl/scanchain.v
--v $(USER_PROJECT_VERILOG)/gl/user_module_357464855584307201.v
+-v $(USER_PROJECT_VERILOG)/gl/user_module_361728533238569985.v
 -v $(USER_PROJECT_VERILOG)/gl/morningjava_top.v
 -v $(USER_PROJECT_VERILOG)/gl/user_module_357752736742764545.v
 -v $(USER_PROJECT_VERILOG)/gl/meiniki_pi.v
@@ -35,3 +35,6 @@
 -v $(USER_PROJECT_VERILOG)/gl/yubex_tiny_logic_analyzer.v
 -v $(USER_PROJECT_VERILOG)/gl/user_module_360745091952588801.v
 -v $(USER_PROJECT_VERILOG)/gl/bat52_pwm_ddpm_top.v
+-v $(USER_PROJECT_VERILOG)/gl/granth_crc_decelerator.v
+-v $(USER_PROJECT_VERILOG)/gl/nikor_clock.v
+-v $(USER_PROJECT_VERILOG)/gl/user_module_361684719151591425.v

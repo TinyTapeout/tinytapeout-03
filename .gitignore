@@ -16,3 +16,7 @@ __pycache__
 scan_mux
 .DS_Store
 venv
+verilog/gl/all_sta.tcl
+verilog/gl/merged_user_project_wrapper.v
+verilog/gl/sta.sh
+verilog/gl/user_project_wrapper.v_edited

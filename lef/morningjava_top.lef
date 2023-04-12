@@ -179,9 +179,9 @@ MACRO morningjava_top
       LAYER li1 ;
         RECT 5.520 5.355 144.440 163.285 ;
       LAYER met1 ;
-        RECT 0.530 4.460 145.240 163.440 ;
+        RECT 2.370 5.200 145.240 163.440 ;
       LAYER met2 ;
-        RECT 0.560 4.430 145.210 163.385 ;
+        RECT 2.390 5.255 145.210 163.385 ;
       LAYER met3 ;
         RECT 2.000 162.200 145.230 163.365 ;
         RECT 2.400 160.800 145.230 162.200 ;
@@ -216,8 +216,6 @@ MACRO morningjava_top
         RECT 2.000 9.200 145.230 18.000 ;
         RECT 2.400 7.800 145.230 9.200 ;
         RECT 2.000 5.275 145.230 7.800 ;
-      LAYER met4 ;
-        RECT 49.055 6.295 49.385 69.185 ;
   END
 END morningjava_top
 END LIBRARY

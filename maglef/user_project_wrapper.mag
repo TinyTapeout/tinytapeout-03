@@ -1,11 +1,11 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1680694604
+timestamp 1681310986
 << obsli1 >>
 rect 11104 20071 571696 680929
 << obsm1 >>
-rect 566 3408 580966 701004
+rect 566 3408 580966 700936
 << metal2 >>
 rect 8086 703520 8198 704960
 rect 24278 703520 24390 704960
@@ -1176,7 +1176,7 @@ rect -960 19260 480 19500
 rect -960 6340 480 6580
 rect 583520 6476 584960 6716
 << obsm3 >>
-rect 480 697540 583520 700365
+rect 480 697540 583520 700501
 rect 560 697404 583520 697540
 rect 560 697140 583440 697404
 rect 480 697004 583440 697140
@@ -1407,7 +1407,7 @@ rect 590110 -5734 590730 709670
 rect 591070 -6694 591690 710630
 rect 592030 -7654 592650 711590
 << obsm4 >>
-rect 10952 17715 571848 700365
+rect 10952 17715 571848 700501
 << metal5 >>
 rect -8726 710970 592650 711590
 rect -7766 710010 591690 710630
@@ -2882,8 +2882,8 @@ port 645 nsew signal input
 string FIXED_BBOX 0 0 584000 704000
 string LEFclass BLOCK
 string LEFview TRUE
-string GDS_END 59473210
-string GDS_FILE /home/matt/work/asic-workshop/shuttle9/tinytapeout-03/openlane/user_project_wrapper/runs/23_04_05_13_33/results/signoff/user_project_wrapper.magic.gds
-string GDS_START 52229370
+string GDS_END 67134758
+string GDS_FILE /home/matt/work/asic-workshop/shuttle9/tinytapeout-03/openlane/user_project_wrapper/runs/23_04_12_16_46/results/signoff/user_project_wrapper.magic.gds
+string GDS_START 59884698
 << end >>
 

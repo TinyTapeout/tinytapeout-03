@@ -23,7 +23,7 @@ For the most recent automatic build, click the tt_datasheet badge above, then do
 
 | Index | Author | Title | Type | Git Repo |
 | ----- | ------ | ------| -----| ---------|
-| 0 | Matt Venn | Test Inverter Project | [Wokwi](https://wokwi.com/projects/357464855584307201) | https://github.com/TinyTapeout/tt03-test-invert |
+| 0 | Matt Venn | Test Inverter Project | [Wokwi](https://wokwi.com/projects/361728533238569985) | https://github.com/TinyTapeout/tt03-test-invert |
 | 1 | Wallie Everest | ChipTune | HDL | https://github.com/WallieEverest/tt03 |
 | 2 | icegoat9 | 7 Segment Life | [Wokwi](https://wokwi.com/projects/357752736742764545) | https://github.com/icegoat9/tinytapeout03-7seglife |
 | 3 | Meinhard Kissich, EAS Group, Graz University of Technology | Another Piece of Pi | HDL | https://github.com/meiniKi/tt03-another-piece-of-pi |
@@ -57,3 +57,6 @@ For the most recent automatic build, click the tt_datasheet badge above, then do
 | 31 | yubex | tiny logic analyzer | HDL | https://github.com/yubex/tt03-tiny-logic-analyzer |
 | 32 | ReJ aka Renaldas Zioma | 4-bit ALU | [Wokwi](https://wokwi.com/projects/360745091952588801) | https://github.com/rejunity/tt03-alu-4bit |
 | 33 | Marco Merlin | Pulse-Density Modulators | HDL | https://github.com/bat52/tt03-ddpm-pwm |
+| 34 | Grant Hernandez (@grant-h) | CRC Decelerator | HDL | https://github.com/grant-h/tt03-crc-decelerator |
+| 35 | Matt Venn | 7 segment seconds | HDL | https://github.com/nikor/tt03-verilog-demo |
+| 36 | Norberto Hernandez-Como | Binary to DEC and HEX | [Wokwi](https://wokwi.com/projects/361684719151591425) | https://github.com/jedicomo22/Norberto_IPN_V1 |
