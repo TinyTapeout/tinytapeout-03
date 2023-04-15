@@ -498,6 +498,38 @@ module sky130_fd_sc_hd__buf_4(
 
 endmodule
 
+module sky130_fd_sc_hd__clkinv_2(
+    output wire Y   ,
+    input  wire A   ,
+    input  wire VPWR,
+    input  wire VGND,
+    input  wire VPB ,
+    input  wire VNB
+);
+
+    assign Y = ~A;
+
+    wire _unused;
+    assign _unused = &{ 1'b0, VPWR, VGND, VPB, VNB };
+
+endmodule
+
+module sky130_fd_sc_hd__clkinv_4(
+    output wire Y   ,
+    input  wire A   ,
+    input  wire VPWR,
+    input  wire VGND,
+    input  wire VPB ,
+    input  wire VNB
+);
+
+    assign Y = ~A;
+
+    wire _unused;
+    assign _unused = &{ 1'b0, VPWR, VGND, VPB, VNB };
+
+endmodule
+
 module sky130_fd_sc_hd__clkbuf_2(
     output wire X   ,
     input  wire A   ,
@@ -588,6 +620,29 @@ module sky130_fd_sc_hd__clkinv_1(
 );
 
     assign Y = ~A;
+
+    wire _unused;
+    assign _unused = &{ 1'b0, VPWR, VGND, VPB, VNB };
+
+endmodule
+
+module sky130_fd_sc_hd__dfrtp_4(
+    output reg  Q      ,
+    input  wire CLK    ,
+    input  wire D      ,
+    input  wire RESET_B,
+    input  wire VPWR   ,
+    input  wire VGND   ,
+    input  wire VPB    ,
+    input  wire VNB
+);
+
+    wire RESET = ~RESET_B;
+
+    always @(posedge CLK, posedge RESET) begin
+        if (RESET) Q <= 'd0;
+        else       Q <= D;
+    end
 
     wire _unused;
     assign _unused = &{ 1'b0, VPWR, VGND, VPB, VNB };
