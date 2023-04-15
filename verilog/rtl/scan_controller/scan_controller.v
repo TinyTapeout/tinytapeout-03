@@ -2,7 +2,7 @@
 `default_nettype none
 
 module scan_controller #(
-    parameter integer NUM_DESIGNS = 498,
+    parameter integer NUM_DESIGNS = 498, // Must be even !!!
     parameter integer NUM_IOS     = 8,
 
     // auto-set
@@ -38,7 +38,6 @@ module scan_controller #(
 
     // Signals
     // -------
-    assign ready = active && state == ST_IDLE;
 
     // Reset
     reg  [2:0]  rst_shift;
@@ -86,8 +85,8 @@ module scan_controller #(
     reg [3:0] state_nxt;
 
     // Scan progress
-    reg [$clog2(NUM_IOS)-1:0] bit_cnt;
-    wire                      bit_last;
+    reg [$clog2(NUM_IOS+1)-1:0] bit_cnt;
+    wire                        bit_last;
 
     reg   [8:0] proj_cnt;
     wire        proj_sel;
@@ -122,12 +121,13 @@ module scan_controller #(
     // Misc
     // ----
 
-    // Generate internal ties for the IO blocks
-    assign oeb = {`MPRJ_IO_PADS{1'b0}};
-
+    // Formal tests
     `ifdef FORMAL
         `include "properties.v"
     `endif
+
+    // Generate internal ties for the IO blocks
+    assign oeb = {`MPRJ_IO_PADS{1'b0}};
 
     // Generate our own reset, with de-assertion
     // synchronized to clock
@@ -138,6 +138,9 @@ module scan_controller #(
             rst_shift <= { rst_shift[1:0], 1'b0 };
 
     assign rst_i = rst_shift[2];
+
+    // External ready output
+    assign ready = active && state == ST_IDLE;
 
 
     // Scan chain and IO muxing
@@ -290,7 +293,9 @@ module scan_controller #(
         else if ((state == ST_IN_SHIFT_HI) | (state == ST_OUT_SHIFT_HI))
             bit_cnt <= bit_last ? 0 : (bit_cnt + 1);
 
-    assign bit_last = (bit_cnt == (NUM_IOS - 1));
+    assign bit_last = ((proj_cnt[0] & ~proj_sel) | (proj_done & active_select[0])) ?
+		(bit_cnt ==  NUM_IOS) :
+		(bit_cnt == (NUM_IOS - 1));
 
     // Keep track of project number
     always @(posedge clk)
