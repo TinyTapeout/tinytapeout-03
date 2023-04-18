@@ -60,3 +60,9 @@ For the most recent automatic build, click the tt_datasheet badge above, then do
 | 34 | Grant Hernandez (@grant-h) | CRC Decelerator | HDL | https://github.com/grant-h/tt03-crc-decelerator |
 | 35 | Matt Venn | 7 segment seconds | HDL | https://github.com/nikor/tt03-verilog-demo |
 | 36 | Norberto Hernandez-Como | Binary to DEC and HEX | [Wokwi](https://wokwi.com/projects/361684719151591425) | https://github.com/jedicomo22/Norberto_IPN_V1 |
+| 37 | Uri Shaked | Simon Says | HDL | https://github.com/wokwi/tt03-simon-game |
+| 38 | Dakotath | Shift Register Ram | [Wokwi](https://wokwi.com/projects/360295047631610881) | https://github.com/dakotath/tt03-submission-template |
+| 39 | Emmanouel Matigakis | tinysat | HDL | https://github.com/emmatigakis/tt03-tinysat |
+| 41 | Balint Kovacs | POV display | HDL | https://github.com/dratini0/tt03-pov-display |
+| 42 | jordan336 | Toy CPU | HDL | https://github.com/jordan336/tt03-toy-cpu |
+| 43 | Daniel Wisehart | Base-10 grey counter from 0-9999 | HDL | https://github.com/dwisehart/tt03-submission |

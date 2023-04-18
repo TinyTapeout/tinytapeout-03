@@ -928,7 +928,7 @@ module user_project_wrapper #(
         .io_out (sw_036_module_data_out)
     );
 
-    // [037] https://github.com/TinyTapeout/tt03-test-invert
+    // [037] https://github.com/wokwi/tt03-simon-game
     wire sw_037_clk_out, sw_037_data_out, sw_037_scan_out, sw_037_latch_out;
     wire [7:0] sw_037_module_data_in;
     wire [7:0] sw_037_module_data_out;
@@ -945,12 +945,12 @@ module user_project_wrapper #(
         .module_data_out (sw_037_module_data_out)
     );
 
-    user_module_361728533238569985 user_module_361728533238569985_037 (
+    wokwi_tt03_simon_top wokwi_tt03_simon_top_037 (
         .io_in  (sw_037_module_data_in),
         .io_out (sw_037_module_data_out)
     );
 
-    // [038] https://github.com/TinyTapeout/tt03-test-invert
+    // [038] https://github.com/dakotath/tt03-submission-template
     wire sw_038_clk_out, sw_038_data_out, sw_038_scan_out, sw_038_latch_out;
     wire [7:0] sw_038_module_data_in;
     wire [7:0] sw_038_module_data_out;
@@ -967,12 +967,12 @@ module user_project_wrapper #(
         .module_data_out (sw_038_module_data_out)
     );
 
-    user_module_361728533238569985 user_module_361728533238569985_038 (
+    user_module_360295047631610881 user_module_360295047631610881_038 (
         .io_in  (sw_038_module_data_in),
         .io_out (sw_038_module_data_out)
     );
 
-    // [039] https://github.com/TinyTapeout/tt03-test-invert
+    // [039] https://github.com/emmatigakis/tt03-tinysat
     wire sw_039_clk_out, sw_039_data_out, sw_039_scan_out, sw_039_latch_out;
     wire [7:0] sw_039_module_data_in;
     wire [7:0] sw_039_module_data_out;
@@ -989,12 +989,12 @@ module user_project_wrapper #(
         .module_data_out (sw_039_module_data_out)
     );
 
-    user_module_361728533238569985 user_module_361728533238569985_039 (
+    tinysat tinysat_039 (
         .io_in  (sw_039_module_data_in),
         .io_out (sw_039_module_data_out)
     );
 
-    // [040] https://github.com/TinyTapeout/tt03-test-invert
+    // [040] https://github.com/emmatigakis/tt03-tinysat
     wire sw_040_clk_out, sw_040_data_out, sw_040_scan_out, sw_040_latch_out;
     wire [7:0] sw_040_module_data_in;
     wire [7:0] sw_040_module_data_out;
@@ -1016,7 +1016,7 @@ module user_project_wrapper #(
         .io_out (sw_040_module_data_out)
     );
 
-    // [041] https://github.com/TinyTapeout/tt03-test-invert
+    // [041] https://github.com/dratini0/tt03-pov-display
     wire sw_041_clk_out, sw_041_data_out, sw_041_scan_out, sw_041_latch_out;
     wire [7:0] sw_041_module_data_in;
     wire [7:0] sw_041_module_data_out;
@@ -1033,12 +1033,12 @@ module user_project_wrapper #(
         .module_data_out (sw_041_module_data_out)
     );
 
-    user_module_361728533238569985 user_module_361728533238569985_041 (
+    dratini0_pov_display_top dratini0_pov_display_top_041 (
         .io_in  (sw_041_module_data_in),
         .io_out (sw_041_module_data_out)
     );
 
-    // [042] https://github.com/TinyTapeout/tt03-test-invert
+    // [042] https://github.com/jordan336/tt03-toy-cpu
     wire sw_042_clk_out, sw_042_data_out, sw_042_scan_out, sw_042_latch_out;
     wire [7:0] sw_042_module_data_in;
     wire [7:0] sw_042_module_data_out;
@@ -1055,12 +1055,12 @@ module user_project_wrapper #(
         .module_data_out (sw_042_module_data_out)
     );
 
-    user_module_361728533238569985 user_module_361728533238569985_042 (
+    jordan336_toy_cpu jordan336_toy_cpu_042 (
         .io_in  (sw_042_module_data_in),
         .io_out (sw_042_module_data_out)
     );
 
-    // [043] https://github.com/TinyTapeout/tt03-test-invert
+    // [043] https://github.com/dwisehart/tt03-submission
     wire sw_043_clk_out, sw_043_data_out, sw_043_scan_out, sw_043_latch_out;
     wire [7:0] sw_043_module_data_in;
     wire [7:0] sw_043_module_data_out;
@@ -1077,7 +1077,7 @@ module user_project_wrapper #(
         .module_data_out (sw_043_module_data_out)
     );
 
-    user_module_361728533238569985 user_module_361728533238569985_043 (
+    dwisehart_top dwisehart_top_043 (
         .io_in  (sw_043_module_data_in),
         .io_out (sw_043_module_data_out)
     );

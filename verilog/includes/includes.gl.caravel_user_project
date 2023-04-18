@@ -38,3 +38,9 @@
 -v $(USER_PROJECT_VERILOG)/gl/granth_crc_decelerator.v
 -v $(USER_PROJECT_VERILOG)/gl/nikor_clock.v
 -v $(USER_PROJECT_VERILOG)/gl/user_module_361684719151591425.v
+-v $(USER_PROJECT_VERILOG)/gl/wokwi_tt03_simon_top.v
+-v $(USER_PROJECT_VERILOG)/gl/user_module_360295047631610881.v
+-v $(USER_PROJECT_VERILOG)/gl/tinysat.v
+-v $(USER_PROJECT_VERILOG)/gl/dratini0_pov_display_top.v
+-v $(USER_PROJECT_VERILOG)/gl/jordan336_toy_cpu.v
+-v $(USER_PROJECT_VERILOG)/gl/dwisehart_top.v

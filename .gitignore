@@ -20,3 +20,4 @@ verilog/gl/all_sta.tcl
 verilog/gl/merged_user_project_wrapper.v
 verilog/gl/sta.sh
 verilog/gl/user_project_wrapper.v_edited
+spef/user_project_wrapper.tcl

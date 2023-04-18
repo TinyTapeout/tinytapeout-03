@@ -1,8 +1,9 @@
-// Title:  Top-level wrapper in Verilog
-// File:   morningjava_top.v
-// Author: Wallie Everest
-// Date:   09-APR-2023
-// URL:    https://github.com/wallieeverest/tt03
+// Title:   Top-level wrapper in Verilog
+// File:    morningjava_top.v
+// Author:  Wallie Everest
+// Date:    09-APR-2023
+// URL:     https://github.com/wallieeverest/tt03
+// License: Apache 2.0
 //
 // Description:
 // Implementation:

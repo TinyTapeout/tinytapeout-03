@@ -147,33 +147,33 @@
   status: active
   fill: false
 37:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/wokwi/tt03-simon-game
   status: active
-  fill: true
+  fill: false
 38:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/dakotath/tt03-submission-template
   status: active
-  fill: true
+  fill: false
 39:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/emmatigakis/tt03-tinysat
   status: active
-  fill: true
+  fill: false
 40:
-  url: https://github.com/TinyTapeout/tt03-test-invert
-  status: active
-  fill: true
+  url: https://github.com/emmatigakis/tt03-tinysat
+  status: disable
+  fill: false
 41:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/dratini0/tt03-pov-display
   status: active
-  fill: true
+  fill: false
 42:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/jordan336/tt03-toy-cpu
   status: active
-  fill: true
+  fill: false
 43:
-  url: https://github.com/TinyTapeout/tt03-test-invert
+  url: https://github.com/dwisehart/tt03-submission
   status: active
-  fill: true
+  fill: false
 44:
   url: https://github.com/TinyTapeout/tt03-test-invert
   status: active

@@ -39,3 +39,9 @@
 -v $(USER_PROJECT_VERILOG)/rtl/034_granth_crc_decelerator.v
 -v $(USER_PROJECT_VERILOG)/rtl/035_clock.v
 -v $(USER_PROJECT_VERILOG)/rtl/user_module_361684719151591425.v
+-v $(USER_PROJECT_VERILOG)/rtl/037_top.v
+-v $(USER_PROJECT_VERILOG)/rtl/user_module_360295047631610881.v
+-v $(USER_PROJECT_VERILOG)/rtl/039_tinysat.v
+-v $(USER_PROJECT_VERILOG)/rtl/041_top.v
+-v $(USER_PROJECT_VERILOG)/rtl/042_jordan336_toy_cpu.v
+-v $(USER_PROJECT_VERILOG)/rtl/043_dwisehart_top.v
