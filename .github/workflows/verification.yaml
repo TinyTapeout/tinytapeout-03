@@ -81,17 +81,17 @@ jobs:
         make clean test_scan_controller
 
     # requires riscv for firmware and PDK for standard cells
-#    - name: full chip sim - external
-#      run: |
-#        cd verilog/dv/scan_controller_ext
-#        make coco_test
+    - name: full chip sim - external
+      run: |
+        cd verilog/dv/scan_controller_ext
+        make coco_test
 
     - name: full chip sim - internal
       run: |
         cd verilog/dv/scan_controller_int
         make coco_test
 
-#    - name: full chip sim - logic analyser
-#      run: |
-#        cd verilog/dv/scan_controller_la
-#        make coco_test
+    - name: full chip sim - logic analyser
+      run: |
+        cd verilog/dv/scan_controller_la
+        make coco_test
