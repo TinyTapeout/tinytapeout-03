@@ -99,6 +99,13 @@ void main()
         SET(reg_la0_data, CLK);
         CLR(reg_la0_data, CLK);
 
+        // new scanchain needs 9 clocks for odd numbered projects
+        if(i % 16 == 0) 
+        {
+            SET(reg_la0_data, CLK);
+            CLR(reg_la0_data, CLK);
+        }
+
         if(GET(reg_la0_data_in, DATA_IN)) // returns 1 even if we see x in the trace
             reg_mprj_datal = (1 << TB_CLK) + (1 << DATA_RX);
             //SET(reg_mprj_datal, DATA_RX);

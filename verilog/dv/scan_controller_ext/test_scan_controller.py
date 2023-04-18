@@ -35,7 +35,7 @@ async def test_start(dut):
     await with_timeout(RisingEdge(dut.fw_ready), 650, 'us')
     print("firmware ready")
 
-    # send some data in
+    # send some data in: 0b11110000
     dut.ext_data_in.value = 1
     for i in range(8):
         dut.ext_clk.value = 1
@@ -57,12 +57,20 @@ async def test_start(dut):
     await ClockCycles(dut.clk, 1)
     dut.ext_scan.value = 0
 
-    # drive the data out
-    for i in range(8*20):
+    # drive the data out - expect : 0b11110000
+    for i in range(20*8):
         dut.ext_clk.value = 1
         await ClockCycles(dut.clk, 1)
         dut.ext_clk.value = 0
         await ClockCycles(dut.clk, 1)
+
+        # new scanchain needs 9 clocks for odd numbered projects
+        if i % 16 == 0:
+            dut.ext_clk.value = 1
+            await ClockCycles(dut.clk, 1)
+            dut.ext_clk.value = 0
+            await ClockCycles(dut.clk, 1)
+        
         if i in [152, 153, 154, 155]:
             assert(dut.ext_data_out.value == 1)
         elif i in [156, 157, 158, 159]:
