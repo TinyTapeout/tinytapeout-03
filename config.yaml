@@ -6,8 +6,6 @@ filler_project: https://github.com/TinyTapeout/tt03-test-invert # used by Orders
 project_dir: 'projects'
 test_project_dir: 'test_projects'
 
-num_projects: 250
-
 # macro layout - used by Caravel
 layout:
     rows: 18
@@ -19,6 +17,7 @@ layout:
 
     # module block sizes
     scanchain_w:  30
+    scanchain_h:  120
     scanchain_spc:  8
     module_w: 150
     module_h: 170
@@ -28,4 +27,4 @@ layout:
     space_y: 15
 
     scan_control_x: 100
-    scan_control_y: 100
+    scan_control_y: 130

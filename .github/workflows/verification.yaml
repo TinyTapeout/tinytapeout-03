@@ -30,7 +30,7 @@ jobs:
       uses: actions/checkout@v3
       with:
         repository: tinytapeout/tt-support-tools
-        ref: submission-tools
+        ref: clkinvert
         path: tt
 
     # build pdk - have to move this back above to get caravel makefile
