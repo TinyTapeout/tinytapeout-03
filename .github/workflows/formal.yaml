@@ -2,8 +2,7 @@ name: verification
 # either manually started, or on a schedule
 on: [ push, workflow_dispatch, pull_request ]
 jobs:
-  verification:
-
+  formal:
     # ubuntu
     runs-on: ubuntu-latest
     steps:
