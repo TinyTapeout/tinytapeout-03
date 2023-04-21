@@ -22,9 +22,9 @@ and reduces the number of buffers:
 The main change to the `scanchain` block is related to the clocking and the
 data output. Previously, you'd have something like this :
 
-clk_in ---|>----|>---- clk_out
-              |
-              '------- Internal FFs
+    clk_in ---|>----|>---- clk_out
+                  |
+                  '------- Internal FFs
 
 That is, you had an input buffer receving clock from the previous block and
 sending it to all the scan chain FF and to a strong output buffer that would
@@ -41,10 +41,9 @@ The issues that were identified there are :
 
 The new block is like this :
 
-clk_in ---|>o--------- clk_out
-              |
-              '-|>o--- Internal FFs
-              
+    clk_in ---|>o--------- clk_out
+                  |
+                  '-|>o--- Internal FFs
               
 You have a single inverter that receives the clock and sends it inverted to
 the next block. That inverted clock is also fed to another small inverter
