@@ -106,6 +106,8 @@ module scan_controller #(
 
     // Wait state config
     reg   [7:0] ws_cnt;
+    wire        ws_cnt_done_short;
+    wire        ws_cnt_done_long;
     wire        ws_cnt_done;
     wire        ws_cnt_run;
 
@@ -353,7 +355,9 @@ module scan_controller #(
         else
             ws_cnt <= ws_cnt + 1;
 
-    assign ws_cnt_done = (ws_cnt == ws_cfg);
+    assign ws_cnt_done_long  = ws_cnt == ws_cfg;
+    assign ws_cnt_done_short = ws_cnt == {1'b0, ws_cfg[7:1]};
+    assign ws_cnt_done = (state == ST_OUT_CAP_WAIT) ? ws_cnt_done_long : ws_cnt_done_short;
 
     assign ws_cnt_run = (
         (state == ST_IN_LATCH_WAIT) |
@@ -382,7 +386,7 @@ module scan_controller #(
 
     always @(posedge clk or posedge rst_i)
         if (rst_i)
-            ws_cfg <= 8'd10;
+            ws_cfg <= 8'd20;
         else if (ws_set_now)
             ws_cfg <= inputs;
 

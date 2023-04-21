@@ -18,8 +18,9 @@ set ::env(VERILOG_FILES) "\
 set ::env(FP_CORE_UTIL) 45
 #set ::env(PL_TARGET_DENSITY) [ expr ($::env(FP_CORE_UTIL)+5) / 100.0 ]
 
-# don't put clock buffers on the outputs, need tristates to be the final cells
-#set ::env(PL_RESIZER_BUFFER_OUTPUT_PORTS) 0
+# This is going to drive long wires to the IO
+# prepare the resizer to drive lots of capacitance !
+set ::env(SYNTH_CAP_LOAD) 350
 
 # set absolute size of the die
 set ::env(DIE_AREA) "0 0 230 100"
@@ -27,8 +28,8 @@ set ::env(FP_SIZING) absolute
 
 set ::env(SYNTH_PARAMETERS) "NUM_DESIGNS=250"
 
-# clock period is ns - 200MHz
-set ::env(CLOCK_PERIOD) "5"
+# clock period is ns - 320MHz
+set ::env(CLOCK_PERIOD) "3.6"
 set ::env(CLOCK_PORT) "clk"
 
 set ::env(BASE_SDC_FILE) $::env(DESIGN_DIR)/base.sdc

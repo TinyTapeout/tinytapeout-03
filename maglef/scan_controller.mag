@@ -1,11 +1,11 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1682078256
+timestamp 1682085196
 << obsli1 >>
 rect 1104 2159 44896 17425
 << obsm1 >>
-rect 14 892 45158 19100
+rect 14 892 45250 19100
 << metal2 >>
 rect -10 19200 102 20000
 rect 1278 19200 1390 20000
@@ -94,7 +94,8 @@ rect 38798 19144 40506 19200
 rect 40730 19144 41794 19200
 rect 42018 19144 43726 19200
 rect 43950 19144 45014 19200
-rect 20 856 45152 19144
+rect 45238 19144 45244 19200
+rect 20 856 45244 19144
 rect 158 711 1222 856
 rect 1446 711 3154 856
 rect 3378 711 4442 856
@@ -123,6 +124,7 @@ rect 38798 711 39862 856
 rect 40086 711 41794 856
 rect 42018 711 43726 856
 rect 43950 711 45014 856
+rect 45238 711 45244 856
 << metal3 >>
 rect 45200 18988 46000 19228
 rect 0 18308 800 18548
@@ -385,8 +387,8 @@ port 83 nsew ground bidirectional
 string FIXED_BBOX 0 0 46000 20000
 string LEFclass BLOCK
 string LEFview TRUE
-string GDS_END 1725128
-string GDS_FILE /home/matt/work/asic-workshop/shuttle9/tinytapeout-03/openlane/scan_controller/runs/23_04_21_13_56/results/signoff/scan_controller.magic.gds
-string GDS_START 430346
+string GDS_END 1891054
+string GDS_FILE /home/matt/work/asic-workshop/shuttle9/tinytapeout-03/openlane/scan_controller/runs/23_04_21_15_52/results/signoff/scan_controller.magic.gds
+string GDS_START 500776
 << end >>
 
