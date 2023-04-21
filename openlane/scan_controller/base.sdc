@@ -12,6 +12,9 @@ set_multicycle_path -start -hold -from [get_clocks $::env(CLOCK_PORT)] -to [get_
 # Create feedback clock - scan_clk_in. we don't know what it will arrive, but we know the period 
 create_clock [get_ports scan_clk_in] -name clk_scan_in -period [expr {$::env(CLOCK_PERIOD) * 2}]
 
+# Grouping
+set_clock_groups -asynchronous -group $::env(CLOCK_PORT) clk_scan_out -group clk_scan_in
+
 # CDC
 # receiving data into shift register and clocked by clk_scan_in
 # constrain to a reasonable range
