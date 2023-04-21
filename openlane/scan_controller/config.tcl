@@ -28,7 +28,7 @@ set ::env(FP_SIZING) absolute
 
 set ::env(SYNTH_PARAMETERS) "NUM_DESIGNS=250"
 
-# clock period is ns - 320MHz
+# clock period is ns - 277MHz
 set ::env(CLOCK_PERIOD) "3.6"
 set ::env(CLOCK_PORT) "clk"
 
