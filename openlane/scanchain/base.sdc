@@ -1,6 +1,6 @@
 # Create a clock for the scan chain @ 200 MHz
 create_clock -name clk_scan_in -period 5 [get_ports {clk_in}]
-create_generated_clock -name clk_scan_out -source clk_in -combinational [get_ports {clk_out}]
+create_generated_clock -name clk_scan_out -source clk_in -combinational -invert [get_ports {clk_out}]
 
 # Scan chain input  0.5 ns setup time, 0.5 ns hold time
 set_input_delay  -min  0.5 -clock [get_clocks clk_scan_in]  [get_ports {data_in}]

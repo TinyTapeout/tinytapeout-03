@@ -4,7 +4,7 @@
 #specify internal clock
 #create_clock -name sc_clk_out -period 10 {scanchain_000/clk_in}
 #create_clock -name sc_ck_out -period 22 -waveform {0 22} {scanchain_000/clk_in}
-create_clock -name sc_clk_out -period 24 -waveform {0 18} {scanchain_000/clk_in}
+create_clock -name sc_clk_out -period 6 {scanchain_000/clk_in}
 set_propagated_clock [all_clocks]
 
 
