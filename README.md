@@ -80,5 +80,5 @@ For the most recent automatic build, click the tt_datasheet badge above, then do
 | 53 | Pat Deegan | Neptune guitar tuner (proportional window) | HDL | https://github.com/psychogenic/tt03_neptune_proportional |
 | 54 | Matt Venn | M segments | [Wokwi](https://wokwi.com/projects/357917324056483841) | https://github.com/mattvenn/tt03-m-segments |
 | 55 | Matt Venn | 7 segment seconds | HDL | https://github.com/tinytapeout/tt03-verilog-demo |
-| 56 |  |  | [Wokwi](https://wokwi.com/projects/340805072482992722) | https://github.com/TinyTapeout/tt03-test-7seg |
-| 57 |  |  | [Wokwi](https://wokwi.com/projects/339501025136214612) | https://github.com/TinyTapeout/tt03-test-straight |
+| 56 | Matt Venn | 7 segment wokwi counter | [Wokwi](https://wokwi.com/projects/340805072482992722) | https://github.com/TinyTapeout/tt03-test-7seg |
+| 57 | Matt Venn | Straight through test | [Wokwi](https://wokwi.com/projects/339501025136214612) | https://github.com/TinyTapeout/tt03-test-straight |
