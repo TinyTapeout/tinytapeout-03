@@ -51,3 +51,10 @@
 -v $(USER_PROJECT_VERILOG)/gl/hpretl_tt03_temperature_sensor.v
 -v $(USER_PROJECT_VERILOG)/gl/dsp_4bits_seq_alu.v
 -v $(USER_PROJECT_VERILOG)/gl/pwm.v
+-v $(USER_PROJECT_VERILOG)/gl/user_module_358370685977079809.v
+-v $(USER_PROJECT_VERILOG)/gl/psychogenic_neptunefixed.v
+-v $(USER_PROJECT_VERILOG)/gl/psychogenic_neptuneprop.v
+-v $(USER_PROJECT_VERILOG)/gl/user_module_357917324056483841.v
+-v $(USER_PROJECT_VERILOG)/gl/seven_segment_seconds.v
+-v $(USER_PROJECT_VERILOG)/gl/user_module_340805072482992722.v
+-v $(USER_PROJECT_VERILOG)/gl/user_module_339501025136214612.v

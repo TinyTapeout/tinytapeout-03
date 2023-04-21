@@ -1236,7 +1236,7 @@ module user_project_wrapper #(
         .io_out (sw_050_module_data_out)
     );
 
-    // [051] https://github.com/TinyTapeout/tt03-test-invert
+    // [051] https://github.com/Intubun/tt03-microtapeout
     wire sw_051_clk_out, sw_051_data_out, sw_051_scan_out, sw_051_latch_out;
     wire [7:0] sw_051_module_data_in;
     wire [7:0] sw_051_module_data_out;
@@ -1253,12 +1253,12 @@ module user_project_wrapper #(
         .module_data_out (sw_051_module_data_out)
     );
 
-    user_module_361728533238569985 user_module_361728533238569985_051 (
+    user_module_358370685977079809 user_module_358370685977079809_051 (
         .io_in  (sw_051_module_data_in),
         .io_out (sw_051_module_data_out)
     );
 
-    // [052] https://github.com/TinyTapeout/tt03-test-invert
+    // [052] https://github.com/psychogenic/tt03_neptune_constantwindow
     wire sw_052_clk_out, sw_052_data_out, sw_052_scan_out, sw_052_latch_out;
     wire [7:0] sw_052_module_data_in;
     wire [7:0] sw_052_module_data_out;
@@ -1275,12 +1275,12 @@ module user_project_wrapper #(
         .module_data_out (sw_052_module_data_out)
     );
 
-    user_module_361728533238569985 user_module_361728533238569985_052 (
+    psychogenic_neptunefixed psychogenic_neptunefixed_052 (
         .io_in  (sw_052_module_data_in),
         .io_out (sw_052_module_data_out)
     );
 
-    // [053] https://github.com/TinyTapeout/tt03-test-invert
+    // [053] https://github.com/psychogenic/tt03_neptune_proportional
     wire sw_053_clk_out, sw_053_data_out, sw_053_scan_out, sw_053_latch_out;
     wire [7:0] sw_053_module_data_in;
     wire [7:0] sw_053_module_data_out;
@@ -1297,12 +1297,12 @@ module user_project_wrapper #(
         .module_data_out (sw_053_module_data_out)
     );
 
-    user_module_361728533238569985 user_module_361728533238569985_053 (
+    psychogenic_neptuneprop psychogenic_neptuneprop_053 (
         .io_in  (sw_053_module_data_in),
         .io_out (sw_053_module_data_out)
     );
 
-    // [054] https://github.com/TinyTapeout/tt03-test-invert
+    // [054] https://github.com/mattvenn/tt03-m-segments
     wire sw_054_clk_out, sw_054_data_out, sw_054_scan_out, sw_054_latch_out;
     wire [7:0] sw_054_module_data_in;
     wire [7:0] sw_054_module_data_out;
@@ -1319,12 +1319,12 @@ module user_project_wrapper #(
         .module_data_out (sw_054_module_data_out)
     );
 
-    user_module_361728533238569985 user_module_361728533238569985_054 (
+    user_module_357917324056483841 user_module_357917324056483841_054 (
         .io_in  (sw_054_module_data_in),
         .io_out (sw_054_module_data_out)
     );
 
-    // [055] https://github.com/TinyTapeout/tt03-test-invert
+    // [055] https://github.com/tinytapeout/tt03-verilog-demo
     wire sw_055_clk_out, sw_055_data_out, sw_055_scan_out, sw_055_latch_out;
     wire [7:0] sw_055_module_data_in;
     wire [7:0] sw_055_module_data_out;
@@ -1341,12 +1341,12 @@ module user_project_wrapper #(
         .module_data_out (sw_055_module_data_out)
     );
 
-    user_module_361728533238569985 user_module_361728533238569985_055 (
+    seven_segment_seconds seven_segment_seconds_055 (
         .io_in  (sw_055_module_data_in),
         .io_out (sw_055_module_data_out)
     );
 
-    // [056] https://github.com/TinyTapeout/tt03-test-invert
+    // [056] https://github.com/TinyTapeout/tt03-test-7seg
     wire sw_056_clk_out, sw_056_data_out, sw_056_scan_out, sw_056_latch_out;
     wire [7:0] sw_056_module_data_in;
     wire [7:0] sw_056_module_data_out;
@@ -1363,12 +1363,12 @@ module user_project_wrapper #(
         .module_data_out (sw_056_module_data_out)
     );
 
-    user_module_361728533238569985 user_module_361728533238569985_056 (
+    user_module_340805072482992722 user_module_340805072482992722_056 (
         .io_in  (sw_056_module_data_in),
         .io_out (sw_056_module_data_out)
     );
 
-    // [057] https://github.com/TinyTapeout/tt03-test-invert
+    // [057] https://github.com/TinyTapeout/tt03-test-straight
     wire sw_057_clk_out, sw_057_data_out, sw_057_scan_out, sw_057_latch_out;
     wire [7:0] sw_057_module_data_in;
     wire [7:0] sw_057_module_data_out;
@@ -1385,7 +1385,7 @@ module user_project_wrapper #(
         .module_data_out (sw_057_module_data_out)
     );
 
-    user_module_361728533238569985 user_module_361728533238569985_057 (
+    user_module_339501025136214612 user_module_339501025136214612_057 (
         .io_in  (sw_057_module_data_in),
         .io_out (sw_057_module_data_out)
     );

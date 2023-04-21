@@ -75,3 +75,10 @@ For the most recent automatic build, click the tt_datasheet badge above, then do
 | 48 | Harald Pretl | Synthesizable Digital Temperature Sensor | HDL | https://github.com/hpretl/tt03-tempsensor |
 | 49 | Diego Satizabal | 4-bits sequential ALU | HDL | https://github.com/dsatizabal/tt03-dsp-4bits-sequential-alu |
 | 50 | Ioannis G. Intzes | Brightness control of LED with PWM | HDL | https://github.com/IoannisIn/tt03-verilog-pwm |
+| 51 | Enno Schnackenberg | Microtapeout | [Wokwi](https://wokwi.com/projects/358370685977079809) | https://github.com/Intubun/tt03-microtapeout |
+| 52 | Pat Deegan | Neptune guitar tuner (fixed window) | HDL | https://github.com/psychogenic/tt03_neptune_constantwindow |
+| 53 | Pat Deegan | Neptune guitar tuner (proportional window) | HDL | https://github.com/psychogenic/tt03_neptune_proportional |
+| 54 | Matt Venn | M segments | [Wokwi](https://wokwi.com/projects/357917324056483841) | https://github.com/mattvenn/tt03-m-segments |
+| 55 | Matt Venn | 7 segment seconds | HDL | https://github.com/tinytapeout/tt03-verilog-demo |
+| 56 |  |  | [Wokwi](https://wokwi.com/projects/340805072482992722) | https://github.com/TinyTapeout/tt03-test-7seg |
+| 57 |  |  | [Wokwi](https://wokwi.com/projects/339501025136214612) | https://github.com/TinyTapeout/tt03-test-straight |
