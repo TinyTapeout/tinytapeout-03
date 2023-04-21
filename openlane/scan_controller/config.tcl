@@ -28,8 +28,8 @@ set ::env(FP_SIZING) absolute
 
 set ::env(SYNTH_PARAMETERS) "NUM_DESIGNS=250"
 
-# clock period is ns - 200MHz
-set ::env(CLOCK_PERIOD) "5"
+# clock period is ns - 320MHz
+set ::env(CLOCK_PERIOD) "3.1"
 set ::env(CLOCK_PORT) "clk"
 
 set ::env(BASE_SDC_FILE) $::env(DESIGN_DIR)/base.sdc
