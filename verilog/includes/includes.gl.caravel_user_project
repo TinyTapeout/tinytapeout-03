@@ -44,3 +44,10 @@
 -v $(USER_PROJECT_VERILOG)/gl/dratini0_pov_display_top.v
 -v $(USER_PROJECT_VERILOG)/gl/jordan336_toy_cpu.v
 -v $(USER_PROJECT_VERILOG)/gl/dwisehart_top.v
+-v $(USER_PROJECT_VERILOG)/gl/gbsha_top.v
+-v $(USER_PROJECT_VERILOG)/gl/kiwih_tt_top.v
+-v $(USER_PROJECT_VERILOG)/gl/htfab_microtapeout.v
+-v $(USER_PROJECT_VERILOG)/gl/my_design.v
+-v $(USER_PROJECT_VERILOG)/gl/hpretl_tt03_temperature_sensor.v
+-v $(USER_PROJECT_VERILOG)/gl/dsp_4bits_seq_alu.v
+-v $(USER_PROJECT_VERILOG)/gl/pwm.v

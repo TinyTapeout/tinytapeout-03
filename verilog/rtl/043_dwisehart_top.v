@@ -7,13 +7,12 @@ module dwisehart_top
  output [7:0] io_out
 );
 
-   // In hardware this module drive LED segments, so we need the slowest changing bits.
-   //  Plus I add the three fastest changing bits to probe with a scope.
+   wire [1:0] w_foo2;
    grey m_grey
    (
-    .io_in( io_in ),
-    .hunM( io_out[7:3] ),
-    .ones( io_out[2:0] )
+    .init   ( 60'd0 ),
+    .io_in  ( io_in ),
+    .io_out ( io_out )
    );
 
 endmodule

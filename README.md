@@ -2,7 +2,6 @@
 [![verification](https://github.com/tinytapeout/tinytapeout-03/actions/workflows/verification.yaml/badge.svg)](https://github.com/tinytapeout/tinytapeout-03/actions/workflows/verification.yaml)
 [![tt_datasheet](https://github.com/tinytapeout/tinytapeout-03/actions/workflows/tt_datasheet.yaml/badge.svg)](https://github.com/tinytapeout/tinytapeout-03/actions/workflows/tt_datasheet.yaml)
 [![gl_verification](https://github.com/TinyTapeout/tinytapeout-03/actions/workflows/gl_verification.yaml/badge.svg)](https://github.com/TinyTapeout/tinytapeout-03/actions/workflows/gl_verification.yaml)
-[![formal](https://github.com/TinyTapeout/tinytapeout-03/actions/workflows/formal.yaml/badge.svg)](https://github.com/TinyTapeout/tinytapeout-03/actions/workflows/formal.yaml)
 
 # TinyTapeout 03
 
@@ -66,4 +65,11 @@ For the most recent automatic build, click the tt_datasheet badge above, then do
 | 39 | Emmanouel Matigakis | tinysat | HDL | https://github.com/emmatigakis/tt03-tinysat |
 | 41 | Balint Kovacs | POV display | HDL | https://github.com/dratini0/tt03-pov-display |
 | 42 | jordan336 | Toy CPU | HDL | https://github.com/jordan336/tt03-toy-cpu |
-| 43 | Daniel Wisehart | Base-10 grey counter from 0-9999 | HDL | https://github.com/dwisehart/tt03-submission |
+| 43 | Daniel Wisehart | Base-10 grey counter counts from zero to a trillion | HDL | https://github.com/dwisehart/tt03-submission |
+| 44 | Georg Boecherer | ttFIR filter | HDL | https://github.com/gbsha/ttfir |
+| 45 | Hammond Pearce | QTCore-A1 | HDL | https://github.com/kiwih/tt03-verilog-qtcoreA1 |
+| 46 | htfab | MicroTapeout | HDL | https://github.com/htfab/microtapeout |
+| 47 | ’Mohamed Nasser | nipple multiplier | HDL | https://github.com/mnasser431998/tt03-mnasser-demo |
+| 48 | Harald Pretl | Synthesizable Digital Temperature Sensor | HDL | https://github.com/hpretl/tt03-tempsensor |
+| 49 | Diego Satizabal | 4-bits sequential ALU | HDL | https://github.com/dsatizabal/tt03-dsp-4bits-sequential-alu |
+| 50 | Ioannis G. Intzes | Brightness control of LED with PWM | HDL | https://github.com/IoannisIn/tt03-verilog-pwm |

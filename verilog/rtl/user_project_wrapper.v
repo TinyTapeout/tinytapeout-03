@@ -1082,7 +1082,7 @@ module user_project_wrapper #(
         .io_out (sw_043_module_data_out)
     );
 
-    // [044] https://github.com/TinyTapeout/tt03-test-invert
+    // [044] https://github.com/gbsha/ttfir
     wire sw_044_clk_out, sw_044_data_out, sw_044_scan_out, sw_044_latch_out;
     wire [7:0] sw_044_module_data_in;
     wire [7:0] sw_044_module_data_out;
@@ -1099,12 +1099,12 @@ module user_project_wrapper #(
         .module_data_out (sw_044_module_data_out)
     );
 
-    user_module_361728533238569985 user_module_361728533238569985_044 (
+    gbsha_top gbsha_top_044 (
         .io_in  (sw_044_module_data_in),
         .io_out (sw_044_module_data_out)
     );
 
-    // [045] https://github.com/TinyTapeout/tt03-test-invert
+    // [045] https://github.com/kiwih/tt03-verilog-qtcoreA1
     wire sw_045_clk_out, sw_045_data_out, sw_045_scan_out, sw_045_latch_out;
     wire [7:0] sw_045_module_data_in;
     wire [7:0] sw_045_module_data_out;
@@ -1121,12 +1121,12 @@ module user_project_wrapper #(
         .module_data_out (sw_045_module_data_out)
     );
 
-    user_module_361728533238569985 user_module_361728533238569985_045 (
+    kiwih_tt_top kiwih_tt_top_045 (
         .io_in  (sw_045_module_data_in),
         .io_out (sw_045_module_data_out)
     );
 
-    // [046] https://github.com/TinyTapeout/tt03-test-invert
+    // [046] https://github.com/htfab/microtapeout
     wire sw_046_clk_out, sw_046_data_out, sw_046_scan_out, sw_046_latch_out;
     wire [7:0] sw_046_module_data_in;
     wire [7:0] sw_046_module_data_out;
@@ -1143,12 +1143,12 @@ module user_project_wrapper #(
         .module_data_out (sw_046_module_data_out)
     );
 
-    user_module_361728533238569985 user_module_361728533238569985_046 (
+    htfab_microtapeout htfab_microtapeout_046 (
         .io_in  (sw_046_module_data_in),
         .io_out (sw_046_module_data_out)
     );
 
-    // [047] https://github.com/TinyTapeout/tt03-test-invert
+    // [047] https://github.com/mnasser431998/tt03-mnasser-demo
     wire sw_047_clk_out, sw_047_data_out, sw_047_scan_out, sw_047_latch_out;
     wire [7:0] sw_047_module_data_in;
     wire [7:0] sw_047_module_data_out;
@@ -1165,12 +1165,12 @@ module user_project_wrapper #(
         .module_data_out (sw_047_module_data_out)
     );
 
-    user_module_361728533238569985 user_module_361728533238569985_047 (
+    my_design my_design_047 (
         .io_in  (sw_047_module_data_in),
         .io_out (sw_047_module_data_out)
     );
 
-    // [048] https://github.com/TinyTapeout/tt03-test-invert
+    // [048] https://github.com/hpretl/tt03-tempsensor
     wire sw_048_clk_out, sw_048_data_out, sw_048_scan_out, sw_048_latch_out;
     wire [7:0] sw_048_module_data_in;
     wire [7:0] sw_048_module_data_out;
@@ -1187,12 +1187,12 @@ module user_project_wrapper #(
         .module_data_out (sw_048_module_data_out)
     );
 
-    user_module_361728533238569985 user_module_361728533238569985_048 (
+    hpretl_tt03_temperature_sensor hpretl_tt03_temperature_sensor_048 (
         .io_in  (sw_048_module_data_in),
         .io_out (sw_048_module_data_out)
     );
 
-    // [049] https://github.com/TinyTapeout/tt03-test-invert
+    // [049] https://github.com/dsatizabal/tt03-dsp-4bits-sequential-alu
     wire sw_049_clk_out, sw_049_data_out, sw_049_scan_out, sw_049_latch_out;
     wire [7:0] sw_049_module_data_in;
     wire [7:0] sw_049_module_data_out;
@@ -1209,12 +1209,12 @@ module user_project_wrapper #(
         .module_data_out (sw_049_module_data_out)
     );
 
-    user_module_361728533238569985 user_module_361728533238569985_049 (
+    dsp_4bits_seq_alu dsp_4bits_seq_alu_049 (
         .io_in  (sw_049_module_data_in),
         .io_out (sw_049_module_data_out)
     );
 
-    // [050] https://github.com/TinyTapeout/tt03-test-invert
+    // [050] https://github.com/IoannisIn/tt03-verilog-pwm
     wire sw_050_clk_out, sw_050_data_out, sw_050_scan_out, sw_050_latch_out;
     wire [7:0] sw_050_module_data_in;
     wire [7:0] sw_050_module_data_out;
@@ -1231,7 +1231,7 @@ module user_project_wrapper #(
         .module_data_out (sw_050_module_data_out)
     );
 
-    user_module_361728533238569985 user_module_361728533238569985_050 (
+    pwm pwm_050 (
         .io_in  (sw_050_module_data_in),
         .io_out (sw_050_module_data_out)
     );

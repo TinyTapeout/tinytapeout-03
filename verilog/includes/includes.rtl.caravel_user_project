@@ -45,3 +45,10 @@
 -v $(USER_PROJECT_VERILOG)/rtl/041_top.v
 -v $(USER_PROJECT_VERILOG)/rtl/042_jordan336_toy_cpu.v
 -v $(USER_PROJECT_VERILOG)/rtl/043_dwisehart_top.v
+-v $(USER_PROJECT_VERILOG)/rtl/044_ttfir.v
+-v $(USER_PROJECT_VERILOG)/rtl/045_kiwih_tt_top.v
+-v $(USER_PROJECT_VERILOG)/rtl/046_microtapeout.v
+-v $(USER_PROJECT_VERILOG)/rtl/047_my_design.v
+-v $(USER_PROJECT_VERILOG)/rtl/048_hpretl_tt03_temperature_sensor.v
+-v $(USER_PROJECT_VERILOG)/rtl/049_4bits_alu.v
+-v $(USER_PROJECT_VERILOG)/rtl/050_pwm.v
