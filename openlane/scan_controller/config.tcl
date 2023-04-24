@@ -28,6 +28,10 @@ set ::env(FP_SIZING) absolute
 
 set ::env(SYNTH_PARAMETERS) "NUM_DESIGNS=250"
 
+# synthesis step already adds buffer so you end up with a _2 buffer added by synth rather than the _1
+# clock buffer added by resizer when it thinks outputs[0] is a clock.
+set ::env(PL_RESIZER_BUFFER_OUTPUT_PORTS) 0
+
 # clock period is ns - 277MHz
 set ::env(CLOCK_PERIOD) "3.6"
 set ::env(CLOCK_PORT) "clk"
