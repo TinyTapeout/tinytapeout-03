@@ -82,3 +82,34 @@ For the most recent automatic build, click the tt_datasheet badge above, then do
 | 55 | Matt Venn | 7 segment seconds | HDL | https://github.com/tinytapeout/tt03-verilog-demo |
 | 56 | Matt Venn | 7 segment wokwi counter | [Wokwi](https://wokwi.com/projects/340805072482992722) | https://github.com/TinyTapeout/tt03-test-7seg |
 | 57 | Matt Venn | Straight through test | [Wokwi](https://wokwi.com/projects/339501025136214612) | https://github.com/TinyTapeout/tt03-test-straight |
+| 58 | Benjamin Collier | Combo lock | HDL | https://github.com/BenAtUvu/tt03-ComboLock |
+| 59 | Jorge Marin, Daniel Arevalos | ro-based_tempsense | HDL | https://github.com/JorgeMarinN/tt03_ac3e-usm_ro-based_tempsens |
+| 60 | Juan Sanchez | FSM_LAT | HDL | https://github.com/Juander28/tt03-FSM-LOOK-AT-TABLE-LATAM |
+| 61 | Matt Venn | 7 segment seconds | HDL | https://github.com/kevinwguan/tt03-mmm-verilog |
+| 62 | Alexandra Zhang Jiang | MMM Finite State Machine (4 States) | [Wokwi](https://wokwi.com/projects/362675777226104833) | https://github.com/Ale-ZJ/tt03-mmm-fsm |
+| 63 | Balint Kovacs | FSK modem | HDL | https://github.com/dratini0/tt03-fsk-modem |
+| 64 | Jason Blocklove | ChatGPT-created Benchmarks | HDL | https://github.com/JBlocklove/tt03-qtchallenges-chatgpt_4 |
+| 65 | HiddenRoom | HiddenCPU | HDL | https://github.com/HiddenRoom/tt03-hiddenCPU |
+| 66 | Aleksandr Zlobin | Simple UART interface | HDL | https://github.com/ZlobinAS/tt03-verilog-uart |
+| 67 | Jamie Wood & Daniel Cannell | MSF Clock | HDL | https://github.com/JMW95/tt03-msf-clock |
+| 68 | Robbert | Hamming(7,4) encoder decoder" | HDL | https://github.com/robbertvanginkel/tt03-hamming74 |
+| 69 | Clemens Nasenberg | I2S reeceiver, data mix and transmitter | HDL | https://github.com/cnasenbe/tt03-chnasenb-i2s |
+| 70 | Jan Gray(TT02), Marco Merlin (TT03) | S4GA: Super Slow Serial SRAM FPGA | HDL | https://github.com/bat52/tt03-s4ga |
+| 71 | Richard Miller | 7 Segment Random Walk | [Wokwi](https://wokwi.com/projects/361728681519813633) | https://github.com/millerresearch/tt03 |
+| 72 | ReJ aka Renaldas Zioma | Tiny binarized neural network | HDL | https://github.com/rejunity/tt03-tiny-bnn |
+| 73 | Luca Collini and Hammond Pearce | RTL Locked QTCore-A1 | HDL | https://github.com/Lucaz97/tt03-RTLlocked-verilog-qtcoreA1 |
+| 74 | Martin A. Heredia | Arbiter Game | HDL | https://github.com/maheredia/tt03-arbiter_game |
+| 75 | Tanish Khanchandani | Frequency Divider | [Wokwi](https://wokwi.com/projects/362208154278843393) | https://github.com/tanishnk/tt03-submission-Frequency-Divider |
+| 76 | Marushika Suri  , Siya Sharma  , Rudakshi  Arora  | FullAdderusing4is1 | [Wokwi](https://wokwi.com/projects/362592986761938945) | https://github.com/marsuri77/tt03-submission-template |
+| 77 | Giresh and Aditya  | BCDtoDECIMAL | [Wokwi](https://wokwi.com/projects/362371515213982721) | https://github.com/MIKEPENCE10CENT/tt03-submission-template |
+| 78 | Hunter Scott | AI Decelerator | HDL | https://github.com/blueintegral/tt03-ai-decelerator |
+| 79 | Anish Paul , Pancham Mittal , Ramandeep  | 3BitParallelAdder | [Wokwi](https://wokwi.com/projects/362249236392794113) | https://github.com/Anishpaul04/tt03-submission-template |
+| 80 | Dikshant, Mohit, Sanidhya | Asynchronous 3-Bit Down Counter | [Wokwi](https://wokwi.com/projects/362336485347742721) | https://github.com/DIKSH4NT0615/tt03-submission-template |
+| 81 | Daniel Wisehart | Ring oscillator with skew correction | HDL | https://github.com/dwisehart/tt03-ring-grey |
+| 82 | Ananya | 3 bit multiplier  | [Wokwi](https://wokwi.com/projects/362379207695863809) | https://github.com/Ananya3511/tt03-submission-template |
+| 83 | Noah Hoffman | Tiny Teeth Toothbrush Timer | [Wokwi](https://wokwi.com/projects/362867354023533569) | https://github.com/13arn/tt03-toothbrush-timer |
+| 84 | Naman Garg and Aryan Chaudhary | 2's Compliment Subtractor | [Wokwi](https://wokwi.com/projects/362441918332875777) | https://github.com/namangarg0701/tt03-submission-template |
+| 85 | Tiny Tapeout 02 (J. Rosenthal) | Customizable Padlock | [Wokwi](https://wokwi.com/projects/347417602591556180) | https://github.com/psychogenic/tt03-padlock |
+| 86 | Tiny Tapeout 02 (J. Rosenthal) | Customizable UART String | [Wokwi](https://wokwi.com/projects/347144898258928211) | https://github.com/psychogenic/tt03-UARTstring |
+| 87 | Tiny Tapeout 02 (J. Rosenthal) | Customizable UART Character | [Wokwi](https://wokwi.com/projects/347140425276981843) | https://github.com/psychogenic/tt03-UARTcharacter |
+| 88 | Tiny Tapeout 02 (J. Rosenthal) | 7-Seg 'Tiny Tapeout' Display | [Wokwi](https://wokwi.com/projects/347497504164545108) | https://github.com/psychogenic/tt03-7segstringdisplay |

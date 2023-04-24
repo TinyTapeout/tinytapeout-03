@@ -32,6 +32,13 @@ set ::env(SYNTH_PARAMETERS) "NUM_DESIGNS=250"
 # clock buffer added by resizer when it thinks outputs[0] is a clock.
 set ::env(PL_RESIZER_BUFFER_OUTPUT_PORTS) 0
 
+# try to reduce slew warnings
+set ::env(PL_RESIZER_MAX_SLEW_MARGIN) 0.1
+set ::env(GLB_RESIZER_MAX_SLEW_MARGIN) 0.1
+
+set ::env(PL_RESIZER_MAX_CAP_MARGIN) 0.1
+set ::env(GLB_RESIZER_MAX_CAP_MARGIN) 0.1
+
 # clock period is ns - 277MHz
 set ::env(CLOCK_PERIOD) "3.6"
 set ::env(CLOCK_PORT) "clk"

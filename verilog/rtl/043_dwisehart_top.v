@@ -7,12 +7,26 @@ module dwisehart_top
  output [7:0] io_out
 );
 
-   wire [1:0] w_foo2;
    grey m_grey
    (
+    .i_clk  ( io_in[0] ),
+    .i_rst  ( io_in[1] ),
+    .i_sel  ( io_in[7:2] ),
     .init   ( 60'd0 ),
-    .io_in  ( io_in ),
-    .io_out ( io_out )
+
+    .hunB   (),
+    .tenB   (),
+    .bil    (),
+    .hunM   (),
+    .tenM   (),
+    .mil    (),
+    .hunT   (),
+    .tenT   (),
+    .thou   (),
+    .hund   (),
+    .tens   (),
+    .ones   (),
+    .o_cnt  ( io_out )
    );
 
 endmodule

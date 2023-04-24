@@ -3,13 +3,13 @@
     timestamp: 1682090292.6650858
     url: https://github.com/Intubun/tt03-microtapeout
 - project:
+    reason: Pat
     timestamp: 1682090960.7652276
     url: https://github.com/psychogenic/tt03_neptune_constantwindow
-    reason: Pat
 - project:
+    reason: Pat
     timestamp: 1682090971.9328575
     url: https://github.com/psychogenic/tt03_neptune_proportional
-    reason: Pat
 - project:
     timestamp: 1682091117.1786447
     url: https://github.com/mattvenn/tt03-m-segments
@@ -22,3 +22,19 @@
 - project:
     timestamp: 1682091234.9083855
     url: https://github.com/TinyTapeout/tt03-test-straight
+- project:
+    reason: Wokwi demo
+    timestamp: 1682331321.005952
+    url: https://github.com/psychogenic/tt03-padlock
+- project:
+    reason: Wokwi demo
+    timestamp: 1682331329.271233
+    url: https://github.com/psychogenic/tt03-UARTstring
+- project:
+    reason: Wokwi demo
+    timestamp: 1682331334.8732295
+    url: https://github.com/psychogenic/tt03-UARTcharacter
+- project:
+    reason: Wokwi demo
+    timestamp: 1682331342.3327532
+    url: https://github.com/psychogenic/tt03-7segstringdisplay
