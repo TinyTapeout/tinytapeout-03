@@ -16,13 +16,13 @@ jobs:
     - name: checkout repo
       uses: actions/checkout@v3
 
-    # install the tt tools
-    - name: checkout tt tools repo
-      uses: actions/checkout@v3
-      with:
-        repository: tinytapeout/tt-support-tools
-        ref: submission-tools
-        path: tt
+#    # install the tt tools
+#    - name: checkout tt tools repo
+#      uses: actions/checkout@v3
+#      with:
+#        repository: tinytapeout/tt-support-tools
+#        ref: submission-tools
+#        path: tt
 
     # build pdk - have to move this back above to get caravel makefile
     - name: pdk & openlane & precheck
@@ -35,39 +35,39 @@ jobs:
       run: | 
         make uncompress
 
-    # need python
-    - name: setup python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
-        cache: 'pip'
-    - run: pip install -r tt/requirements.txt
+#    # need python
+#    - name: setup python
+#      uses: actions/setup-python@v4
+#      with:
+#        python-version: '3.10'
+#        cache: 'pip'
+#    - run: pip install -r tt/requirements.txt
 
-    # install oss fpga tools for yosys to sanity check module ports
-    - name: install oss-cad-suite
-      uses: YosysHQ/setup-oss-cad-suite@v2
-      with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          version: '2022-09-03' # pin the version, latest one fails to work with caravel
+#    # install oss fpga tools for yosys to sanity check module ports
+#    - name: install oss-cad-suite
+#      uses: YosysHQ/setup-oss-cad-suite@v2
+#      with:
+#          github-token: ${{ secrets.GITHUB_TOKEN }}
+#          version: '2022-09-03' # pin the version, latest one fails to work with caravel
 
-    # fetch the repos
-    - name: fetch all
-      run: python ./tt/configure.py --clone-all --fetch-gds --debug
+#    # fetch the repos
+#    - name: fetch all
+#      run: python ./tt/configure.py --clone-all --fetch-gds --debug
 
-    # pwd debug
-    - name: show projects
-      run: find projects
+#    # pwd debug
+#    - name: show projects
+#      run: find projects
 
-    # install projects
-    - name: configure
-      run: python ./tt/configure.py --update-caravel
+#    # install projects
+#    - name: configure
+#      run: python ./tt/configure.py --update-caravel
 
     - name: user project wrapper GDS
       run: make user_project_wrapper
 
-    # remove projects so that the precheck doesn't fail on 'non-inclusive words'
-    - name: remove projects
-      run: rm -rf projects
+#    # remove projects so that the precheck doesn't fail on 'non-inclusive words'
+#    - name: remove projects
+#      run: rm -rf projects
 
     - name: precheck
       run: make run-precheck
