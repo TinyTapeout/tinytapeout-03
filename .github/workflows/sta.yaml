@@ -39,7 +39,8 @@ jobs:
       if: success() || failure()
       run: |
         # ignore Harald's weird STA issues
-        ! grep -v hpretl sta.log | grep VIOLATED sta.log
+        grep -v hpretl sta.log > sta.log.2
+        ! grep VIOLATED sta.log.2
 
     - name: upload logs
       if: success() || failure()
