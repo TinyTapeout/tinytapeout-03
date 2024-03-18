@@ -1,0 +1,83 @@
+---
+project:
+  wokwi_id:    0
+
+  source_files:
+    - grey_10.v
+    - grey_1000.v
+    - slow_grey.v
+    - capture.v
+    - ringd.v
+    - scan.v
+    - LED.v
+    - dwisehart_ring_top.v
+  top_module:  "dwisehart_ring_top"
+
+yaml_version: 3.0
+
+documentation:
+  author:       "Daniel Wisehart"
+  title:        "Ring oscillator with skew correction"
+  language:     "Verilog"
+  description:  "Fixing the problem of skew in a ring oscillator with a differential clock ring. "
+
+  how_it_works: |
+      Multiple buffers connected in series have a problem: they skew the incoming waveform on the output because the
+      rise and fall time of the FETs that buffer the signal have uneven rise and fall times.  The solution used here
+      is to use a differential clock signal with two rings of buffers running opposite polarity that need to both
+      have changed before the output is changed.
+
+      The clock ring is then tested by driving grey counters to see if the resulting output is stable and at an
+      expected rate.  The original design--which is still available for testing via cocotb--used multiple rings of
+      different lengths to detect skew with differential timings, but that extended design would not fit into
+      hardware.
+
+  how_to_test:  |
+      After not reset is desasserted, set the bits of select to read one of the grey counters.  The outputs should
+      change each half second with something like "7 6 2 ." over two seconds and then repeats.  If a value is not a
+      good one, a minus sign is shown instead.  A 762. says the divided ratio is 762:1.  The table belows shows what
+      is being measured and what the divide ratio is.  The clock number is the number of stages in its ring buffer.
+      In hardware, the only clock that is running is clock 097, which actually has 93 stages.
+
+      \begin{tabular}{llr}
+      Select input & counter                 & divisor \\
+      000001       & clock 005 vs scan clock & 01,300  \\
+      000011       & clock 011 vs scan clock & 00,600  \\
+      000111       & clock 023 vs scan clock & 00,290  \\
+      000110       & clock 047 vs scan clock & 00,140  \\
+      001110       & clock 097 vs scan clock & 00,069  \\
+      001100       & clock 005 vs clock 011  & 01,500  \\
+      011100       & clock 005 vs clock 023  & 03,000  \\
+      011000       & clock 005 vs clock 047  & 06,000  \\
+      111000       & clock 011 vs clock 023  & 12,000  \\
+      110000       & clock 011 vs clock 047  & 01,500  \\
+      100000       & clock 023 vs clock 047  & 03,000  \\
+      default      & digits 4 5 6 . repeat   & n/a     \\
+      \end{tabular}
+
+  inputs:
+    - clock
+    - not reset
+    - select[5]
+    - select[4]
+    - select[3]
+    - select[2]
+    - select[1]
+    - select[0]
+
+  outputs:
+    - output[7] LED seg a
+    - output[6] LED seg b
+    - output[5] LED seg c
+    - output[4] LED seg e
+    - output[3] LED seg f
+    - output[2] LED seg g
+    - output[1] LED seg h
+    - output[0] LED point
+
+  tag:          "counter, grey, test"
+  external_hw:  ""
+  discord:      "danielwyo#2929"
+  doc_link:     ""
+  clock_hz:     any
+  picture:      ""

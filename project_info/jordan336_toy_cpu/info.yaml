@@ -1,0 +1,103 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# Source files must be in ./src and you must list each source file separately
+  source_files:        
+    - alu.v
+    - cells.v
+    - decode.v
+    - instr_fetch.v
+    - jordan336_toy_cpu.v
+    - reg_file.v
+    - toy_cpu.v
+  top_module:  "jordan336_toy_cpu"
+
+# Keep a track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation: 
+  author:       "jordan336"      # Your name
+  title:        "Toy CPU"      # Project title
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  description:  "Toy CPU is an 8 bit toy CPU for the Tiny Tapeout project."      # Short description of what your project does
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+      ### ISA
+
+      |Opcode|Mnemonic|Name           |Description                         |
+      |------|--------|---------------|------------------------------------|
+      |000   |DISP    |Display        |data_out = reg[src_a]               |
+      |001   |ADD     |Add            |reg[dest] = reg[src_a] + reg[src_b] |
+      |010   |ADD_I   |Add (immediate)|reg[dest] = reg[src_a] + imm        |
+      |011   |AND     |And            |reg[dest] = reg[src_a] & reg[src_b] |
+      |100   |AND_I   |And (immediate)|reg[dest] = reg[src_a] & imm        |
+      |101   |OR      |Or             |reg[dest] = reg[src_a] \| reg[src_b]|
+      |110   |OR_I    |Or (immediate) |reg[dest] = reg[src_a] \| imm       |
+      |111   |STRE    |Store          |reg[dest] = imm                     |
+
+      ### Instruction format
+
+      Instructions are passed using the upper 6 bits of the inputs. Depending on the opcode, the full instruction with opcode and all arguments is passed using one, two, or three 6 bit instruction words.
+
+      |Word|Input [7:5] |Input [4:2]           |Input [1]|Input [0]|
+      |----|------------|----------------------|---------|---------|
+      |0   |opcode[2:0] |src_a[2:0]            |rst      |clk      |
+      |1   |dest[2:0]   |src_b[2:0] or imm[7:5]|rst      |clk      |
+      |2   |{X,imm[4:3]}|imm[2:0]              |rst      |clk      |
+
+      |Opcode|Mnemonic|Number of Instruction Words|
+      |------|--------|---------------------------|
+      |000   |DISP    |1                          |
+      |001   |ADD     |2                          |
+      |010   |ADD_I   |3                          |
+      |011   |AND     |2                          |
+      |100   |AND_I   |3                          |
+      |101   |OR      |2                          |
+      |110   |OR_I    |3                          |
+      |111   |STRE    |3                          |
+
+      ### Start input
+
+      After exiting reset, the Toy CPU looks for a start input to begin processing the instruction stream. The start input is all 1s in the 6 bit instruction word (0x3F). After sampling the start sequence, the CPU will interpret the next 6 bit instruction word as the first word in the instruction stream.
+
+
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+      Drive a clock on input pin 0 and perform a reset using pin 1. Drive the start input on the 6 bit instruction word, then encode your instructions in the above format on the 6 bit instruction word interface.
+
+# A description of what the inputs do
+  inputs:               
+    - clock
+    - reset
+    - instruction[0]
+    - instruction[1]
+    - instruction[2]
+    - instruction[3]
+    - instruction[4]
+    - instruction[5]
+# A description of what the outputs do
+  outputs:
+    - data_out[0]
+    - data_out[1]
+    - data_out[2]
+    - data_out[3]
+    - data_out[4]
+    - data_out[5]
+    - data_out[6]
+    - data_out[7]
+
+# The following fields are optional
+  tag:          "microprocessor"      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  ""      # Describe any external hardware needed
+  discord:      ""      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     10000   # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository

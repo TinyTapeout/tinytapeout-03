@@ -1,0 +1,66 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# Source files must be in ./src and you must list each source file separately
+  source_files:        
+    - guess_game.v
+  top_module:  "guess_game"      # put the name of your top module here, make it unique by prepending your github username
+
+# Keep a track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation: 
+  author:       "Yufei Zhen, Elaina Zodiatis, Khadijatou Dibba"
+  title:        "Random number guess game"
+  language:     "Verilog"
+  description:  "Guess 6-bit random number, 3 attemps in one round. "
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+      Uses '$random' to generate 6-bit random numbers, and input [7:2] to make a guess. 
+      
+      Some combinatorial logics are used to check if the guessed bit matches the random number bit on positive clock edges. 
+      If they match, the corresponding bit in the output [5:0] is set to 1; otherwise, it is set to 0. 
+      
+      Of course a correct guess will output 6'b111111 and reset random numebr to enter a new round. 
+      If the player uses all 3 guesses, the game outputs 6'b000000 and resets with a new random number as well. 
+
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+      After reset, output [5:0] should zero out. 
+
+# A description of what the inputs do
+  inputs:               
+    - clock
+    - rst
+    - guess[0]
+    - guess[1]
+    - guess[2]
+    - guess[3]
+    - guess[4]
+    - guess[5]
+# A description of what the outputs do
+  outputs:
+    - result[0]
+    - result[1]
+    - result[2]
+    - result[3]
+    - result[4]
+    - result[5]
+    - none
+    - none
+
+# The following fields are optional
+  tag:          ""      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  ""      # Describe any external hardware needed
+  discord:      "hcholic#2938"      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     manual       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository

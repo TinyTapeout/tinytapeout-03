@@ -1,0 +1,91 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# Source files must be in ./src and you must list each source file separately
+  source_files:        
+    - simon.v
+    - top.v
+  top_module:  "wokwi_tt03_simon_top"      # put the name of your top module here, make it unique by prepending your github username
+
+# Keep a track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation: 
+  author:       "Uri Shaked"      # Your name
+  title:        "Simon Says"      # Project title
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  description:  "A simple memory game"      # Short description of what your project does
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+      Simon says is a simple electronic memory game: the user has to repeat a growing sequence of colors. 
+      The sequence is displayed by lighting up the LEDs. Each color also has a corresponding tone.
+      
+      In each turn, the game will play the sequence, and then wait for the user to repeat the sequence
+      by pressing the buttons according to the color sequence. 
+      If the user repeated the sequence correctly, the game will play a "leveling-up" sound, 
+      add a new color at the end of the sequence, and move to the next turn.
+      
+      The game continues until the user has made a mistake. Then a game over sound is played, and the game restarts.
+
+      The game supports four clock speeds, which can be selected using the clk3 and clk1 inputs:
+
+      | clk3 | clk1 | Clock Speed |
+      |------|------|-------------|
+      | 0    | 0    | 4KHz        |
+      | 0    | 1    | 6KHz        |
+      | 1    | 0    | 12KHz       |
+      | 1    | 1    | 14KHz       |
+
+      Setting the clock speed affects the speed of the game and the tone generator.
+      
+      Check out the online simulation at https://wokwi.com/projects/352319274216569857 (including wiring diagram).
+
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+      You need four buttons, four LEDs, resistors, and optionally a speaker/buzzer.
+      Ideally, you want to use 4 different colors for the buttons/LEDs (red, green,
+      blue, yellow).
+      1. Connect the buttons to pins `btn1`, `btn2`, `btn3`, and `btn4`, and also 
+        connect each button to a pull down resistor.
+      2. Connect the LEDs to pins `led1`, `led2`, `led3`, and `led4`, matching 
+        the colors of the buttons (so `led1` and `btn1` have the same color, etc.)
+      3. Connect the speaker to the `speaker` pin.
+      4. Select the clock frequency (using the `clk3` and `clk1` inputs).
+      5. Reset the game, and then press any button to start it. Enjoy!
+
+# A description of what the inputs do
+  inputs:               
+    - clock
+    - reset
+    - btn1
+    - btn2
+    - btn3
+    - btn4
+    - clk1
+    - clk3
+# A description of what the outputs do
+  outputs:
+    - led1
+    - led2
+    - led3
+    - led4
+    - speaker
+    - none
+    - none
+    - none
+
+# The following fields are optional
+  tag:          "game,sound"      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  "Four push buttons (with pull-down resistors), four LEDs, and optionally a speaker/buzzer"      # Describe any external hardware needed
+  discord:      "urish#8086"      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     "https://wokwi.com/projects/352319274216569857"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     4000      # Clock frequency in Hz (if required)
+  picture:      "docs/tt-simon-game.jpg"      # relative path to a picture in your repository

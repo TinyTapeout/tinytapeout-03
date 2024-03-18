@@ -1,0 +1,79 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# Source files must be in ./src and you must list each source file separately
+  source_files:        
+    - zl_uart.v
+  top_module:  "zl_uart"      # put the name of your top module here, make it unique by prepending your github username
+
+# Keep a track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation: 
+  author:       "Aleksandr Zlobin"
+  title:        "Simple UART interface"
+  language:     "Verilog"
+  description:  "UART interface with access to internal registers"
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+      Each transaction consists of two bytes. First byte - address and r/w bit.
+      Second byte - data to be written (write transaction), or data read from internal registers (read transaction).
+
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+      After reset LEDs should show 3 horisontal segments.
+      
+      Read transaction: first byte is send by host, device will reply with one data byte. List of implemented commands:
+
+        1. Read 15:18 bits of signature: send 0x00, device will reply with 0xDA byte
+
+        2. Read 7:0 bits of signature: send 0x02, device will reply with 0xDE byte
+
+        3. Read internal register: send 0x04, device will reply with 0x00 byte (initial value of internal register is 0)
+
+        4. Read led register: send 0x06, device will reply with 0x49 byte (initial value of led register is 0x49)
+    
+        5. Read status of input4-input7: send 0x08, device sill reply with byte containing state of the inputs.
+
+      Write transaction: host should send two bytes first - command, second data:
+
+        1. Write to internal register: send 0x05, send byte you want to write
+
+        2. Write to LED register: send 0x07, send byte you want to write to LED register
+
+# A description of what the inputs do
+  inputs:               
+    - clock
+    - reset
+    - rx
+    - input4
+    - input5
+    - input6
+    - input7
+    - input8
+# A description of what the outputs do
+  outputs:
+    - segment a
+    - segment b
+    - segment c
+    - segment d
+    - segment e
+    - segment f
+    - segment g
+    - tx
+
+# The following fields are optional
+  tag:          "uart, test"      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  ""      # Describe any external hardware needed
+  discord:      "Zloy#3870"      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     12500   # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository

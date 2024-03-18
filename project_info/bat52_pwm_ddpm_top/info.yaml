@@ -1,0 +1,101 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# Source files must be in ./src and you must list each source file separately
+  source_files:        
+    - bat52_pwm_ddpm_top.v
+  top_module:  "bat52_pwm_ddpm_top"      # put the name of your top module here, make it unique by prepending your github username
+
+# Keep a track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation: 
+  author:       "Marco Merlin"             # Your name
+  title:        "Pulse-Density Modulators" # Project title
+  language:     "myHDL, python, verilog"   # other examples include Verilog, Amaranth, VHDL, etc
+  description:  "An implementation of a DDPM, PWM and Sigma-Delta Pulse-Density Modulators with python libraries myHDL and PuEDA."  # Short description of what your project does
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+      This project implements three different architectures of Pulse Density Modulators (PDM), to compare performances and 
+      implementation complexity of the different schemes.
+      
+      PDM modulators are of particular interest because exploiting oversampling, they allow to implement 
+      Digital-to-Analog-Conversion (DAC) schemes with an equivalent resolution of multiple bits, based on 
+      a single-bit digital output, by means of a straightforward analogue low-pass filter.      
+
+      The PDM modulators implemented in this project are the following:
+        1) Pulse Width Moulation (PWM)
+        2) Dyadic Digital Pulse Modulation (DDPM)
+        3) Sigma-Delta (SD)
+
+      PWM is arguably the simplest and possibly most widespread PDM technology that is praised for its low complexity.      
+
+      DDPM [1][2][3] is a type of digital modulation technique in which the pulse width are quantized in a dyadic manner, 
+      meaning that they are quantized in powers of two, which allows for efficient implementation using binary arithmetic. 
+      As a consequence, DDPM modulators are relatively inexpensive to deploy, with a complexity comparable to that of widespread 
+      Pulse-Width Moduldation (PWM) modulators.
+
+      SD modulators are perhaps the best-performing PDM technology, that is particularly well suited for higher resolution 
+      data conversion, and typically find use in audio DACs and fractional PLLs. 
+      In spite their good performaces, SD modulators are Infinite-Impulse-Response (IIR) closed-loop systems 
+      which behavior depends on the input signal, resulting in a number of concerns (most notably stability), that typically
+      require careful modeling of the systems and condition under which they will be required to operate.
+
+      This design is separated into two section:
+        1) 6 bits resolution instance of PWM, DDPM and SD fed by a static DC value from the input pins
+        2) 8 bits resolution instance of PWM, DDPM and SD fed sine look-up-table (LUT) that allows to evaluate the spectral content
+        of the modulated signals.
+
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+      Common:
+      The circuit needs to be fed with a clock on pin io_in[0]. 
+      Reset signal needs to be released by raising to 1 pin io_in[1].
+
+      Static DC:      
+      The input inval of the first set of DC modulators is fed through pins io_in[7:2].
+      The low-passed dc component of the outputs on pins io_out[0] (PWM), io_out[1], and io_out[2] is
+      proportional to the decimal value of the input inval. 
+
+      Sinusoidal output:
+      The low-passed outputs on pins io_out[4] (PWM), io_out[5], and io_out[6] is a sinusoidal wave.
+      When clocking the chip with a clock frequency of 12.5kHz, the frequency of the sine is of 0.76z (fsin = fclock / 2^14), so that it should 
+      be visible at naked eye. The different designs should achieve an ENOB of 8 bits in the band 0-40Hz, with different
+      level of out-of-band emission between each other.
+
+# A description of what the inputs do
+  inputs:               
+    - clock
+    - resetn
+    - inval[0]
+    - inval[1]
+    - inval[2]
+    - inval[3]
+    - inval[4]
+    - inval[5]
+# A description of what the outputs do
+  outputs:
+    - pwm       / segment a
+    - ddpm      / segment b
+    - sd        / segment c
+    - 0'b1      / segment d
+    - pwm_sine  / segment e
+    - ddpm_sine / segment f
+    - sd_sine   / segment g
+    - 0'b1      / dot
+
+# The following fields are optional
+  tag:          "pwm, ddpm, sigma-delta, dac"     # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  "clock source"  # Describe any external hardware needed
+  discord:      ""              # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     "https://github.com/bat52/tt03-ddpm-pwm/blob/main/README.md"   # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     12500           # Clock frequency in Hz (if required)
+  picture:      "doc/ddpm.pdf"  # relative path to a picture in your repository

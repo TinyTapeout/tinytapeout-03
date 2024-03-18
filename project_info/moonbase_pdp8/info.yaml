@@ -1,0 +1,83 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# Source files must be in ./src and you must list each source file separately
+  source_files:        
+    - cpu.v
+  top_module:  "moonbase_pdp8"      # put the name of your top module here, make it unique by prepending your github username
+
+# Keep a track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation: 
+  author:       "Paul Campnell"
+  title:        "12-bit PDP8"
+  language:     "Verilog"
+  description:  "PDP8 core"
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+        This is a 12-bit basic PDP8 cpu - it doesn't have the extended arithmetic unit (so no
+        multiply or divide). Included is an assembler (mostly for test).
+        Bus interface is a 5-clock to get 12 bits of address and 12 bits of data though 8-bit
+        interfaces. Address is 2 beats of 6 bits each, data is 3 beats of 4 bits each, I/O 
+        cycles have an extra beat
+
+                    output bits
+                    7 6 5 4 3 2 1 0
+                    1 0 A A A A A A     address hi
+                    1 1 A A A A A A     address lo
+    
+                    0 1 1 I I 4 2 1     IO cycle intro
+    
+                    either
+                    0 0 0 0 - - - -     read data high nibble
+                    0 0 1 0 - - - -     read data med nibble
+                    0 1 0 0 - - - -     read data low nibble
+                    or
+                    0 0 0 1 D D D D     write data high nibble
+                    0 0 1 1 D D D D     write data med nibble
+                    0 1 0 1 D D D D     write data low nibble
+
+        Input bits are ignored except during read beats, interrupts are sampled during the first
+        address beat
+
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+      code in test-bench, assembler in asm dir
+
+# A description of what the inputs do
+  inputs:               
+    - clock
+    - reset
+    - none
+    - none
+    - data_in_0
+    - data_in_1
+    - data_in_2
+    - data_in_3
+# A description of what the outputs do
+  outputs:
+    - address_0_data_mux_0
+    - address_1_data_mux_1
+    - address_2_data_mux_2
+    - address_3_data_mux_3
+    - address_4_rw_mux 
+    - address_5_phase_lo_select_mux
+    - phase_hi_select
+    - address_data_select
+
+# The following fields are optional
+  tag:          "cpu, test"      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  ""      # Describe any external hardware needed
+  discord:      "taniwha#5884"      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     1000       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository

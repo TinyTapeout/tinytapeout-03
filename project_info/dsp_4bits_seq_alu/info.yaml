@@ -1,0 +1,59 @@
+---
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:
+    - 4bits_alu.v
+  top_module:  "dsp_4bits_seq_alu"      # put the name of your top module here, make it unique by prepending your github username
+
+# Keep a track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation:
+  author:       "Diego Satizabal"      # Your name
+  title:        "4-bits sequential ALU"      # Project title
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  description:  "A 4-bits sequential ALU that takes operands and opcode seqentially and performs operations and outputs results"      # Short description of what your project does
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+      The ALU takes 4-bits wide Operators and Operation sequentially with every clock cycle if the enabled signal is set to high, it takes an additional clock to output the result
+
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+      Run `make` from the command line in the src directory to perform all tests suites, you must have Python, cocotb and Icarus Verilog installed
+      If you have GTK Wave installed you can run the command `make test_gtkwave` to generate the VCD output, the run `gtkwave tb.vcd` to see the waveforms
+
+# A description of what the inputs do
+  inputs:
+    - clock
+    - reset
+    - enabled
+    - none
+    - Opx_opcode_0
+    - Opx_opcode_1
+    - Opx_opcode_2
+    - Opx_opcode_3
+
+# A description of what the outputs do
+  outputs:
+    - result_0
+    - result_1
+    - result_2
+    - result_3
+    - done_flag
+    - carry_flag
+    - zero_flag
+    - sign_flag
+
+# The following fields are optional
+  tag:          ""      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  ""      # Describe any external hardware needed
+  discord:      ""      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository

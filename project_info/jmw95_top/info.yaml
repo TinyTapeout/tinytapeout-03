@@ -1,0 +1,90 @@
+---
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+
+  # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here.
+  # Source files must be in ./src and you must list each source file separately
+  source_files:
+    - jmw95_top.v
+    - bcd2bin.v
+    - bcd_to_seven_seg.v
+    - bin2bcd.v
+    - bit_sampler.v
+    - counter.v
+    - days_in_month.v
+    - decoder.v
+    - digits.v
+    - pulse_delay.v
+    - second_counter.v
+    - seven_seg_digits.v
+    - shift_reg.v
+    - time_date_decoder.v
+    - time_date_shift.v
+  top_module:  "jmw95_top"      # put the name of your top module here, make it unique by prepending your github username
+
+# Keep a track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation:
+  author:       "Jamie Wood & Daniel Cannell"      # Your name
+  title:        "MSF Clock"      # Project title
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  description:  "MSF radio clock"      # Short description of what your project does
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+      The MSF radio clock bitstream is synchronised, decoded, and the time displayed on an LED display driven by a shift-register.
+
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+      * Provide 12.5kHz clock to the clock pin, e.g. using the clock divider set to 0.
+      * Connect the data input to a WWVB / MSF receiver module.
+      * Connect the inverted input high if the module outputs a 1 when there is no carrier.
+      * Connect the shift_date input to a button. If held, the display will show date instead of time.
+      * Connect the shift register outputs to a 42-bit shift register chain. Bit 41 is shifted out first.
+
+      Bit | Segment
+      ----|--------
+      41-35 | Hours tens G-A (41=G, 35=A)
+      34-28 | Hours ones G-A as above
+      27-21 | Minutes tens G-A as above
+      20-14 | Minutes ones G-A as above
+      13-7  | Seconds tens G-A as above
+      6-0   | Seconds ones G-A as above
+
+      Time and date are always both shifted out, so an 84-bit shift register will show both simultaneously.
+
+
+# A description of what the inputs do
+  inputs:
+    - clock
+    - reset
+    - data
+    - inverted
+    - shift_date
+    - none
+    - none
+    - none
+# A description of what the outputs do
+  outputs:
+    - shift_clk
+    - shift_data
+    - shift_latch
+    - none
+    - none
+    - none
+    - none
+    - none
+
+# The following fields are optional
+  tag:          "clock, decoder"      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  ""      # Describe any external hardware needed
+  discord:      ""      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     12500   # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository

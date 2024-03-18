@@ -1,0 +1,72 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# Source files must be in ./src and you must list each source file separately
+  source_files:        
+    - onebitcpu.v
+    - dualport_ram.v
+    - shiftreg.v
+    - reg8.v
+  top_module:  "onebitcpu"      # put the name of your top module here, make it unique by prepending your github username
+
+# Keep a track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation: 
+  author:       "Emilio Alvarez"      # Your name
+  title:        "Two Bit Universal FSM"      # Project title
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  description:  "A two bit FSM inspired by Rue Mohr's 1Bit CPU"      # Short description of what your project does
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+      It's a Moore Finite State Machine where the "next step logic" is sinthetized by a Dual-port RAM and latched in a register. "Instructions" are loaded 
+      into the ram using port A through a 16 bit shift registed, clocked in A7-A0-D7-D0 format; once loaded they are written into RAM gating the RW pin.
+      The FSM itself uses port B of ram. Two inputs are concatenated with the address, forming the "next state", and the two ouputs are taken from the 
+      Data bus memory. The CLK runs the machine.
+      
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+      - Initial conditions: clk_shft=0, clk_data=0, wr_shft=0, reset=0; clk_cpu=0, entradas=00 (sorry for the spanish)
+      - Pulse reset line (0->1->0)
+      - Gate 16 bits using clk_shft and data_shft inputs, knowing that (MSB)(LSB) are (A7 downto A0)(D7 downto D0) "instructions", rising edge clock active. 
+      - Once 16 clocks are gated, pulse wr_shft to 1 (0->1->0). Now, contents of shift register are written into RAM
+      - Once the 256 (or desired) instructions are written in ram, start clk_cpu.
+      - Output salidas(Q1,Q0) should start responding to input entradas(D1,D0) in a finite state machine fashion, in synch with cl.
+
+# A description of what the inputs do
+  inputs:               
+    - clk_shft : clock to the 16 bit shift register, risign clock active.
+    - data_shft: data to be gated into the 16 bit shift register
+    - wr_shft  : a pulse here transfers the contents from shift register to RAM
+    - reset    : active high, resets the 16bit shift reg and the Next State reg
+    - clk_cpu  : clock to run the FSM
+    - entradaD0 : input bit D0
+    - entradaD1 : input bit D1
+    - none : unused
+
+# A description of what the outputs do
+  outputs:
+    - salidaQ0  : bit Q0
+    - salidaQ1  : bit Q1
+    - none : unused
+    - none : unused
+    - none : unused
+    - none : unused
+    - none : unused
+    - none : unused
+
+# The following fields are optional
+  tag:          "FSM, finite state machine, one bit cpu, 1bitCPU, Universal Finite State Machine, Two Bit Universal Finite State Machine "      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  "A microcomputer to load the RAM instructions (can be an Arduino), and a clock to run the FSM"      # Describe any external hardware needed
+  discord:      ""      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     1-1000       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository

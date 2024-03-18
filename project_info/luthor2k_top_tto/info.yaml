@@ -1,0 +1,51 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - luthor2k_top_tto.v
+    - main.v
+  top_module:  "luthor2k_top_tto"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Arthur Hazleden"      # Your name
+  discord:      "L2K20"      # Your discord handle
+  title:        "Baudot Converter"      # Project title
+  description:  "This circuit will convert 5-bit Baudot from a teletype machine to 8-bit ASCII."      # Short description of what your project does
+  how_it_works: "Two UARTs, a clock divider and a conversion ROM"      # Longer description of how the project works
+  how_to_test:  | # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+    "Provide 9600Hz at IN0 and 5000Hz at IN1. This sets up a 50 baud input and 9600 baud output.
+    Us a PC set for 50 5n1 to drive the Baudot input. Check the baudot[4:0] pins and baudot_ready(OUT1) if the ASCII output isn't making sense."
+  external_hw:  | # Describe any external hardware needed
+    "An optoisolaor is required at the Baudot input (IN1). A USB serial adapter or RS232 converter should be connected at the ASCII output (OUT0).
+    Hopefully the onboard clock can drive the ASCII UART at 9600 and lower baud. Baudot uses 45.5 Hz and a 100x clock divider drives the UART.
+    Since the TTY machines are not always on spec, drive IN1 with an adjustable 4550 Hz source. Baudot Out Ready and baudot[4:0] are available for
+    debugging purposes."
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     "https://github.com/Luthor2k/tt02-baudot/blob/main/README.md"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     9600       # Clock frequency in Hz (if required)
+  picture:      "https://github.com/Luthor2k/tt02-baudot/blob/main/teleprinter-test.jpg"      # relative path to a picture in your repository
+  inputs:               # a description of what the inputs do
+    - ascii clock at 8x desired baudrate
+    - baudot clock at 100x desired baudrate
+    - baudot input, should be held high when line is idle but connected
+    - none
+    - none
+    - none
+    - none
+    - none
+  outputs:
+    - ASCII serial output at 9600 baud
+    - Baudot UART output byte ready
+    - none
+    - Baudot bit 0
+    - Baudot bit 1
+    - Baudot bit 2
+    - Baudot bit 3
+    - Baudot bit 4

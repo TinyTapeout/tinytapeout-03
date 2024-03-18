@@ -1,0 +1,61 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    362867354023533569        # If using wokwi, set this to your project's ID
+
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# Source files must be in ./src and you must list each source file separately
+#  source_files:        
+#    - counter.v
+#    - decoder.v
+#  top_module:  "seven_segment_seconds"      # put the name of your top module here, make it unique by prepending your github username
+
+# Keep a track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation: 
+  author:       "Noah Hoffman"      # Your name
+  title:        "Tiny Teeth Toothbrush Timer"      # Project title
+  language:     "Wokwi" # other examples include Verilog, Amaranth, VHDL, etc
+  description:  "Simple 2 minute timer that gives visual feedback on the seven-segment display for each 30-second increment that passes. This indicates when to move to the next quarter of the mouth. Each 30 second increment can be blocked by an input switch so the user has to acknowledge they are done with that section before moving forward. At the end of 2 minutes, all segments of the display will flash"      # Short description of what your project does
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+      This project expects a 10KHz clock. It divides it by 2^15 to get about 0.305Hz clock with a period of about 3.27 seconds. This time is reflected by the blinking of the decminal on the seven segment dispaly. After 10 clock cycles, the first input goes high to signify the first 30-second increment is done and the top-right segment of the display will turn on. After the next 30-second increment, the top left segment will turn on. Then the bottom right, and finally the bottom left. Once they are all lit, the 3 segments in the middle will flash to indicate it is done. Each of the 4 increments can be blocked by an enable switch for each one. If desired, a physical input can be used to ensure the timer does not continue to the next section until the user is done the current task.
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+      The timing is dependent on a 10KHz clock. From a hard reset, the first increment may be less than 30 seconds, so it is best to start with at least the "reset first increment" switch off (input 3) or the "enable first increment" switch off (input 7). With the other inputs on (1,2,4,5,6), one should be able to time each segment lighting up after 30 seconds and the 3 middle segments flashing at 2 minutes. If the decimal is not flashing or is flashing at a different period than 3.27 seconds, that indicates either the clock is off (input 1 to connect the clock or 2 to enable the clock dividing) or something other than a 10KHz clock was applied. If one wants to try the gated incremental mode, make sure inputs 4,5,6 start off. As one sees the timer indicate it is time to move on, the user can toggle that section's switch. Each section is sequentially dependent on the next, so if a user want to go back to increment 2, the timer will start from 2 and then 3 and then 4. If it is desired to freeze the process where it is at while not resetting anything, the input 8 "pause" switch can be turned high. For normal operation it should stay low.  
+      
+
+# A description of what the inputs do
+  inputs:               
+    - clock
+    - reset clock
+    - reset first increment
+    - enable fourth increment
+    - enable third increment
+    - enable second increment
+    - enable first increment
+    - pause
+# A description of what the outputs do
+  outputs:
+    - segment a- complete
+    - segment b- first increment done
+    - segment c- third increment done
+    - segment d- complete
+    - segment e- fourth increment done
+    - segment f- second increment done
+    - segment g- complete
+    - dot- clock (3.27 seconds)
+
+# The following fields are optional
+  tag:          "timer, utility, counter, clock"      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  ""      # Describe any external hardware needed
+  discord:      "13arn#9121"      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     10000       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository

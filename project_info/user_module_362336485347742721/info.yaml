@@ -1,0 +1,83 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    362336485347742721     # If using wokwi, set this to your project's ID
+
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# Source files must be in ./src and you must list each source file separately
+#  source_files:        
+#    - counter.v
+#    - decoder.v
+#  top_module:  "seven_segment_seconds"      # put the name of your top module here, make it unique by prepending your github username
+
+# Keep a track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation: 
+  author:       "Dikshant, Mohit, Sanidhya"      # Your name
+  title:        "Asynchronous 3-Bit Down Counter"      # Project title
+  language:     "Wokwi"                                 # other examples include Verilog, Amaranth, VHDL, etc
+  description:  "This Project works as a down counter which counts from 7 to 0"      # Short description of what your project does
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works : | 
+   See The [Wokwi gate and simulation](https://wokwi.com/projects/362336485347742721).
+   * The sequence in which the counter works is as follows :
+   7: 0111
+   3: 0011
+   5: 0101
+   1: 0001
+   6: 0110
+   2: 0010
+   4: 0100
+   0: 0000
+   Here's how the counter works : first, all the three flip flops are set to 1 then for changing the inputs i have used the switch 1 of the Dip switch.
+    * When the count signal is triggered, the first flip-flop (least significant bit) toggles from 1 to 0, which produces the binary number 0111 (decimal 7).
+    * The second count signal should not trigger a change in the counter value, as the next count is 3, not 6.
+    * The third count signal triggers a change in the counter value, where the second flip-flop toggles from 1 to 0, which produces the binary number 0101 (decimal 5).
+    * The fourth count signal should not trigger a change in the counter value, as the next count is 1, not 4.
+    * The fifth count signal triggers a change in the counter value, where the first flip-flop toggles from 0 to 1, and the third flip-flop toggles from 0 to 1, which produces the binary number 0110 (decimal 6).
+    * The sixth count signal should not trigger a change in the counter value, as the next count is 2, not 5.
+    * The seventh count signal triggers a change in the counter value, where the second flip-flop toggles from 0 to 1, which produces the binary number 0100 (decimal 4).
+    * The eighth count signal triggers a change in the counter value, where all three flip-flops toggle from 0 to 1, which produces the binary number 0000 (decimal 0).
+    * The counter stays at 000 until the count signal is triggered again, which causes all three flip-flops to be set back to 1, and the counting process starts again from the beginning of the sequence.
+   In summary, the 3-bit asynchronous down counter counts down in the sequence 7, 3, 5, 1, 6, 2, 4, 0 using three flip-flops and asynchronous inputs to trigger each flip-flop in the sequence.
+   
+   
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+   For Testing this project, the user has to use the switch 1 of the dip switch to give different inputs and then get the desired output on the 7-segment display.
+    
+  
+# A description of what the inputs do
+  inputs:               
+    - clock
+    - reset
+    - I0 - Input
+    - I1 - None
+    - I2 - None
+    - I3 - None
+    - I4 - None
+    - Unused
+# A description of what the outputs do
+  outputs:
+    - segment a - OUT0
+    - segment b - OUT1
+    - segment c - OUT2
+    - segment d - OUT3
+    - segment e - OUT4
+    - segment f - OUT5
+    - segment g - OUT6
+    - dot - None
+
+# The following fields are optional
+  tag:          ""      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  ""      # Describe any external hardware needed
+  discord:      "!CON!C#5234"      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository

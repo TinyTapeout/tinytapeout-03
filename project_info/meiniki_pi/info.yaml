@@ -1,0 +1,78 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# Source files must be in ./src and you must list each source file separately
+  source_files:        
+    - decoder.v
+    - dpd.v
+    - meiniki_pi.v
+  top_module:  "meiniki_pi"      # put the name of your top module here, make it unique by prepending your github username
+
+# Keep a track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation: 
+  author:       "Meinhard Kissich, EAS Group, Graz University of Technology"
+  title:        "Another Piece of Pi"
+  language:     "Verilog"
+  description:  "This design takes up the idea of James Ross [1], who submitted a circuit to Tiny Tapeout 02 that stores and outputs the first 1024 decimal digits of the number Pi (including the decimal point) to a 7-segment display. In contrast to his approach, a densely packed decimal encoding is used to store the data. With this approach, 1400 digits can be stored and output within the design area of 150um x 170um. However, at 1400 decimals and utilization of 38.99%, the limitation seems to be routing. Like James, I'm also interested to hear about better strategies to fit more information into the design with synthesizable Verilog code.
+  [1] https://github.com/jar/tt02_freespeech"
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+      The circuit stores each triplet of decimals in a 10-bit vector encoded as densely packed decimals. An index vector selects the current digits to be output to the 7-segment display. It consists of an upper part `index[11:2]` that selects the triplet and a lower part `index[1:0]` that specifies the digit within the triplet. First, the upper part decides on the triplet, which is then decoded into three decimals. Afterwards, the lower part selects one of the three decimals to be decoded into 7-segment display logic and applied to the outputs. The index is incremented at each primary clock edge. However, when the lower part equals three, i.e., `index[1:0]==1'b10`, two is added, as the triplet consists of three (not four) digits.
+
+      - `index == 'b0000000000|00`: triplet[0], digit 0 within triplet  
+      - `index == 'b0000000000|01`: triplet[0], digit 1 within triplet  
+      - `index == 'b0000000000|10`: triplet[0], digit 2 within triplet  
+      - `index == 'b0000000001|00`: triplet[1], digit 0 within triplet  
+      - `index == 'b0000000001|01`: triplet[1], digit 1 within triplet  
+      - `index == 'b0000000001|10`: triplet[1], digit 2 within triplet
+
+      There is one exception to the rule above: the decimal point. Another multiplexer at the input of the 7-segment decoder can either forward a digit from the decoded tripled or a constant -- the decimal point. Once the lower part of the index counter, i.e., `index[1:0]` reaches `2'b10` for the first time, the multiplexer selects the decimal point and pauses incrementing the index for one clock cycle.
+
+      - `index == 'b0000000000|00`: triplet[0], digit 0 within triplet  
+      - `index == 'b0000000000|01`: triplet[0], decimal point
+      - `index == 'b0000000000|01`: triplet[0], digit 1 within triplet  
+      - `index == 'b0000000000|10`: triplet[0], digit 2 within triplet  
+      - `index == 'b0000000001|00`: triplet[1], digit 0 within triplet  
+
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+      For simulation, please use the provided testbench and Makefile. It is important to run the `genmux.py` Python script first, as it generates the test vectors required by the Verilog testbench. For testing the physical chip, release the reset and compare the digits of Pi against a reference.
+
+# A description of what the inputs do
+  inputs:               
+    - clk
+    - reset
+    - none
+    - none
+    - none
+    - none
+    - none
+    - none
+# A description of what the outputs do
+  outputs:
+    - segment a
+    - segment b
+    - segment c
+    - segment d
+    - segment e
+    - segment f
+    - segment g
+    - decimal LED
+
+# The following fields are optional
+  tag:          "pi, data, storage, verilog, 7-segment, display, experiment"      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  "7-segment display"      # Describe any external hardware needed
+  discord:      "Meinhard#5781"      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository

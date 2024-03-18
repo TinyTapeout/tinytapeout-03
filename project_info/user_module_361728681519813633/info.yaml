@@ -1,0 +1,77 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    361728681519813633        # If using wokwi, set this to your project's ID
+
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# Source files must be in ./src and you must list each source file separately
+#  source_files:        
+#    - counter.v
+#    - decoder.v
+#  top_module:  "seven_segment_seconds"      # put the name of your top module here, make it unique by prepending your github username
+
+# Keep a track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation: 
+  author:       "Richard Miller"      # Your name
+  title:        "7 Segment Random Walk"      # Project title
+  language:     "Wokwi" # other examples include Verilog, Amaranth, VHDL, etc
+  description:  "Random walk around the 7 segment display"      # Short description of what your project does
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+      Segments of the 7seg display are activated in a sequence controlled
+      by a finite state machine. The state is represented by 14 flipflops.
+      Each segment has two flipflops, one for each direction of the walk.
+      Where a segment has two possible successors, a mux selects
+      between them, controlled by the output from a linear feedback shift
+      register acting as a random number generator. The FSM is self
+      initialising so a reset signal isn't required: the number of true
+      flipfops is summed, and if the total isn't exactly 1 the state will
+      be initialised to have a single segment and direction active. A
+      clock divider is used to slow the walk to a visible speed. This is
+      done by gating the flipflop state transitions with a pulse generated
+      every 2^N clock cycles (where N is a 4-bit number set by the DIP
+      switches.) The pulses are obtained by using a tree of muxes controlled
+      by the bits of N to select one carry bit from within a 16-bit counting
+      register.
+
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+      Use switches 5-8 (LSB is switch 8) to set a number N from 0 to 15;
+      the clock will be divided by 2^N. To test the clock, set switch 4 on
+      and the 7seg dot will flash at half the clock speed.
+
+# A description of what the inputs do
+  inputs:               
+    - clock
+    - none
+    - none
+    - enable flashing dot
+    - clock divisor bit 3 (MSB)
+    - clock divisor bit 2
+    - clock divisor bit 1
+    - clock divisor bit 0 (LSB)
+# A description of what the outputs do
+  outputs:
+    - segment a
+    - segment b
+    - segment c
+    - segment d
+    - segment e
+    - segment f
+    - segment g
+    - dot
+
+# The following fields are optional
+  tag:          ""      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  ""      # Describe any external hardware needed
+  discord:      ""      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository

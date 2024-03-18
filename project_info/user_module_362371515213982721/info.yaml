@@ -1,0 +1,62 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id: 362371515213982721  # If using wokwi, set this to your project's ID
+
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# Source files must be in ./src and you must list each source file separately
+#  source_files:        
+#    - counter.v
+#    - decoder.v
+#  top_module:  "seven_segment_seconds"      # put the name of your top module here, make it unique by prepending your github username
+
+# Keep a track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation: 
+  author:       "Giresh and Aditya "      # Your name
+  title:        "BCDtoDECIMAL"      # Project title
+  language:     "Wokwi" # other examples include Verilog, Amaranth, VHDL, etc
+  description:  "The objective of this project is to create a circuit that can convert Binary Coded Decimal (BCD) numbers to their decimal equivalents. This will enable users to easily convert BCD numbers, which are commonly used in electronic devices, into the decimal format that is more commonly understood."      # Short description of what your project does
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+      Explain how your project works : A BCD to decimal generator on a seven-segment display works by converting Binary Coded Decimal (BCD) input signals into the corresponding decimal digits that can be displayed on a seven-segment display. The BCD input consists of four binary digits, where each digit corresponds to a decimal number between 0 and 9. These four digits are converted into their corresponding decimal values by using a decoder circuit. The decoder circuit uses logic gates to decode the BCD input signals into the corresponding outputs for each of the seven segments in the seven-segment display. Each segment is either turned on or off, depending on the decimal value of the BCD input.
+
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+      Explain how to test your project : To test this project we have connected the output pins of this circuit to the seven segment pins.To display the decimal digit on the seven-segment display, the corresponding segments are turned on or off, depending on the decimal value of the BCD input. For example, if the BCD input is 0010, the decoder circuit will turn on segment A, segment F, and segment G to display the decimal digit 2 on the seven-segment display.
+
+# A description of what the inputs do
+  inputs:               
+    - B: connected to IN0
+    - C: connected to IN1
+    - D: connected to IN2
+    - E: connected to IN3
+    - none
+    - none
+    - none
+    - none
+# A description of what the outputs do
+  outputs:
+
+    - segment a : connected to OUT0
+    - segment b : connected to OUT1
+    - segment c : connected to OUT2
+    - segment d : connected to OUT3
+    - segment e : connected to OUT4
+    - segment f : connected to OUT5
+    - segment g : connected to OUT6
+    - dot
+
+# The following fields are optional
+  tag:          ""      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  ""      # Describe any external hardware needed
+  discord:      " adityasoni#2009"      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository

@@ -1,0 +1,71 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+  source_files:        # If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. Source files must be in ./src
+    - FSM_LAT.v
+    - FSM.v
+    - clk_sel.v
+    - clock_div.v
+    - clock_divider.v
+    - SIPO.v
+    - dff_5.v
+    - d_ff.v
+    - desition.v
+    - chaout.v
+    - Comparador.v
+    - counter.v
+    - registro20bits.v
+    - jk_ff.v
+    - mux2_1.v
+    - PISO.v
+    - piso_1_bit.v
+    - PISO_div.v
+    - ring_osc.v
+    - inv_with_delay.v
+    - inv_with_delay_16.v
+    - nand2_with_delay.v
+    #
+    
+  top_module:  "FSM_LAT"      # put the name of your top module here, make it unique by prepending your github username
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it.
+#
+# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
+#
+# This info will be automatically collected and used to make a datasheet for the chip.
+documentation: 
+  author:       "Juan Sanchez"      # Your name
+  discord:      "juander28#1964"      # Your discord handle
+  title:        "FSM_LAT"      # Project title
+  description:  "FSM look at table"      # Short description of what your project does
+  how_it_works: "el proyecto es una maquina de estados a la cual se le puede cambiar la secuencia de los estados por medio de una entrada serial "      # Longer description of how the project works
+  how_to_test:  "para cagar la secuencnia de estados se debe conectar un relog el cual este sincronixado con la secuencia serial para programar la maquina de estados = y para pasar de estado la entrada conectada a cada estado debe estar en 1"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  external_hw:  "un fpga que permita generar un relog una salida serial para programar la secuencia de la maquina de estados "      # Describe any external hardware needed
+  language:     "verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository
+  inputs:             # a description of what the inputs do
+
+# A description of what the outputs do
+  inputs:             # a description of what the inputs do
+    - oi_in[0]
+    - oi_in[1]
+    - oi_in[2]
+    - oi_in[3]
+    - oi_in[4]
+    - oi_in[5]
+    - oi_in[6]
+    - oi_in[7]
+  outputs:
+    - oi_out[1]
+    - oi_out[2]
+    - oi_out[3]
+    - oi_out[4]
+    - oi_out[5]
+    - oi_out[6]
+    - oi_out[7]
+    - oi_out[0]
+

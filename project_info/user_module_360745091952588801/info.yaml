@@ -1,0 +1,99 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    360745091952588801        # If using wokwi, set this to your project's ID
+
+# Keep a track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation: 
+  author:       "ReJ aka Renaldas Zioma"      # Your name
+  title:        "4-bit ALU"                   # Project title
+  language:     "Wokwi" # other examples include Verilog, Amaranth, VHDL, etc
+  description:  Digital design for a 4-bit ALU supporting 8 different operations and built-in 4-bit accumulator register
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+      Each clock cycles ALU performs one of the 8 possible operations and stores result in the 4-bit accumulator register.
+
+      accumulator [4 bit] = accumulator [4 bit] (operation) operand [4 bit]
+
+      Supported operations:
+      lda imm   ::  imm -> accumulator
+      neg imm   ::  0x0F - imm -> accumulator
+      shr       ::  accumulator / 2 -> accumulator
+      sub imm   ::  accumulator - imm -> accumulator
+      and imm   ::  accumulator & imm -> accumulator
+      xor imm   ::  accumulator ^ imm -> accumulator
+      or  imm   ::  accumulator | imm -> accumulator
+      add imm   ::  accumulator + imm -> accumulator
+
+      Matrix mapping of operation opcode to internal control signals
+               muxA muxB muxC AtoX negX setC outC invC
+      000 lda   -    -    1    0    0    -    0    -
+      001 neg   -    -    1    0    1    -    0    -
+      010 shr   -    -    1    1    0    -    0    -
+      011 sub   1    1    0    0    1    1    1    1
+      100 and   0    0    0    0    0    -    0    -
+      101 xor   0    1    0    0    0    -    0    -
+      110 or    1    0    0    0    0    -    0    -
+      111 add   1    1    0    0    0    0    1    0
+
+
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+    The following diagram shows a simple test setup that can be used to test ALU
+    ```
+      VCC
+      |    __|__ pushbutton
+      +----.   .-------------+
+                            _|_
+                 schmitt    \ /
+                 trigger     O
+                 inverter    |
+                             +--> CLK   OUT0--> +-----------+
+                   +--------+---> OP0   OUT1--> +  hex to   +
+                   +        +---> OP1   OUT2--> + 7 segment +--->> 7 segment display
+                   +        +---> OP2   OUT3--> +  decoder  +
+                   +  DIP   +---> IMM0          +-----------+
+                   + switch +---> IMM1          
+                   +        +---> IMM2          
+                   +        +---> IMM3 CARRY--> LED
+                   +--------+--
+    ```
+    
+    To reset ALU set all input pins to 0 which corresponds to ```lda 0``` operation
+    loading Accumulator register with 0.
+
+# A description of what the inputs do
+  inputs:               
+    - clock
+    - opcode 0th bit
+    - opcode 1st bit
+    - opcode 2nd bit
+    - operand 0th bit
+    - operand 1st bit
+    - operand 2nd bit
+    - operand 3rd bit
+# A description of what the outputs do
+  outputs:
+    - accumulator value 0th bit
+    - accumulator value 1st bit
+    - accumulator value 2nd bit
+    - accumulator value 3rd bit
+    - unused (TODO: negative flag)
+    - unused (TODO: overflow flag)
+    - unused (TODO: zero flag)
+    - carry flag
+
+# The following fields are optional
+  tag:          "alu"      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  "push-button, debouncer, DIP-switch, 5 LEDs"      # Describe any external hardware needed
+  discord:      "ReJ aka Renaldas Zioma#3631"      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     "README.md"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository

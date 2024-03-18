@@ -1,0 +1,68 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# Source files must be in ./src and you must list each source file separately
+  source_files:        
+    - lukevassallo_xor_cipher.v
+    - dual_xor_stream_cipher.v
+    - signature.v
+    - counter.v
+    - lfsr.v
+  top_module:  "lukevassallo_xor_cipher"      # put the name of your top module here, make it unique by prepending your github username
+
+# Keep a track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation: 
+  author:       "Luke Vassallo"
+  title:        "XOR Stream Cipher"
+  language:     "Verilog"
+  description:  "An two channel XOR stream cipher with fully programmable 32-bit galois LFSRs."
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+    An XOR (exclusive or) cipher is a type of encryption that uses a bitwise exclusive or operation to combine a plaintext message with a secret key. This process generates a ciphertext that can only be decrypted by someone with the same secret key. XOR ciphers are commonly used in computer security and are popular due to their simplicity and efficiency. They can be implemented in hardware using XOR cipher chips, which typically use a Galois LFSR (linear feedback shift register) to generate a key stream that is XORed with the plaintext to produce the ciphertext. XOR ciphers are considered relatively secure as long as the secret key is kept secret and is not easily guessable.
+
+    The system uses a Galois Linear Feedback Shift Register (LFSR) to produce a key stream that is combined with the incoming bitstream through an XORing process to create the cipher stream that appears at the output. A concurrent channel is additionally provided such that a transmission and receiption bitstream can be encrypted and decrypted simultaneously. When the system is reset, a default confgiruation is applied that will encrypt the bitsream on tx_p and decrypt the bistream on rx_e when te_en and rx_en are respectively driven high.
+
+    To configure the chip (optional), a 130-bit configuration vector is serial shifted through the pin cfg_i while the current configuration is simultaneously outputted on pin cfg_o. This configuration method functions as a lengthy shift register with its input connected to cfg_i and its output connected to cfg_o. It only operates synchronously to clk when cfg_en is asserted. The configuration vector consists of bits 95->64, 31->0 for the tx/rx LFSR state, 127->96, 63->32  bits for the tx/rx LFSR taps. Power-on-reset state has the taps configured for PRBS-31 and LFSR state holding 0x55. Bit 128 is used to internally route the output bitstreams through an XOR that returns the original bitstreams provided at the input albeit placed on debug output pins (disabled by default). Bit 129 selects between the internal or externally provided plaintext generator (default).
+
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+    Reset the module and optionally configure the LFSR taps, state and other options using the serial shift configuration register. When the enable pin (tx_en/rx_en) is asserted the corresponding channel is activate and the plain/cipher text bitstream will be encrypted/decrypted. Detailed simulation, FPGA and ASIC design examples are available on GitHub (https://github.com/LukeVassallo/tt03-xor-cipher). The GitHub repository is mirrored on my private GitLab instance (https://gitlab.lukevassallo.com/luke/tt03-xor-cipher) that incorporates automated builds and pre-built bitstreams. 
+    
+# A description of what the inputs do
+  inputs:               
+    - clk (12.5KHz system clock)
+    - rst (Active high synchronous reset)
+    - tx_p (Plaintext bitstream for transmission)
+    - cfg_i (Configuration input to the 130-bit serial shift register)
+    - cfg_en (Active high configuration enable)
+    - tx_en (Transmit channel enable)
+    - rx_e (Encrypted bitstream for receiption)
+    - rx_en (Receive channel enable)
+# A description of what the outputs do
+  outputs:
+    - tx_e ( Encrypted bitstream for transmission)
+    - dbg_tx_p (Decrypted transmit bitstream, pin disabled by default)
+    - dbg_rx_e (Encrypted receive bitstream, pin disabled by default)
+    - rx_p (Decrypted bitstream for receiption)
+    - cfg_o (Configuration output from the 130-bit shift register)
+    - heartbeat[7] (bit from heartbeat counter)
+    - heartbeat[8] (bit from heartbeat counter)
+    - heartbeat[9] (bit from heartbeat counter)
+
+# The following fields are optional
+  tag:          "xor, stream cipher, encryption circuit, decryption circuit"      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  "General puporse FPGA with PMOD connector for detailed testing./"      # Describe any external hardware needed
+  discord:      ""      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     12500       # Clock frequency in Hz (if required)
+  picture:      "./docs/dual-xor-top-level.png"      # relative path to a picture in your repository

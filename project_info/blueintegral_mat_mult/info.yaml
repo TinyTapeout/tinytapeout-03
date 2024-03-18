@@ -1,0 +1,62 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# Source files must be in ./src and you must list each source file separately
+  source_files:        
+    - matrix.v
+  top_module:  "blueintegral_mat_mult"      # put the name of your top module here, make it unique by prepending your github username
+
+# Keep a track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation: 
+  author:       "Hunter Scott"      # Your name
+  title:        "AI Decelerator"      # Project title
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  description:  "A 2x2 matrix multiplier, guaranteed to slow down your AI model training."      # Short description of what your project does
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+      Just performs arithmetic to do the matrix multiplication and outputs the result.
+
+
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+      Use the DIP switches to set the value of each position in the two matrices you're multiplying. That means that each position in each input matrix can only contain a zero or one. The output is 4 groups of 2 bits, each group representing one of the positions in the output matrix. 
+
+# A description of what the inputs do
+  inputs:               
+    - 7 is Matrix 1, top left
+    - 6 is Matrix 1, top right
+    - 5 is Matrix 1, bottom left
+    - 4 is Matrix 1, bottom right
+    - 3 is Matrix 2, top left
+    - 2 is Matrix 2, top right
+    - 1 is Matrix 2, bottom left
+    - 0 is Matrix 2, bottom right
+# A description of what the outputs do
+  outputs:
+    - 7 is Result matrix, top left, bit 1
+    - 6 is Result matrix, top left, bit 0
+    - 5 is Result matrix, top right, bit 1
+    - 4 is Result matrix, top right, bit 0
+    - 3 is Result matrix, bottom left, bit 1
+    - 2 is Result matrix, bottom left, bit 0
+    - 1 is Result matrix, bottom right, bit 1
+    - 0 is Result matrix, bottom right, bit 0
+
+
+# The following fields are optional
+  tag:          ""      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  ""      # Describe any external hardware needed
+  discord:      ""      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository

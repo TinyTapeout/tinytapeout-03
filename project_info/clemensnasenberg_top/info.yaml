@@ -1,0 +1,67 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# Source files must be in ./src and you must list each source file separately
+  source_files:        
+    - clemensnasenberg_top.v
+  top_module:  "clemensnasenberg_top"      # put the name of your top module here, make it unique by prepending your github username
+
+# Keep a track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation: 
+  author:       "Clemens Nasenberg"
+  title:        "I2S reeceiver, data mix and transmitter"
+  language:     "Verilog"
+  description:  "Mix two I2S streams according to selection"
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+        Read in 2 Channels of I2S streams, mix them according to input bits (mute, I2S input 1 or 2 or both) and send them out again.
+        For adding the LSB of the data is truncated.
+        This should support standard I2S transmitter/receiver.
+
+            https://www.sparkfun.com/datasheets/BreakoutBoards/I2SBUS.pdf
+
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+        You need to connect the word select signal (WS), continous serial clock (SCK) and serial data for channel 1 and 2 (SD_CH1 SD_CH2).
+        Configure channel_sel (b00 is mute, b01 channel 1, b10 channel 2 and b11 is adding ch1 and ch2), reset, then
+        let and I2S master drive the signals according to the standard and receive data on the output SD_OUT.
+        Some other IC needs to act as clock master and provide the clocks and signals.
+
+# A description of what the inputs do
+  inputs:               
+    - sck
+    - reset
+    - ws
+    - sd_ch1
+    - sd_ch2
+    - channel_sel
+    - none
+    - none
+# A description of what the outputs do
+  outputs:
+    - wsd 
+    - wsp
+    - sd_out
+    - none
+    - none
+    - none
+    - none
+    - none
+
+# The following fields are optional
+  tag:          "i2s, audio, adder, dsp"      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  "I2S Controller/Transmitter/Receiver"      # Describe any external hardware needed
+  discord:      "cnasenbe#2318"      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     1000       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository

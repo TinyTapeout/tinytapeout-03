@@ -1,0 +1,70 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id: 0  # Using HDL, not Wokwi.
+
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# Source files must be in ./src and you must list each source file separately
+  source_files:        
+    - product.v
+  top_module:  "algofoogle_product"      # put the name of your top module here, make it unique by prepending your github username
+
+# Keep a track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation: 
+  author:       "Anton Maurovic"
+  title:        "Simple multiply"
+  language:     "Verilog"
+  description:  "Multiply two 8-bit numbers, get a 16-bit result."
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+      Do synchronous reset first, then on each rising clock edge...
+
+      Clock in each of two 8-bit values, one `nibble` at a time (high to low).
+
+      Then clock out a 16-bit value, one byte (via `result`) at a time (high to low).
+
+# Instructions on how someone could test your project:
+  how_to_test:  |
+      After synchronous reset, expect `result` output to be 0.
+
+      Set `nibble` to a value of your choice, then pulse the clock.
+
+      Repeat 3 more times.
+
+      Then pulse the clock 1 more times, each time expecting to get a byte at the output `result`.
+
+# A description of what the inputs do
+  inputs:               
+    - clock
+    - reset
+    - none
+    - none
+    - nibble[0]
+    - nibble[1]
+    - nibble[2]
+    - nibble[3]
+# A description of what the outputs do
+  outputs:
+    - result[0]
+    - result[1]
+    - result[2]
+    - result[3]
+    - result[4]
+    - result[5]
+    - result[6]
+    - result[7]
+
+# The following fields are optional
+  tag:          "test, multiplier"      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  ""      # Describe any external hardware needed
+  discord:      "algofoogle#4505"      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     "Any"   # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository

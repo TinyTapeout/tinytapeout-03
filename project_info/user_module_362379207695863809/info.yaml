@@ -1,0 +1,63 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:  362379207695863809 # If using wokwi, set this to your project's ID
+
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# Source files must be in ./src and you must list each source file separately
+#  source_files:        
+#    - counter.v
+#    - decoder.v
+#  top_module:  "seven_segment_seconds"      # put the name of your top module here, make it unique by prepending your github username
+
+# Keep a track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation: 
+  author:       "Ananya"      # Your name
+  title:        "3 bit multiplier "      # Project title
+  language:     "Wokwi" # other examples include Verilog, Amaranth, VHDL, etc
+  description:  "3 bit multiplier"      # Short description of what your project does
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+      Explain how your project works :-   A 3×3 binary multiplier is one of the combinational logic circuits, which can perform binary multiplication of two binary numbers having a bit size of a maximum of 3 bits. The bit size of the resultant output binary product is 6.Consider the multiplicand A0 A1, A2 and the multiplier B0, B1, B2, and the final binary product output as P0, P1, P2.     The 3 partial product terms are obtained in the binary multiplication because it is a 3-bit multiplier. This 3×3 multiplier can be implemented using a 3-bit full adder and individual single-bit adders.    The carry bit is raised when A2B0 and A1B1 are added together. By the addition of the sum obtained from that, the carry bit is obtained from the addition of A0B1 and A0B2 to A1B0,  which can raise another carry bit. Hence 2 carry bits are obtained and carried over for the addition of A2B1 and A1B2 and the 2 more carry bits are generated in the same way.   The circuit is designed with 3-bit full adders to add the 3 partial product terms. The least significant bit (LSB) of the 1st partial product is not added to the next partial product because it is taken as an LSB of the final binary product output obtained.From the above logical circuit, one 3-bit full adder is used to add the first 2 partial products   together and the other 3-bit full adder adds the 3rd partial product with the sum of the first adder.
+
+
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+      Explain how to test your project :- For testing a 3bit multiplier put 3bit 2 binary numbers at the input and cheak the outputs coming at the 7 segmented display.
+
+# A description of what the inputs do
+  inputs:                            
+    - B : connected to IN1
+    - C : connected to IN2
+    - D : connected to IN3
+    - E : connected to IN4
+    - F : connected to IN5
+    - G : connected to IN6
+    - none
+    - none
+    - none
+# A description of what the outputs do
+  outputs:
+    - segment a : connected to OUT0
+    - segment b : connected to OUT1
+    - segment c : connected to OUT2
+    - segment d : connected to OUT3
+    - segment e : connected to OUT4
+    - segment f : connected to OUT5
+    - segment g : connected to OUT6
+    - dot
+
+# The following fields are optional
+  tag:          ""      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  ""      # Describe any external hardware needed
+  discord:      "ananya#8774"      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository

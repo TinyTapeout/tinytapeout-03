@@ -1,0 +1,73 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# Source files must be in ./src and you must list each source file separately
+  source_files: 
+    - change_detect.v       
+    - counter.v
+    - fsm_control.v
+    - combo_div.v
+    - PrimeDetector.v
+    - reg.v
+    - sipo.v
+    - debouncer.v
+  top_module:  "aidan_mcnay_PrimeDetector"      # put the name of your top module here, make it unique by prepending your github username
+
+# Keep a track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation: 
+  author:       "Aidan McNay"      # Your name
+  title:        "31b-PrimeDetector"      # Project title
+  language:     "Verilog"      # other examples include Verilog, Amaranth, VHDL, etc
+  description:  "Detects whether a 31-bit number is prime or not"      # Short description of what your project does
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+      The 31-bit Prime Detector takes in a 31-bit number (shifted in serially). Once the number is obtained, the FSM control logic takes over. It attempts to divide the value by all numbers less than it; if it finds one that divides evenly, the logic stops and declares the number not prime. If it doesn't divide evenly by any of these, the number is declared prime. 
+      
+      Due to space constraints, the design uses an iterative divider and FSM logic to minimize space usage. Further information can be taken from the README.md on the GitHub page
+
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+      This design requires an external clock. Before testing, the design should be reset with the appropriate pin (active high), which resets the stored value to 0. To shift in a value, use the SPI-like interface; when the CS line is enabled (active low), on rising edges of SCLK, the data present at SDI is shifted in. Data is shifted into the LSB, and progressively shifted to more significant bits as new data is received (with the data at MSB being shifted out and disregarded).
+
+      Once you have the desired number stored, start the calculations by enabling the ready pin (active high). Note that the stored value cannot change while calculations are ongoing.
+
+      Once the calculations are finished, the done pin will be driven high. The result will be shown on the is_prime pin; a value of 1 indicates that the value inputted is prime.
+
+# A description of what the inputs do
+  inputs:               
+    - clock
+    - reset
+    - SDI
+    - SCLK
+    - CS
+    - ready
+    - NC
+    - NC
+# A description of what the outputs do
+  outputs:
+    - done
+    - is_prime
+    - waiting
+    - GND
+    - GND
+    - GND
+    - GND
+    - GND
+
+# The following fields are optional
+  tag:          "experiment"      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  "External Clock, 5 buttons for inputs, 2 LEDs for outputs"      # Describe any external hardware needed
+  discord:      "Aidan#6678"      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     50000 (though could probably be faster)       # Clock frequency in Hz (if required)
+  picture:      "assets/diagram_31b.png"      # relative path to a picture in your repository

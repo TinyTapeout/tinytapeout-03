@@ -1,0 +1,63 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id: 359387860730498049       # If using wokwi, set this to your project's ID
+
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# Source files must be in ./src and you must list each source file separately
+#  source_files:        
+#    - counter.v
+#    - decoder.v
+#  top_module:  "seven_segment_seconds"      # put the name of your top module here, make it unique by prepending your github username
+
+# Keep a track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation: 
+  author:       "Marcus Michaely"      # Your name
+  title:        "BinaryDoorLock"      # Project title
+  language:     "Wokwi" # other examples include Verilog, Amaranth, VHDL, etc
+  description:  "Input is 8-Bit and only one combination opens the door"      # Short description of what your project does
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+      The ideas was to build a simple BinaryDoorLock with 8-Bits as input. With 8 Bits there are 256 possible combinations
+      which can be switched on with the input switches. Only one combination opens the BinaryDoorLock by setting the output pin high.
+
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+      You can test this project on its **WOKWI**:  
+      [https://wokwi.com/projects/359387860730498049](https://wokwi.com/projects/359387860730498049)
+
+# A description of what the inputs do
+  inputs:               
+    - Bit_0
+    - Bit_1
+    - Bit_2
+    - Bit_3
+    - Bit_4
+    - Bit_5
+    - Bit_6
+    - Bit_7
+# A description of what the outputs do
+  outputs:
+    - Output
+    - none
+    - none
+    - none
+    - none
+    - none 
+    - none 
+    - none
+
+# The following fields are optional
+  tag:          ""      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  ""      # Describe any external hardware needed
+  discord:      ""      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     "https://github.com/marcusmichaely/tt03_8Bit_BinaryDoorLock/blob/main/README.md"      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required)
+  picture:      "./media_assets/screenshot.png"      # relative path to a picture in your repository

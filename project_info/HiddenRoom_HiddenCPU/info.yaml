@@ -1,0 +1,88 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# Source files must be in ./src and you must list each source file separately
+  source_files:        
+    - top.v
+    - decode.v
+    - mux.v
+    - ALU.v
+    - add.v
+    - sub.v
+    - xor.v
+    - movAndBranch.v
+  top_module:  "HiddenRoom_HiddenCPU"      # put the name of your top module here, make it unique by prepending your github username
+
+# Keep a track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation: 
+  author:       "HiddenRoom"
+  title:        "HiddenCPU"
+  language:     "Verilog"
+  description:  "Basic 8 bit CPU."
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+      Each instruction is executed in one clock cycle.
+
+      Instructions are inputed on io_in[2:7].
+
+  instruction_format: |
+      io_in[2:3] = opcode (00 add, 01 sub, 10 xor, 11 mov or special operations)
+      io_in[4:5] = result reg address
+      io_in[6:7] = operand reg address
+
+      Special operations are executed when the register address in a mov instruction are the same. These would normally acts as a nop but are instead repurposed as follows
+      register address    special operation
+      00                  add r3 to pc if 
+                          carryflag is high
+
+      01                  memWrite r3 into
+                          address r2
+
+      10                  memRead address r2
+                          into r3
+
+      11                  swap output between
+                          pc and r3
+
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+      After reset, registers will initialize, in order of ascending address, to 00000000b, 00000001b, 00000010b, 00000011b
+
+# A description of what the inputs do
+  inputs:               
+    - clock
+    - reset
+    - opcode bit zero
+    - opcode bit one
+    - result reg address bit zero
+    - result reg address bit one
+    - non result operand reg address bit zero
+    - non result operand reg address bit one
+# A description of what the outputs do
+  outputs:
+    - bit zero of hardwired output reg number at address 11b or pc 
+    - bit one of hardwired output reg number at address 11b or pc 
+    - bit two of hardwired output reg number at address 11b or pc 
+    - bit three of hardwired output reg number at address 11b or pc 
+    - bit four of hardwired output reg number at address 11b or pc 
+    - bit five of hardwired output reg number at address 11b or pc 
+    - bit six of hardwired output reg number at address 11b or pc 
+    - bit seven of hardwired output reg number at address 11b or pc 
+
+# The following fields are optional
+  tag:          "risc, microprocessor, alu"      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  "No absolute requirements but external memory and hardware for addressing is not a bad idea"      # Describe any external hardware needed
+  discord:      "ComedyMan#6380"      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     1000       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository

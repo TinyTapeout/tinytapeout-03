@@ -1,0 +1,64 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# Source files must be in ./src and you must list each source file separately
+  source_files:
+    - combolock.v
+  top_module:  "BenAtUvu_combo"      # put the name of your top module here, make it unique by prepending your github username
+
+# Keep a track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation: 
+  author:       "Benjamin Collier"      # Your name
+  title:        "Combo lock"      # Project title
+  language:     "Verilog" # other examples include Verilog, Amaranth, VHDL, etc
+  description:  "set, reset, and check for a combo"      # Short description of what your project does
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+      this projects works by taking 4 inputs for number 0-9. The first 4 number inputed will be the new combo (0000 is not an input zero should be 0001). 
+      Then to "unlock" press your combo again. to reset and enter a new combo the unlock must be high and reset must be pressed, or master reset must be pressed.
+      
+
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+      Enter 4 single digits in binary into input 0-4, each input must be followed by 0000. Then input the same 4 digits in each followed by 0000 to make unlock high. 
+      a valid input would look some think like this: 0001, 0000, 0101, 0000, 1001, 0000, 0011, 0000, then 0001, 0000, 0101, 0000, 1001, 0000, 0011, 0000, will make
+      unlock high.
+
+# A description of what the inputs do
+  inputs:               
+    - input 0
+    - input 1
+    - input 2
+    - input 3
+    - reset
+    - master reset
+    - none
+    - none
+# A description of what the outputs do
+  outputs:
+    - unlock
+    - none
+    - none
+    - none
+    - none
+    - none
+    - none
+    - none
+
+# The following fields are optional
+  tag:          ""      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  ""      # Describe any external hardware needed
+  discord:      ""      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     0       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository

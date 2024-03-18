@@ -1,0 +1,61 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# Source files must be in ./src and you must list each source file separately
+  source_files:        
+    - main.v
+  top_module:  "andrewm_parallel_to_uart"      # put the name of your top module here, make it unique by prepending your github username
+
+# Keep a track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation: 
+  author:       "Andrew M"
+  title:        "Parallel Nibble to UART"
+  language:     "Verilog"
+  description:  "Loads two half-bytes into registers, then sends over UART"
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+      4 bits should be loaded into registers through the `data` pins twice - once for the LSB of a byte, once for the MSB of a byte (specified using the `mode` pins). 
+      Once ready, `mode` can be set to transmit to send the loaded byte over UART.
+      
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+      When mode[1,2]=01, data is clocked in as the least-significant 4-bits for a UART transmissions. When mode[1,2]=10, the same occurs for the most-significant 4-bits. When mode[1,2]=11, the complete data should get sent over UART.
+
+# A description of what the inputs do
+  inputs:               
+    - clock
+    - reset
+    - data1
+    - data2
+    - data3
+    - data4
+    - mode1
+    - mode2
+# A description of what the outputs do
+  outputs:
+    - uart_tx
+    - none
+    - none
+    - none
+    - none
+    - none
+    - none
+    - none
+
+# The following fields are optional
+  tag:          "serial"      # comma separated list of tags: test encryption, experiment, clock, animation, utility, industrial, pwm, fpga, alu, microprocessor, risc, riscv, sensor, signal generator, fft, filter, music, bcd, sound, serial, timer, random number generator, calculator, decoder, counter, puzzle, multiplier, game, oscillator,
+  external_hw:  "Arduino can be used for testing UART RX"      # Describe any external hardware needed
+  discord:      ""      # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
+  clock_hz:     1000       # Clock frequency in Hz (if required)
+  picture:      ""      # relative path to a picture in your repository

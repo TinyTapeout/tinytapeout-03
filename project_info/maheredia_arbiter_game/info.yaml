@@ -1,0 +1,70 @@
+--- 
+# TinyTapeout project information
+project:
+  wokwi_id:    0        # If using wokwi, set this to your project's ID
+
+# If using an HDL, set wokwi_id as 0 and uncomment and list your source files here. 
+# Source files must be in ./src and you must list each source file separately
+  source_files:       
+    - top.v 
+    - arbiter_game.v
+    - arbiter_game_fsm.v
+    - countdown.v
+    - winner.v
+  top_module:  "maheredia_arbiter_game" 
+
+# Keep a track of the submission yaml
+yaml_version: 3.0
+
+# As everyone will have access to all designs, try to make it easy for someone new to your design to know what
+# it does and how to operate it. This info will be automatically collected and used to make a datasheet for the chip.
+#
+# Here is a great example: https://github.com/davidsiaw/tt02-davidsiaw-stackcalc/blob/38c5647f83aad2aec675d566aa3d67b98f0aac81/info.yaml
+documentation: 
+  author:       "Martin A. Heredia"
+  title:        "Arbiter Game"
+  language:     "Verilog"
+  description:  "This is a game for 2 players. After a countdown, the player who press his/her button first wins. Countdown and winner should be displayed in output leds."
+
+# Longer description of how the project works. You can use standard markdown format.
+  how_it_works: |
+      This is a 2 players game where every player has an active low pushbutton assigned (req1_in and req2_in inputs to top level). 
+      After applying reset to the circuit, a countdown will be displayed at the output ports (ideally connected to some LEDs). 
+      Then, when the last LED stops toggling, the players will press the buttons. 
+      The first player to press the button wins and this will be displayed in output LEDs.
+
+# Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
+  how_to_test:  |
+      - Connect 2 active low pushbuttons to req1_in and req2_in (io_in[2] and io_in[3] respectively).
+      - Connect 4 LEDs to leds_out[3:0] (io_out[3:0]).
+      - Apply 1 KHz clock at clk port (io_in[0]).
+      - Apply an active low reset (io_in[1]) to start the game.
+
+# A description of what the inputs do
+  inputs:               
+    - clk
+    - rst_in_n (active low)
+    - req1_in  (active low)
+    - req2_in  (active low)
+    - none
+    - none
+    - none
+    - none
+# A description of what the outputs do
+  outputs:
+    - leds_out[0] / segment a
+    - leds_out[1] / segment b
+    - leds_out[2] / segment c
+    - leds_out[3] / segment d
+    - none
+    - none
+    - none
+    - none
+
+# The following fields are optional
+  tag:          "educational, game, FSM, counters, shiftreg, sequential"
+  external_hw:  "2 active low pushbuttons for players + 1 active low pushbutton for reset. 4 LEDs connected to outputs."
+  discord:      "maheredia#7961" # Your discord handle, used for communication and automatically assigning tapeout role after a submission
+  doc_link:     "https://github.com/maheredia/tt03-arbiter_game/blob/main/README.md"
+  clock_hz:     1000 # Clock frequency in Hz
+  picture:      "docs/arbiter_game_bd.png"   # relative path to a picture in your repository
